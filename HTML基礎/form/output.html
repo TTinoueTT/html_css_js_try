@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>アウトプット</title>
+  </head>
+  <body>
+    <form oninput="op1.value = Number(id_a.value) + Number(id_b.value);">
+      <!-- <form oninput="op1.value = a.value + b.value;"> -->
+      <div></div>
+      <div>
+        <div>
+          <input
+            type="number"
+            step="0.01"
+            name="a[sio2]"
+            value="0.0"
+            size="5"
+            id="id_a"
+          />
+          ＋
+          <input
+            type="number"
+            step="0.01"
+            name="b[tio2]"
+            value="0.0"
+            size="5"
+            id="id_b"
+          />
+        </div>
+        ＝
+        <div>
+          <output name="op1">0</output>
+        </div>
+      </div>
+    </form>
+
+    <main>
+      <h2>原料の新規登録</h2>
+      <form
+        id="material_form"
+        oninput="sum.value = Number(sio2_num.value) + Number(tio2_num.value);"
+        action="/materials"
+        accept-charset="UTF-8"
+        method="post"
+      >
+        <!-- <input
+          type="hidden"
+          name="authenticity_token"
+          value="nsP5SCCVfQbIPa3cypV2GOw6Eq/Ddm5kezZAMr+WwlB7HtNQgqH9jj/04ruNczsKhgWzNd2I8yN0bqe77mSIpA=="
+        /> -->
+        <div class="form__group_mol">
+          <div class="molinput-set">
+            <label class="form__label" for="material_sio2">SiO2</label>
+            <input
+              step="0.01"
+              class="form__control_molratio"
+              id="sio2_num"
+              type="number"
+              value="0.0"
+              name="material[sio2]"
+            />
+          </div>
+          <div class="molinput-set">
+            <label class="form__label" for="material_tio2">TiO2</label
+            ><input
+              step="0.01"
+              class="form__control_molratio"
+              id="tio2_num"
+              type="number"
+              value="0.0"
+              name="material[tio2]"
+            />
+          </div>
+
+          <div class="molinput-set">
+            <label class="form__label" for="material_sum">Sum</label>
+            <output for="sio2_num tio2_num" form="material_form" name="sum"
+              >0</output
+            >
+
+            <p id="sum_value">hello</p>
+          </div>
+        </div>
+      </form>
+    </main>
+    <script src="output.js"></script>
+  </body>
+</html>

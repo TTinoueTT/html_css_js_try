@@ -1,0 +1,59 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+table {
+  padding: 0;
+  table-layout: fixed;
+  /* flex: 1; */
+  border-collapse: collapse;
+}
+
+thead {
+  padding: 0;
+  background: blue;
+  color: aliceblue;
+}
+
+th {
+  padding: 0;
+  background: rgb(173, 171, 171);
+}
+
+.group {
+  width: 100px;
+}
+
+.period {
+  width: 50px;
+}
+
+td {
+  text-align: center;
+  vertical-align: middle;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background: rgb(189, 173, 173);
+}
+
+.atomic_nucleus {
+  justify-content: center;
+  position: absolute;
+  top: 50px;
+  /* right: 50px; */
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background: rgba(74, 126, 68, 0.507);
+}
+
+.elect_config {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 25px;
+  border-radius: 15px;
+  background: rgba(255, 255, 0, 0.555);
+}

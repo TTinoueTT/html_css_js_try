@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>タブメニュー実践</title>
+    <link rel="stylesheet" href="タブメニュー実践.css" />
+  </head>
+  <body>
+    <div class="tabs">
+      <!-- ヘッダー部分(タブ切り替え) -->
+      <input id="raitio-tab" type="radio" name="tab_item" checked />
+      <label class="tab_item" for="raitio-tab">割合</label>
+      <!--  -->
+      <input id="mol-tab" type="radio" name="tab_item" />
+      <label class="tab_item" for="mol-tab">モル値</label>
+      <!--  -->
+      <input id="air-tab" type="radio" name="tab_item" />
+      <label class="tab_item" for="air-tab">空値</label>
+      <!-- ボディ部分(内容の表示) -->
+      <div class="tab_content" id="raitio_content">
+        <p class="c-txtsp">割合の内容がここに入ります</p>
+      </div>
+      <div class="tab_content" id="mol_content">
+        <p class="c-txtsp">モル値の内容がここに入ります</p>
+      </div>
+      <div class="tab_content" id="air-tab_content">
+        <p class="c-txtsp">空値の内容がここに入ります</p>
+      </div>
+    </div>
+    <script src="タブメニュー.js"></script>
+  </body>
+</html>

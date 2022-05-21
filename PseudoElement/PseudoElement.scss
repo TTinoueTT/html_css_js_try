@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  & h2 {
+    background-color: #591895;
+    color: aliceblue;
+  }
+
+  & div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.before-after {
+  &__basis {
+    & a {
+      &::before {
+        content: "::beforeです <=";
+        color: blue;
+      }
+
+      &::after {
+        content: "=> ::affterです";
+        color: green;
+      }
+    }
+
+  }
+
+  &__practice {
+    & span[data-content] {
+      position: relative;
+
+      &:active::before {
+        content: attr(data-content);
+        position: absolute;
+        background-color: beige;
+        border-radius: 5px;
+        border-style: double;
+      }
+
+      &:hover::after,
+      &:focus::after {
+        content: attr(data-content);
+        position: absolute;
+        background-color: aqua;
+        border-radius: 5px;
+        border-style: dotted;
+      }
+
+
+    }
+  }
+}

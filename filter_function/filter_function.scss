@@ -1,0 +1,19 @@
+.filter-function {
+  &__image {
+    width: 300px;
+    height: 300px;
+    background-image: url(hotoke_gouzanze_myouou.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  & ul {
+    list-style-type: none;
+
+    & li {
+      & select {
+        width: 30%;
+      }
+    }
+  }
+}

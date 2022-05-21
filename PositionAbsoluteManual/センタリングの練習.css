@@ -1,0 +1,28 @@
+.parent {
+  /*親要素*/
+  position: relative;
+  background: orange;
+  height: 200px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .parent p { */
+/* .parent .child { */
+/* .parent a {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  /* vertical-align: middle; */
+/* }  */
+
+.item {
+  /* align-items: center; */
+  display: block;
+  justify-content: center;
+}

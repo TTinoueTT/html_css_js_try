@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSSを使った表</title>
+    <link rel="stylesheet" href="CSSを使った表.css" />
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html lang="ja">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>htmlのみの表</title>
+      </head>
+      <body>
+        <table>
+          <caption>
+            テーブルのキャプション
+          </caption>
+          <colgroup>
+            <col />
+            <col span="2" class="orange" />
+            <col span="2" class="yellow" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">見出しセル1</th>
+              <th scope="col">見出しセル2</th>
+              <th scope="col">見出しセル3</th>
+              <th scope="col">見出しセル4</th>
+              <th scope="col">見出しセル5</th>
+              <th scope="col">見出しセル6</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">ゴリラ</th>
+              <td rowspan="2">rowspan<br />の実装</td>
+              <td colspan="2">colspanの実装</td>
+              <!-- <td>データ3</td> -->
+              <td>データ4</td>
+              <td>データ5</td>
+              <td>データ6</td>
+            </tr>
+            <tr>
+              <th scope="row">サル</th>
+              <!-- <td>霊長類</td> -->
+              <td>データ2</td>
+              <td>データ3</td>
+              <td>データ4</td>
+              <td>データ5</td>
+              <td>データ6</td>
+            </tr>
+            <tr>
+              <th scope="row">ブタ</th>
+              <td>データ1</td>
+              <td>データ2</td>
+              <td>データ3</td>
+              <td>データ4</td>
+              <td>データ5</td>
+              <td>データ6</td>
+            </tr>
+            <tr>
+              <th scope="row">Aさん</th>
+              <td>データ1</td>
+              <td>データ2</td>
+              <td>データ3</td>
+              <td>データ4</td>
+              <td>データ5</td>
+              <td>データ6</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="7">フッター</td>
+            </tr>
+          </tfoot>
+        </table>
+      </body>
+    </html>
+  </body>
+</html>

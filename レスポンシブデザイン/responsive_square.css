@@ -1,0 +1,52 @@
+section {
+  margin: 10%;
+}
+/* ------------------------------ */
+.square_box {
+  width: 30vw;
+  height: 30vw;
+  background: #ffb6c1;
+}
+
+/* .square_box {
+  width: 30vmin;
+  height: 30vmin;
+  background: #ffb6c1;
+} */
+/* ------------------------------ */
+.square_content {
+  max-width: 400px;
+}
+
+.square_content div {
+  width: 50%;
+  padding-top: 50%;
+  background: #802432;
+}
+
+/* 
+paddingの値を%で指定すると、包含ブロック（親要素）の横幅が基準となる
+widthと同じ比率をpadding-topに指定することで、
+親要素の横幅に合わせて正方形の幅・高さを一緒に変化させることができる
+*/
+
+/* ------------------------------ */
+.square_box2 {
+  position: relative;
+  max-width: 300px;
+  background: #6e9b25;
+}
+
+.square_box2::before {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.square_box2 p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* margin: 10px; */
+}

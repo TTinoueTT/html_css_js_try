@@ -1,0 +1,56 @@
+/* 未完成 */
+.frame {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  height: 32px;
+  width: 128px;
+}
+
+
+.input_frame {
+  display: flex;
+  position: relative;
+  border-left: 1px solid rgba(0, 0, 0, 0.3);
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+  flex: 1 1 0%;
+  height: 100%;
+}
+
+input {
+  /* Take full size of its container */
+  /* flex: 1; */
+  border: 0;
+  padding: 0 8px;
+  height: 100%;
+  width: 100%;
+}
+
+.minus_btn {
+  /* Center the content */
+  align-items: center;
+  
+  /* background-color: rgba(0, 0, 0, 0.05); */
+  border-color: transparent;
+  display: flex;
+  justify-content: center;
+
+  border-radius: 8px 0 0 8px;
+  /* Size */
+  width: 32px;
+  height: 100%;
+}
+
+.plus_btn {
+  /* Center the content */
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  /* Size */
+  width: 32px;
+  height: 100%;
+}
