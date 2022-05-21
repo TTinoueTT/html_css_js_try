@@ -1,0 +1,153 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    padding: 10px;
+}
+
+//風船が表示される範囲、風船はこの範囲の下から上に移動させている
+#container {
+    position: relative;
+    // height: 300px;
+    height: 100vw;
+    margin: 0;
+    padding: 0;
+    background: #87ceeb;
+    overflow: hidden; //範囲外のものを非表示にする
+}
+
+// 風船自体のレイアウト
+.balloons div {
+    position: absolute;
+    // left: 0;
+    bottom: -150px;
+    // width: 80px;
+    // height: 100px;
+    width: 5%;
+    height: 5%;
+    background: #ffa07a;
+    // border-radius: 50%;
+    // box-shadow: -6px -6px 0 rgba(0, 0, 0, 0.15) inset;
+
+    // 風船の紐
+    // &::before {//     content: "";
+    //     position: absolute;
+    //     left: 38px;
+    //     bottom: -70px;
+    //     width: 2px;
+    //     height: 70px;
+    //     background: #a0a0a0;
+    //     transform: rotate(5deg);
+    // }
+    @mixin anim-wobbling-and-flyhigh(
+        $left: 0,
+        $wobbling-x-duration: 1s,
+        $wobbling-y-duration: 1s,
+        $fly-high-duration: 10s
+    ) {
+        left: $left;
+        animation: wobbling-x $wobbling-x-duration ease-in-out infinite alternate,
+            wobbling-y $wobbling-y-duration ease-in-out infinite alternate,
+            fly-high $fly-high-duration ease-in-out infinite;
+    }
+
+    &:nth-of-type(1) {
+        @include anim-wobbling-and-flyhigh(5%, 0.8s, 1.1s, 10s);
+    }
+
+    // &:nth-of-type(1) {
+    //     left: -5%; //位置調整
+    //     background-color: #9400d3;
+    //     animation: wobbling-x 0.8s ease-in-out infinite alternate, wobbling-y 1.1s ease-in-out infinite alternate,
+    //         fly-high 13s ease-in-out infinite;
+    // }
+
+    // &:nth-of-type(2) {
+    //     left: 12%;
+    //     background: #ffc0cb;
+    //     animation: wobbling-x 0.8s ease-in-out infinite alternate, wobbling-y 1.1s ease-in-out infinite alternate,
+    //         fly-high 7s ease-in-out infinite;
+    // }
+
+    // &:nth-of-type(3) {
+    //     left: 18%;
+    //     background: #ffa07a;
+    //     animation: wobbling-x 0.8s ease-in-out infinite alternate, wobbling-y 1.1s ease-in-out infinite alternate,
+    //         fly-high 16s ease-in-out infinite;
+    // }
+
+    // &:nth-of-type(4) {
+    //     left: 22%;
+    //     background: #f0f8ff;
+    //     animation: wobbling-x 0.8s ease-in-out infinite alternate, wobbling-y 1.1s ease-in-out infinite alternate,
+    //         fly-high 14s ease-in-out infinite;
+    // }
+
+    // &:nth-of-type(5) {
+    //     left: 36%;
+    //     background: #ffa07a;
+    //     animation: wobbling-x 0.8s ease-in-out infinite alternate, wobbling-y 1.1s ease-in-out infinite alternate,
+    //         fly-high 7s ease-in-out infinite;
+    // }
+
+    // &:nth-of-type(6) {
+    //     left: 50%;
+    //     background: #00fa9a;
+    //     animation: wobbling-x 0.9s ease-in-out infinite alternate, wobbling-y 1.2s ease-in-out infinite alternate,
+    //         fly-high 12s ease-in-out infinite;
+    // }
+
+    // &:nth-of-type(7) {
+    //     left: 62%;
+    //     background: #ffc0cb;
+    //     animation: wobbling-x 0.8s ease-in-out infinite alternate, wobbling-y 1.1s ease-in-out infinite alternate,
+    //         fly-high 15s ease-in-out infinite;
+    // }
+
+    // &:nth-of-type(8) {
+    //     left: 68%;
+    //     background: #9400d3;
+    //     animation: wobbling-x 0.8s ease-in-out infinite alternate, wobbling-y 1.1s ease-in-out infinite alternate,
+    //         fly-high 7s ease-in-out infinite;
+    // }
+
+    // &:nth-of-type(9) {
+    //     left: 78%;
+    //     background: #ffa07a;
+    //     animation: wobbling-x 0.9s ease-in-out infinite alternate, wobbling-y 1.2s ease-in-out infinite alternate,
+    //         fly-high 9s ease-in-out infinite;
+    // }
+}
+
+// 横揺れ
+@keyframes wobbling-x {
+    0% {
+        // margin-left: 8px;
+        margin-left: 5%;
+    }
+
+    100% {
+        margin-left: 0px;
+    }
+}
+
+// 縦揺れ
+@keyframes wobbling-y {
+    0% {
+        margin-bottom: 0px;
+    }
+
+    100% {
+        margin-bottom: 8px;
+    }
+}
+
+// 上に移動
+@keyframes fly-high {
+    100% {
+        // transform: translateY(-1000px);
+        transform: translateY(-700px);
+    }
+}

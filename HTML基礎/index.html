@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <!-- jaはJAでもよい -->
+  <head>
+    <meta charset="UTF-8" />
+    <!-- 文字コードはコンピューターが使う文字セットの種類 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="プログラミング学習サービスのドットインストールです"
+    />
+    <!-- ブラウザに表示されない検索エンジンが利用するテキスト -->
+    <title>ドキュメント</title>
+    <!-- ファイル名がタブに表示 -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <!-- ファビコンはタブのtitleテキストの頭にある極小の画像 -->
+  </head>
+  <body>
+    <header>
+      <img
+        src="img/logo.png"
+        alt="画像が表示されなかったときのテキスト"
+        width="300"
+        height="50"
+      />
+    </header>
+
+    <main>
+      <h1>ドットインストール</h1>
+      <p>
+        プログラミング学習サービスのです！ 「<a href="http://dotinstall.com"
+          >ドットインストール</a
+        >」です！「<a href="members.html">メンバー紹介</a>」「<a
+          href="lessons/index.html"
+          >レッスン一覧</a
+        >」もご覧ください
+      </p>
+
+      <nav>
+        <ul>
+          <li><a href="#about">このサービスについて</a></li>
+          <li><a href="#feature">主な特徴について</a></li>
+        </ul>
+      </nav>
+
+      <section>
+        <h2 id="about">このサービスについて</h2>
+        <p>
+          <!-- strongは強調 -->
+          パラグラフ用テキスト。こんにちは。こんにちは。こんにちは。こんにちは。
+          こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。
+          <strong>すごいサービスです！</strong
+          >こんにちは。こんにちは。こんにちは。
+        </p>
+      </section>
+
+      <section>
+        <h2 id="feature">主な特徴</h2>
+        <blockquote cite="https://dotinstall.com">
+          <!-- 字下げの効果 -->
+          <p>HTMLはこれから学ぶべきスキルです！</p>
+        </blockquote>
+
+        <!-- 水平線で区切る(話題の切り替え用)、装飾のためにはCSSをつかう -->
+        <hr />
+        <p>ここで一句</p>
+        <p>
+          いますぐに、<br />
+          はじめてみよう、<br />
+          HTML
+        </p>
+
+        <p>&lt;br&gt;タグは次のように使います。</p>
+        <!-- HTMLでつかう記号はそのまま使えないので文字実体参照 -->
+        <pre>
+          <code>
+            &lt;p&gt;
+            いますぐに、&lt;br /&gt;
+            はじめてみよう、&lt;br /&gt;
+            HTML
+            &lt;/p&gt;
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h2>使い方</h2>
+        <!-- リストの種類 -->
+        <!-- unorderd list …箇条書きリスト -->
+        <ul>
+          <li>やばい</li>
+          <li>つよい</li>
+          <li>すごい</li>
+        </ul>
+        <!-- orderd list …順序付きリスト -->
+        <ol>
+          <li>動画を見る</li>
+          <li>コードを書く</li>
+          <li>コードを改造する</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>よく聞かれる質問</h2>
+        <!-- description list …項目と説明のリスト -->
+        <dl>
+          <dt>質問A</dt>
+          <dd>回答A</dd>
+          <dt>質問B</dt>
+          <dd>回答B</dd>
+          <dt>質問C</dt>
+          <dd>回答C</dd>
+        </dl>
+      </section>
+    </main>
+
+    <aside>
+      <h2>広告</h2>
+      <p>
+        広告です。広告です。広告です。広告です。広告です
+        。広告です。広告です。広告です。広告です。広告です。広告です。
+      </p>
+    </aside>
+
+    <footer>
+      <p><a href="#top">先頭へもどる</a></p>
+    </footer>
+  </body>
+</html>

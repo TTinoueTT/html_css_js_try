@@ -1,0 +1,502 @@
+body {
+  background-color: bisque;
+}
+
+h3 {
+  margin-block: 0;
+  margin-inline: 0;
+  line-height: 100%;
+}
+
+// list-style …list-style-image, list-style-position, list-style-type の一括指定プロパティ
+
+// list-style-image: 
+//    image型 …URL、
+//    none …
+
+// list-style-position: 
+//    inside …::markerをlistブロックの内側に入れる
+//    outside …::markerをlistブロックの内側に入れない(デフォルト)
+
+#list-style-img {
+  & ul {
+    & li::marker {
+      font-size: 200%;
+      line-height: 80%;
+      // color: aquamarine;//colorは効かない
+    }
+  }
+
+  &__checkmark-list {
+    list-style-position: outside;
+    list-style-image: url(./list_images/checkmark-outline.svg);
+  }
+
+  &__arrow-forward-circle-list {
+    list-style-position: inside;
+    list-style-image: url(./list_images/arrow-forward-circle.svg);
+  }
+
+  &__rocket-outline {
+    list-style-position: inside;
+    list-style-image: url(./list_images/rocket-outline.svg), linear-gradient(to left bottom, red, blue);
+  }
+
+  &__linear-gradient {
+    list-style-position: inside;
+    list-style-image: linear-gradient(to left bottom, red, blue);
+  }
+}
+
+// -----------------------//
+// list-style-type のテスト 
+// -----------------------//
+
+// list-style-type:
+//  // 用意されたmarkerの種類
+//    disc, circle, square, decimal, georigian, trad-chinese-informal, kannada, none
+//  // 文字列型の値
+//    '-'
+
+#list-style-type {
+  & ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 105px;
+  }
+
+  & li {
+    font-size: 0.6rem;
+    width: 20%;
+    font-weight: 600;
+    color: #452096;
+  }
+
+  &__disc {
+    // 塗りつぶされた円形 (既定値)
+    list-style-type: disc;
+  }
+
+  &__circle {
+    // 中空円
+    list-style-type: circle;
+  }
+
+  &__square {
+    // 塗りつぶされた四角形
+    list-style-type: square;
+  }
+
+  &__decimal {
+    // 数値
+    list-style-type: decimal;
+  }
+
+  &__decimal-leading-zero {
+    // 数値で、先頭がゼロ埋めされる
+    list-style-type: decimal-leading-zero;
+  }
+
+  &__lower-roman {
+    // 小文字のローマ数字
+    list-style-type: lower-roman;
+  }
+
+  &__upper-roman {
+    // 大文字のローマ数字
+    list-style-type: upper-roman;
+  }
+
+  &__lower-greek {
+    // 小文字の古代ギリシャ文字
+    list-style-type: lower-greek;
+  }
+
+  &__lower-alpha {
+    // 小文字の ASCII 文字
+    list-style-type: lower-alpha;
+  }
+
+  &__upper-alpha {
+    // 大文字の ASCII 文字
+    list-style-type: upper-alpha;
+  }
+
+  &__arabic-indic {
+    // アラビア－インド数字
+    list-style-type: arabic-indic; //-moz-arabic-indic
+  }
+
+  &__armenian {
+    // 伝統的なアルメニア語の数値表記
+    list-style-type: armenian;
+  }
+
+  &__lower-armenian {
+    // アルメニア語の小文字の数値表記
+    list-style-type: lower-armenian;
+  }
+
+  &__upper-armenian {
+    // 伝統的なアルメニア語の大文字の数値表記
+    list-style-type: upper-armenian;
+  }
+
+  &__bengali {
+    // ベンガル語の数値表記 -moz-bengali
+    list-style-type: bengali;
+  }
+
+  &__cambodian {
+    // カンボジア／クメール語の数値表記 /khmer
+    list-style-type: cambodian;
+  }
+
+  &__cjk-earthly-branch {
+    // 漢字の「十二支」順, -moz-cjk-earthly-branch
+    list-style-type: cjk-earthly-branch;
+  }
+
+  &__cjk-heavenly-stem {
+    // 漢字の「十干」順, -moz-cjk-heavenly-stem
+    list-style-type: cjk-heavenly-stem;
+  }
+
+  &__devanagari {
+    // デーヴァナーガリーの数値表記, -moz-devanagari
+    list-style-type: devanagari;
+  }
+
+  &__ethiopic-numeric {
+    // エチオピア語の数値表記
+    list-style-type: ethiopic-numeric;
+  }
+
+  &__georgian {
+    // 伝統的なジョージア語の数値表記
+    list-style-type: georgian;
+  }
+
+  &__gujarati {
+    // グジャラート語の数値表記、-moz-gujarati
+    list-style-type: gujarati;
+  }
+
+  &__gurmukhi {
+    // グルムキー語の数値表記、-moz-gurmukhi
+    list-style-type: gurmukhi;
+  }
+
+  &__hebrew {
+    // 伝統的なヘブライ語の数値表記
+    list-style-type: hebrew;
+  }
+
+  &__hiragana {
+    // ひらがなの辞書順の文字
+    list-style-type: hiragana;
+  }
+
+  &__hiragana-iroha {
+    // ひらがなのいろは順の文字
+    list-style-type: hiragana-iroha;
+  }
+
+  &__japanese-formal {
+    // 法律や金融関係の書類に使用される日本の公的な数値表記
+    list-style-type: japanese-formal;
+  }
+
+  &__japanese-informal {
+    // 日本語の日常的な数値表記
+    list-style-type: japanese-informal;
+  }
+
+  &__katakana {
+    // カタカナの辞書順
+    list-style-type: katakana;
+  }
+
+  &__katakana-iroha {
+    // カタカナのいろは順
+    list-style-type: katakana-iroha;
+  }
+
+  &__korean-hangul-formal {
+    // 韓国語のハングルの数値表記
+    list-style-type: korean-hangul-formal;
+  }
+
+  &__korean-hanja-formal {
+    // 韓国語の公的な漢数字
+    list-style-type: korean-hanja-formal;
+  }
+
+  &__korean-hanja-informal {
+    // 韓国語の漢数字
+    list-style-type: korean-hanja-informal;
+  }
+
+  &__lao {
+    // ラオス語の数値表記、-moz-lao
+    list-style-type: lao;
+  }
+
+  &__lao {
+    // ラオス語の数値表記、-moz-lao
+    list-style-type: lao;
+  }
+
+  &__malayalam {
+    // マラヤーラム語の数値表記、-moz-malayalam
+    list-style-type: malayalam;
+  }
+
+  &__mongolian {
+    // モンゴル語の数値表記
+    list-style-type: mongolian;
+  }
+
+  &__myanmar {
+    // ミャンマー語 (ビルマ語) の数値表記、-moz-myanmar
+    list-style-type: myanmar;
+  }
+
+  &__oriya {
+    // オリヤー語の数値表記、-moz-oriya
+    list-style-type: oriya;
+  }
+
+  &__persian {
+    // ペルシャ語の数値表記、-moz-persian
+    list-style-type: persian;
+  }
+
+  &__simp-chinese-formal {
+    // 公的な簡体字中国語の数値表記
+    list-style-type: simp-chinese-formal;
+  }
+
+  &__simp-chinese-informal {
+    // 日常的な簡体字中国語の数値表記
+    list-style-type: simp-chinese-informal;
+  }
+
+  &__trad-chinese-formal {
+    // 公的な繁体字中国語の数値表記
+    list-style-type: trad-chinese-formal;
+  }
+
+  &__trad-chinese-informal {
+    // 日常的な繁体字中国語の数値表記
+    list-style-type: trad-chinese-informal;
+  }
+
+  &__cjk-decimal {
+    // 漢数字
+    list-style-type: cjk-decimal;
+  }
+
+  &__tamil {
+    // タミル語の数値表記、-moz-tamil
+    list-style-type: tamil;
+  }
+
+  &__telugu {
+    // テルグ語の数値表記、-moz-telugu
+    list-style-type: telugu;
+  }
+
+  &__thai {
+    // タイ語の数値表記、-moz-thai
+    list-style-type: thai;
+  }
+
+  &__tibetan {
+    // チベット語の数値表記
+    list-style-type: tibetan;
+  }
+
+  &__kannada {
+    // カンナダ語の数値表記、-moz-kannada
+    list-style-type: kannada;
+  }
+
+  &__none {
+    // マーカーは表示されない
+    list-style-type: none;
+  }
+
+  &__string {
+    // 文字列をマーカーに指定
+    list-style-type: '文字:';
+  }
+
+  &__symbol {
+    // '記号識別子'(記号をデコードしてマーカー記号に)
+    list-style-type: "\1F44D:"; // thumbs up sign
+  }
+
+  &__disclosure-open {
+    // <details> などの展開ウィジェットを開いていることを示す記号
+    list-style-type: disclosure-open; // thumbs up sign
+  }
+
+  &__disclosure-closed {
+    // <details> などの展開ウィジェットを閉じていることを示す記号
+    list-style-type: disclosure-closed; // thumbs up sign
+  }
+
+}
+
+//  // @counter-style 規則に一致する識別子
+//    キーワード識別子
+@counter-style exam {
+  system: cyclic;
+  symbols: "❤️""✨""🔥""😊""😂""🥺""❤️‍🔥""👍""🥰""🐻""🍔""⚽""💨""🎨"" 🐶"; //デフォルトは decimal
+  prefix: " ";
+  suffix: ":  "; //デフォルト "."
+  fallback: disc;
+}
+
+// @counter-style 識別子 {
+//   system: …表示の方法を指定(カウンターの整数値を文字列表現に変換するために使用するアルゴリズム)
+//   symbols: …markerのスタイルを指定(文字、画像)、複数可
+//   prefix: …markerの前に表示する内容 // prefix: "("
+//   suffix: …markerの後ろに表示する内容  // suffix: ")"
+//   range: …スタイルを適用するカウント数を指定 start end の2値// range: 1 3;
+//   system: extends …既存のスタイルを拡張、prefixやsuffixを指定できる // extends decimal;
+//   negative: 負の数値を表示する際の prefix や suffix を指定 // 'prefix' 'suffix';
+//   pad: 桁数(integer) 詰める値 //  3 '0'; とすると 000 001 002 ...とカウントされる
+//   fallback: 'system: fixed;'で指定した範囲を超えた場合のスタイルを指定、代替のカウンター。
+//   speak-as: 音声読み上げ時の音声を指定[auto bullets numbers words spell-out]
+// }
+
+
+// =============================== //
+// system がもつ値
+//  cyclic …symbolsの内容の繰り返しを行う、symbolsの内容は1つ以上の記号を指定
+
+//  fixed 
+//  …symbolsの内容の繰り返しを行わない。symbolsの内容以上のリストがあると標準のリストスタイルになる
+//  …オプションで整数値を指定するとリスト番号の整数値からスタイルを適用する。デフォルトは 1
+
+//  symbolic …a. b. c. aa. bb. cc. aaa. bbb. ccc. aaaa. bbbb. cccc. ... の順序で表示
+
+//  numeric …b. c. ba. bb. bc. ca. cb. cc. baa. bab. bac. bba. bbb. bbc. ... の順序で表示
+
+//  alphabetic …symbolsにアルファベットを指定するとそれの連続のカウンターを生成、a. b. c. aa. ab. ac. ba. bb. bc. ca. cb. cc. aaa. aab. aac. ... の順序で表示
+
+//  addtive … additive-symbols: 10 X, 5 V, 1 I; を指定、X を 10、V を 5、I を 1 として数えます。I. II. III. IIII. V. VI. VII. VIII. VIIII. X. XI. ... の順序で表示
+// =============================== //
+
+@counter-style cyclicSystem {
+  system: cyclic;
+  symbols: "🐇""🐢";
+}
+
+@counter-style cyclicSystemImg {
+  system: cyclic;
+  // symbols: url('./list_images/rocket-outline.svg');
+  symbols: A "1""\24B7"D E;
+}
+
+@counter-style fixedSystem {
+  system: fixed 2;
+  symbols: "🐇""🐢";
+}
+
+@counter-style symbolicSystem {
+  system: symbolic;
+  symbols: "🐇""🐢";
+}
+
+@counter-style alphabeticSystemBasic {
+  system: alphabetic;
+  symbols: Ⓐ Ⓑ Ⓒ Ⓓ Ⓔ Ⓕ Ⓖ Ⓗ Ⓘ Ⓙ Ⓚ Ⓛ Ⓜ Ⓝ Ⓞ Ⓟ Ⓠ Ⓡ Ⓢ Ⓣ Ⓤ Ⓥ Ⓦ Ⓧ Ⓨ Ⓩ;
+  suffix: "";
+}
+
+@counter-style alphabeticSystem {
+  system: alphabetic;
+  symbols: "🐇""🐢";
+  suffix: "";
+}
+
+@counter-style numericSystemBasic {
+  system: numeric;
+  symbols: 0 1 2 3 4 5; // 数値型だと特に変化しないが、
+  suffix: ": ";
+}
+
+@counter-style numericSystem {
+  system: numeric;
+  symbols: a b c d e; // 文字列型だと最初の一つ目を0とみなし、カウントしない
+  suffix: ": ";
+}
+
+@counter-style additiveSystem {
+  system: additive;
+  additive-symbols: 10 Ⅹ, 5 Ⅴ, 1 Ⅰ;
+  suffix: ": ";
+}
+
+
+
+#list-style-type-custom {
+  & ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 105px;
+  }
+
+  & li {
+    font-size: 0.6rem;
+    width: 20%;
+    font-weight: 600;
+    color: #452096;
+  }
+
+  &__exam {
+    list-style-type: exam;
+  }
+
+  &__cyclicSystem {
+    list-style-type: cyclicSystem;
+  }
+
+  &__cyclicSystemImg {
+    list-style-type: cyclicSystemImg;
+  }
+
+  &__fixedSystem {
+    list-style-type: fixedSystem;
+  }
+
+
+  &__symbolicSystem {
+    list-style-type: symbolicSystem;
+  }
+
+  &__alphabeticSystemBasic {
+    list-style-type: alphabeticSystemBasic;
+  }
+
+  &__alphabeticSystem {
+    list-style-type: alphabeticSystem;
+  }
+
+  &__numericSystemBasic {
+    list-style-type: numericSystemBasic;
+  }
+
+  &__numericSystem {
+    list-style-type: numericSystem;
+  }
+
+  &__additiveSystem {
+    list-style-type: additiveSystem;
+  }
+}

@@ -1,0 +1,58 @@
+$widths: (ss: 20px,
+  s: 40px,
+  m: 80px,
+  l: 160px);
+
+.squeare {
+  width: map-get($widths, s);
+  height: map-get($widths, s);
+  background: rgb(182, 68, 68);
+}
+
+$btn-default: (padding: 10px,
+  background: #000,
+);
+
+$btn-primary: (color: #000,
+  background: #fff,
+);
+
+$btn-merged: map-merge($btn-default, $btn-primary);
+
+@each $key,
+$var in $btn-merged {
+  .merged {
+    $key: $var;
+  }
+}
+
+// $shadow-long: (sss: 2px,
+//   ss: 5px,
+//   s: 10px,
+//   m: 20px,
+//   l: 30px,
+// );
+
+// @function light($size) {
+  //   $lights: ();
+
+  //   @each $key,
+  //   $var in $shadow-long {
+  //     append($lights, #{$key} -1 * #{$var});
+  //   }
+
+  //   @return map-get($lights, $size);
+  // }
+
+#main {
+  width: 90%;
+
+  p {
+    font-size: 14px;
+    color: orange;
+    font-weight: bold;
+    text-shadow: light(l) light(l) light(l) skyblue;
+  }
+}
+
+// @debug map-get($widths, s);

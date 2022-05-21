@@ -1,0 +1,72 @@
+.slider-x {
+  /* 以下の設定は必須 */
+  /* scroll-snap-type: x mandatory; */
+  /* width: 100%; */
+  width: 80%;
+  scroll-snap-align: start;
+  scroll-snap-align: center;
+  overflow-x: scroll;
+  display: flex;
+  -webkit-overflow-scrolling: touch;
+  /* スマホ対応のため必須 */
+  overflow-scrolling: touch;
+  /* スマホ対応のため必須 *
+    
+    /* 以下デモ用のデザイン */
+  height: 100px;
+}
+
+/* PC用縦並びレイアウト */
+@media screen and (min-width: 1030px) {
+  .slider-x {
+    scroll-snap-type: none;
+    overflow-x: visible;
+    height: auto;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .slider-x.responsible>div {
+    height: 100px;
+    width: auto;
+  }
+}
+
+.slider-x>div {
+  /* 以下の設定は必須 */
+  scroll-snap-align: center;
+  height: 100%;
+  width: 100%;
+  /* width: 33.33%; */
+  flex: none;
+
+  /* 以下デモ用のデザイン */
+  color: #FFF;
+  font-size: 150%;
+  font-weight: bold;
+  /* 文字の上下左右中央寄せのための記述 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* デモ用のデザイン */
+.slider-x>div:nth-child(1) {
+  background-color: #C7000B
+}
+
+.slider-x>div:nth-child(2) {
+  background-color: #D28300
+}
+
+.slider-x>div:nth-child(3) {
+  background-color: #DFD000
+}
+
+.slider-x>div:nth-child(4) {
+  background-color: #00873C
+}
+
+.slider-x>div:nth-child(5) {
+  background-color: #005AA0
+}

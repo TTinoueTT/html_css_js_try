@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>htmlのみの表</title>
+  </head>
+  <body>
+    <table border="1">
+      <caption>
+        テーブルのキャプション
+      </caption>
+      <colgroup>
+        <col />
+        <col span="2" />
+        <col span="2" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">見出しセル1</th>
+          <th scope="col">見出しセル2</th>
+          <th scope="col">見出しセル3</th>
+          <th scope="col">見出しセル4</th>
+          <th scope="col">見出しセル5</th>
+          <th scope="col">見出しセル6</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">ゴリラ</th>
+          <td rowspan="2">rowspan<br />の実装</td>
+          <td colspan="2">colspanの実装</td>
+          <!-- <td>データ3</td> -->
+          <td>データ4</td>
+          <td>データ5</td>
+          <td>データ6</td>
+        </tr>
+        <tr>
+          <th scope="row">サル</th>
+          <!-- <td>霊長類</td> -->
+          <td>データ2</td>
+          <td>データ3</td>
+          <td>データ4</td>
+          <td>データ5</td>
+          <td>データ6</td>
+        </tr>
+        <tr>
+          <th scope="row">ブタ</th>
+          <td>データ1</td>
+          <td>データ2</td>
+          <td>データ3</td>
+          <td>データ4</td>
+          <td>データ5</td>
+          <td>データ6</td>
+        </tr>
+        <tr>
+          <th scope="row">Aさん</th>
+          <td>データ1</td>
+          <td>データ2</td>
+          <td>データ3</td>
+          <td>データ4</td>
+          <td>データ5</td>
+          <td>データ6</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="7">フッター</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <table border="1">
+      <caption>
+        出張費
+      </caption>
+      <thead>
+        <th>日程</th>
+        <th scope="col">食費</th>
+        <th scope="col">宿泊費</th>
+        <th scope="col">交通費</th>
+      </thead>
+      <tbody>
+        <tr>
+          <th id="kokura">小倉</th>
+        </tr>
+        <tr>
+          <th scope="row" headers="kokura">2012-07-17</th>
+          <td headers="kokura">3,300</td>
+          <td headers="kokura">8,600</td>
+          <td headers="kokura">1,400</td>
+        </tr>
+        <tr>
+          <th scope="row" headers="kokura">2012-07-18</th>
+          <td headers="kokura">4,100</td>
+          <td headers="kokura">8,600</td>
+          <td headers="kokura">1,380</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <th id="hakata">博多</th>
+        </tr>
+        <tr>
+          <th scope="row" headers="hakata">2012-07-19</th>
+          <td headers="hakata">2,600</td>
+          <td headers="hakata">9,600</td>
+          <td headers="hakata">6,300</td>
+        </tr>
+        <tr>
+          <th scope="row" headers="hakata">2012-07-20</th>
+          <td headers="hakata">2,300</td>
+          <td headers="hakata">9,600</td>
+          <td headers="hakata">1,150</td>
+        </tr>
+        <tr>
+          <th scope="row" headers="hakata">2012-07-21</th>
+          <td headers="hakata">2,900</td>
+          <td headers="hakata">9,600</td>
+          <td headers="hakata">1,320</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- scope="rowgroup" ============================ -->
+    <table border="1">
+      <thead>
+        <tr>
+          <th scope="col">見出し1</th>
+          <th scope="col">見出し2</th>
+          <th scope="col">見出し3</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <th colspan="3" scope="rowgroup">グループA</th>
+        </tr>
+        <tr>
+          <td>データ1-1</td>
+          <td>データ2-1</td>
+          <td>データ3-1</td>
+        </tr>
+        <tr>
+          <td>データ1-2</td>
+          <td>データ2-2</td>
+          <td>データ3-2</td>
+        </tr>
+      </tbody>
+
+      <tbody>
+        <tr>
+          <th colspan="3" scope="rowgroup">グループB</th>
+        </tr>
+        <tr>
+          <td>データ1-3</td>
+          <td>データ2-3</td>
+          <td>データ3-3</td>
+        </tr>
+        <tr>
+          <td>データ1-4</td>
+          <td>データ2-4</td>
+          <td>データ3-4</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- scope="colgroup" ============================ -->
+    <table border="1">
+      <colgroup span="2"></colgroup>
+      <colgroup span="2"></colgroup>
+
+      <thead>
+        <tr>
+          <th colspan="2" scope="colgroup">グループA</th>
+          <th colspan="2" scope="colgroup">グループB</th>
+        </tr>
+        <tr>
+          <th scope="col">見出し1</th>
+          <th scope="col">見出し2</th>
+          <th scope="col">見出し3</th>
+          <th scope="col">見出し4</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>データ1-1</td>
+          <td>データ2-1</td>
+          <td>データ3-1</td>
+          <td>データ4-1</td>
+        </tr>
+        <tr>
+          <td>データ1-2</td>
+          <td>データ2-2</td>
+          <td>データ3-2</td>
+          <td>データ4-2</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table>
+      <tbody>
+        <tr>
+          <th scope="row">0.65</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tbody>tr>
+
+        <tr>
+          <th scope="row">0.65</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <th scope="row">0.65</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <th scope="row">0.65</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <th scope="row">0.65</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">見出しセル1</th>
+          <th scope="col">見出しセル2</th>
+          <th scope="col">見出しセル3</th>
+          <th scope="col">見出しセル4</th>
+          <th scope="col">見出しセル5</th>
+      </tfoot>
+    </table>
+  </body>
+</html>

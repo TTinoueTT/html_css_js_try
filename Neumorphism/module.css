@@ -1,0 +1,82 @@
+/* ======================================== */
+/* クリックボタンのスタイルを指定 */
+/* ======================================== */
+button {
+  color: rgba(194, 53, 76, 0.596);
+  text-shadow: 10px 10px 80px rgba(189, 78, 97, 0.596),
+    -10px -10px 80px rgba(189, 78, 97, 0.596);
+  margin: 20px 10px;
+
+  font-size: 2rem;
+  font-weight: bold;
+  width: 200px;
+  height: 200px;
+  border-radius: 10%;
+  background: rgb(243, 177, 188);
+}
+
+button:active {
+  color: rgb(252, 72, 102);
+  /* background: rgb(241, 176, 187); */
+  /* background: rgba(241, 175, 187); */
+  box-shadow: none;
+  box-shadow: inset 2px 2px 8px rgb(212, 154, 164),
+    inset -2px -2px 8px rgb(255, 198, 208);
+  text-shadow: 20px 20px 60px rgb(255, 117, 140),
+    -20px -20px 60px rgb(255, 117, 140);
+  /* box-shadow: 1px 1px 6px rgb(212, 154, 164), -1px -1px 6px rgb(255, 198, 208); */
+}
+
+/* ======================================== */
+/* 表のスタイルを指定 */
+/* ======================================== */
+.table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 6px;
+}
+
+thead tr:first-child th:first-child {
+  border-radius: 5px 0 0 0;
+}
+
+thead tr:first-child th:last-child {
+  border-radius: 0 5px 0 0;
+}
+
+tfoot tr:last-child th:first-child {
+  border-radius: 0 0 0 5px;
+}
+
+tfoot tr:last-child th:last-child {
+  border-radius: 0 0 5px 0;
+}
+
+.tr:hover {
+  color: rgb(252, 72, 102);
+  background: rgb(255, 127, 150);
+  /* box-shadow: inset 2px 2px 8px rgb(212, 154, 164),
+    inset -2px -2px 8px rgb(255, 198, 208);
+  text-shadow: 20px 20px 60px rgb(255, 117, 140),
+    -20px -20px 60px rgb(255, 117, 140); */
+}
+
+.th {
+  color: aliceblue;
+  background: rgba(194, 53, 76, 0.596);
+}
+
+.th,
+.td {
+  padding: 3px 3px;
+  border: solid 1px rgb(243, 177, 188);
+  /* 枠線を作る */
+}
+
+.tfoot {
+  text-align: center;
+}
+
+.mg-3 {
+  margin: 1.5rem;
+}

@@ -1,0 +1,60 @@
+/* 画面幅が最低600px ~ 最大800pxのときのスタイルの指定 */
+/* @media (min-width: 600px) and (max-width: 800px) {
+  body {
+    background: skyblue;
+  }
+} */
+
+/* ======================================================= */
+/* 共通のスタイルは先に記述、必要な分だけ後から上書きしていく */
+/* 共通スタイル 小さい順に作っていく(モバイルファースト) */
+/* small screen */
+body {
+  margin: 0;
+}
+
+.image {
+  background: pink;
+  height: 100px;
+}
+
+.text {
+  background: gray;
+  height: 100px;
+}
+
+aside {
+  background: yellow;
+  display: none;
+}
+
+/* ======================================================= */
+/* medium screen 共通のスタイルからの変更点のみを記述*/
+@media (min-width: 600px) {
+  section {
+    display: flex;
+  }
+
+  .image {
+    width: 200px;
+  }
+
+  .text {
+    flex: 1;
+  }
+}
+
+/* ======================================================= */
+/* large screen */
+@media (min-width: 800px) {
+  section {
+    width: 800px;
+    margin: 0 auto;
+  }
+
+  aside {
+    /* background: yellow; */
+    display: block;
+    width: 160px;
+  }
+}

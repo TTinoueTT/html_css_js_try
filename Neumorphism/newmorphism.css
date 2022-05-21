@@ -1,0 +1,61 @@
+.bump {
+  box-shadow: 6px 6px 15px rgb(212, 154, 164),
+    -5px -5px 20px rgb(255, 198, 208);
+
+}
+
+.depressed {
+  box-shadow: inset 2px 2px 8px rgb(212, 154, 164),
+    inset -2px -2px 8px rgb(255, 198, 208);
+  text-shadow: 20px 20px 60px rgb(255, 117, 140),
+    -20px -20px 60px rgb(255, 117, 140);
+}
+
+.distinct {
+  box-shadow:
+    inset -5px -5px 8px rgb(212, 154, 164),
+    inset 5px 5px 8px rgb(255, 198, 208),
+    6px 6px 15px rgb(212, 154, 164),
+    -5px -5px 20px rgb(255, 198, 208);
+  text-shadow: 20px 20px 60px rgb(255, 117, 140),
+    -20px -20px 60px rgb(255, 117, 140);
+}
+
+.cleardeco {
+  border: none;
+  /* 枠線を消す */
+  outline: none;
+  /* クリックした時の枠線を消す */
+  user-select: none;
+}
+
+
+
+.video-billboard {
+  color: rgb(252, 72, 102);
+  font-weight: bold;
+  text-shadow: 20px 20px 60px rgb(255, 117, 140),
+    -20px -20px 60px rgb(255, 117, 140);
+
+  position: relative;
+  left: -450px;
+
+  animation-name: move;
+  animation-duration: 10s;
+  /* animation-iteration-count: infinite; */
+  animation-timing-function: linear;
+  animation-delay: 0.5s;
+
+  user-select: none;
+}
+
+@keyframes move {
+  0% {
+    transform: none;
+  }
+
+  100% {
+    /* transform: translateX(100vw); */
+    transform: translateX(1000px);
+  }
+}

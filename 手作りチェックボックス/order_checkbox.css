@@ -1,0 +1,51 @@
+/* 元々のチェックボックス（非表示） */
+.mycheckbox input[type="checkbox"] {
+  display: none;
+}
+
+/* チェックボックスの代わりを成すラベル */
+.mycheckbox input[type="checkbox"]+label {
+  display: none;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  padding-left: 25px;
+  padding-right: 10px;
+}
+
+/* ラベルの左に表示させる正方形のボックス□ */
+.mycheckbox input[type="checkbox"]+label::before {
+  content: "";
+  position: absolute;
+  display: block;
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  left: 0;
+  top: 50%;
+  border: 3px solid;
+  border-color: #a8964f;
+  /* 枠の色変更 お好きな色を */
+  background-color: rgb(196, 114, 114);
+  /* 背景の色変更 お好きな色を */
+  border-radius: 50%;
+}
+
+/* チェックが入った時のレ点 */
+.mycheckbox input[type="checkbox"]:checked+label::after {
+  content: "";
+  position: absolute;
+  display: block;
+  box-sizing: border-box;
+  width: 18px;
+  height: 9px;
+  margin-top: -9px;
+  top: 50%;
+  left: 3px;
+  transform: rotate(-45deg);
+  border-bottom: 3px solid;
+  border-left: 3px solid;
+  border-color: #585753;
+  /* チェックの色変更 お好きな色を */
+}

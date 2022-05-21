@@ -1,0 +1,14 @@
+.squeare {
+  width: 40px;
+  height: 40px;
+  background: #b64444; }
+
+#main {
+  width: 90%; }
+  #main p {
+    font-size: 14px;
+    color: orange;
+    font-weight: bold;
+    text-shadow: light(l) light(l) light(l) skyblue; }
+
+/*# sourceMappingURL=main.css.map */

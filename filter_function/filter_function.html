@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="filter_function.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="filter-function" id="filterFunction">
+      <div class="filter-function__image" ref="image"></div>
+      <ul>
+        <li>
+          <label for="filter-selecter">フィルター関数を選択:</label>
+          <select id="filter-selecter" @change="selectFilterFunction" ref="select">
+            <option v-for="el in filterFunctions" :value="el" v-text="el"></option>
+          </select>
+        </li>
+        <li>
+          <input type="range" data-unit="px" ref="slider" />
+          <output ref="output" v-text="outputValue"></output>
+        </li>
+        <li>
+          <p>現在の値:<code ref="code"></code></p>
+        </li>
+      </ul>
+
+      <div
+        style="
+          background: black;
+          opacity: 0.65;
+          color: #ff9800;
+          font-size: 10%;
+          position: fixed;
+          top: 0;
+          right: 0;
+          width: 35%;
+          border-radius: 5px;
+          z-index: 10;
+        "
+      >
+        <p style="margin: 0">#list-style-type-custom</p>
+        <pre v-text="$data" style="margin: 0; padding: 0 4%; text-align: left"></pre>
+      </div>
+    </section>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="filter_function.js"></script>
+  </body>
+</html>

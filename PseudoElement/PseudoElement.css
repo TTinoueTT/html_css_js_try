@@ -1,0 +1,44 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0; }
+
+section h2 {
+  background-color: #591895;
+  color: aliceblue; }
+
+section div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.before-after__basis a::before {
+  content: "::beforeです <=";
+  color: blue; }
+
+.before-after__basis a::after {
+  content: "=> ::affterです";
+  color: green; }
+
+.before-after__practice span[data-content] {
+  position: relative; }
+  .before-after__practice span[data-content]:active::before {
+    content: attr(data-content);
+    position: absolute;
+    background-color: beige;
+    border-radius: 5px;
+    border-style: double; }
+  .before-after__practice span[data-content]:hover::after, .before-after__practice span[data-content]:focus::after {
+    content: attr(data-content);
+    position: absolute;
+    background-color: aqua;
+    border-radius: 5px;
+    border-style: dotted; }
+/*# sourceMappingURL=PseudoElement.css.map */

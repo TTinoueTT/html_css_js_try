@@ -1,0 +1,48 @@
+.slider-y {
+  /* 以下の設定は必須 */
+  scroll-snap-type: y mandatory;
+  position: relative;
+  width: 100%;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+
+  /* 以下デモ用のデザイン */
+  height: 100px;
+}
+
+.slider-y>div {
+  /* 以下の設定は必須 */
+  scroll-snap-align: start;
+  height: 100%;
+  width: 100%;
+
+  /* 以下デモ用のデザイン */
+  color: #FFF;
+  font-size: 150%;
+  font-weight: bold;
+  /* 文字の上下左右中央寄せのための記述 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-y>div:nth-child(1) {
+  background-color: #C7000B
+}
+
+.slider-y>div:nth-child(2) {
+  background-color: #D28300
+}
+
+.slider-y>div:nth-child(3) {
+  background-color: #DFD000
+}
+
+.slider-y>div:nth-child(4) {
+  background-color: #00873C
+}
+
+.slider-y>div:nth-child(5) {
+  background-color: #005AA0
+}

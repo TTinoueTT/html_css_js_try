@@ -1,0 +1,28 @@
+table {
+  color: aliceblue;
+  background: rgb(204, 86, 86);
+  border-collapse: collapse;
+  border:3px dotted rgb(202, 38, 65);
+}
+
+caption {
+  color: blueviolet;
+  font-weight: bold;
+}
+
+th, td {
+  padding: 3px 5px;
+  border: 1px solid aliceblue;
+}
+
+.orange {
+  /* 文字の太さはcolgroupで変更不可 */
+  /* font-weight: bold; */
+  background: orange;
+}
+
+.yellow {
+  /* 文字色は変更不可 */
+  /* color: blueviolet; */ 
+  background: yellow;
+}
