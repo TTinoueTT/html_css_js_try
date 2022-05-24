@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  & h2 {
+    background-color: #12517d;
+    color: aliceblue;
+  }
+
+  & div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+// 以下特有のスタイル
+
+.today+p {
+  background-color: yellowgreen;
+
+  &:hover::after {
+    content: "こちらが今日に対する隣接兄弟結合子で対象となる要素";
+    background-color: aliceblue;
+    border-style: solid 1px;
+    border-radius: 5px;
+    padding: 2%;
+  }
+}

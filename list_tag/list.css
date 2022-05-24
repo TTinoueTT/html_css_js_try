@@ -1,40 +1,33 @@
 @charset "UTF-8";
 body {
-  background-color: bisque;
-}
+  background-color: bisque; }
 
 h3 {
   margin-block: 0;
   margin-inline: 0;
-  line-height: 100%;
-}
+  line-height: 100%; }
 
 #list-style-img ul li::marker {
   font-size: 200%;
-  line-height: 80%;
-}
+  line-height: 80%; }
 
 #list-style-img__checkmark-list {
   list-style-position: outside;
-  list-style-image: url(./list_images/checkmark-outline.svg);
-}
+  list-style-image: url(./list_images/checkmark-outline.svg); }
 
 #list-style-img__arrow-forward-circle-list {
   list-style-position: inside;
-  list-style-image: url(./list_images/arrow-forward-circle.svg);
-}
+  list-style-image: url(./list_images/arrow-forward-circle.svg); }
 
 #list-style-img__rocket-outline {
   list-style-position: inside;
   list-style-image: url(./list_images/rocket-outline.svg), -webkit-gradient(linear, right top, left bottom, from(red), to(blue));
-  list-style-image: url(./list_images/rocket-outline.svg), linear-gradient(to left bottom, red, blue);
-}
+  list-style-image: url(./list_images/rocket-outline.svg), linear-gradient(to left bottom, red, blue); }
 
 #list-style-img__linear-gradient {
   list-style-position: inside;
   list-style-image: -webkit-gradient(linear, right top, left bottom, from(red), to(blue));
-  list-style-image: linear-gradient(to left bottom, red, blue);
-}
+  list-style-image: linear-gradient(to left bottom, red, blue); }
 
 #list-style-type ul {
   display: -webkit-box;
@@ -46,293 +39,226 @@ h3 {
           flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  height: 105px;
-}
+  height: 105px; }
 
 #list-style-type li {
   font-size: 0.6rem;
   width: 20%;
   font-weight: 600;
-  color: #452096;
-}
+  color: #452096; }
 
 #list-style-type__disc {
-  list-style-type: disc;
-}
+  list-style-type: disc; }
 
 #list-style-type__circle {
-  list-style-type: circle;
-}
+  list-style-type: circle; }
 
 #list-style-type__square {
-  list-style-type: square;
-}
+  list-style-type: square; }
 
 #list-style-type__decimal {
-  list-style-type: decimal;
-}
+  list-style-type: decimal; }
 
 #list-style-type__decimal-leading-zero {
-  list-style-type: decimal-leading-zero;
-}
+  list-style-type: decimal-leading-zero; }
 
 #list-style-type__lower-roman {
-  list-style-type: lower-roman;
-}
+  list-style-type: lower-roman; }
 
 #list-style-type__upper-roman {
-  list-style-type: upper-roman;
-}
+  list-style-type: upper-roman; }
 
 #list-style-type__lower-greek {
-  list-style-type: lower-greek;
-}
+  list-style-type: lower-greek; }
 
 #list-style-type__lower-alpha {
-  list-style-type: lower-alpha;
-}
+  list-style-type: lower-alpha; }
 
 #list-style-type__upper-alpha {
-  list-style-type: upper-alpha;
-}
+  list-style-type: upper-alpha; }
 
 #list-style-type__arabic-indic {
-  list-style-type: arabic-indic;
-}
+  list-style-type: arabic-indic; }
 
 #list-style-type__armenian {
-  list-style-type: armenian;
-}
+  list-style-type: armenian; }
 
 #list-style-type__lower-armenian {
-  list-style-type: lower-armenian;
-}
+  list-style-type: lower-armenian; }
 
 #list-style-type__upper-armenian {
-  list-style-type: upper-armenian;
-}
+  list-style-type: upper-armenian; }
 
 #list-style-type__bengali {
-  list-style-type: bengali;
-}
+  list-style-type: bengali; }
 
 #list-style-type__cambodian {
-  list-style-type: cambodian;
-}
+  list-style-type: cambodian; }
 
 #list-style-type__cjk-earthly-branch {
-  list-style-type: cjk-earthly-branch;
-}
+  list-style-type: cjk-earthly-branch; }
 
 #list-style-type__cjk-heavenly-stem {
-  list-style-type: cjk-heavenly-stem;
-}
+  list-style-type: cjk-heavenly-stem; }
 
 #list-style-type__devanagari {
-  list-style-type: devanagari;
-}
+  list-style-type: devanagari; }
 
 #list-style-type__ethiopic-numeric {
-  list-style-type: ethiopic-numeric;
-}
+  list-style-type: ethiopic-numeric; }
 
 #list-style-type__georgian {
-  list-style-type: georgian;
-}
+  list-style-type: georgian; }
 
 #list-style-type__gujarati {
-  list-style-type: gujarati;
-}
+  list-style-type: gujarati; }
 
 #list-style-type__gurmukhi {
-  list-style-type: gurmukhi;
-}
+  list-style-type: gurmukhi; }
 
 #list-style-type__hebrew {
-  list-style-type: hebrew;
-}
+  list-style-type: hebrew; }
 
 #list-style-type__hiragana {
-  list-style-type: hiragana;
-}
+  list-style-type: hiragana; }
 
 #list-style-type__hiragana-iroha {
-  list-style-type: hiragana-iroha;
-}
+  list-style-type: hiragana-iroha; }
 
 #list-style-type__japanese-formal {
-  list-style-type: japanese-formal;
-}
+  list-style-type: japanese-formal; }
 
 #list-style-type__japanese-informal {
-  list-style-type: japanese-informal;
-}
+  list-style-type: japanese-informal; }
 
 #list-style-type__katakana {
-  list-style-type: katakana;
-}
+  list-style-type: katakana; }
 
 #list-style-type__katakana-iroha {
-  list-style-type: katakana-iroha;
-}
+  list-style-type: katakana-iroha; }
 
 #list-style-type__korean-hangul-formal {
-  list-style-type: korean-hangul-formal;
-}
+  list-style-type: korean-hangul-formal; }
 
 #list-style-type__korean-hanja-formal {
-  list-style-type: korean-hanja-formal;
-}
+  list-style-type: korean-hanja-formal; }
 
 #list-style-type__korean-hanja-informal {
-  list-style-type: korean-hanja-informal;
-}
+  list-style-type: korean-hanja-informal; }
 
 #list-style-type__lao {
-  list-style-type: lao;
-}
+  list-style-type: lao; }
 
 #list-style-type__lao {
-  list-style-type: lao;
-}
+  list-style-type: lao; }
 
 #list-style-type__malayalam {
-  list-style-type: malayalam;
-}
+  list-style-type: malayalam; }
 
 #list-style-type__mongolian {
-  list-style-type: mongolian;
-}
+  list-style-type: mongolian; }
 
 #list-style-type__myanmar {
-  list-style-type: myanmar;
-}
+  list-style-type: myanmar; }
 
 #list-style-type__oriya {
-  list-style-type: oriya;
-}
+  list-style-type: oriya; }
 
 #list-style-type__persian {
-  list-style-type: persian;
-}
+  list-style-type: persian; }
 
 #list-style-type__simp-chinese-formal {
-  list-style-type: simp-chinese-formal;
-}
+  list-style-type: simp-chinese-formal; }
 
 #list-style-type__simp-chinese-informal {
-  list-style-type: simp-chinese-informal;
-}
+  list-style-type: simp-chinese-informal; }
 
 #list-style-type__trad-chinese-formal {
-  list-style-type: trad-chinese-formal;
-}
+  list-style-type: trad-chinese-formal; }
 
 #list-style-type__trad-chinese-informal {
-  list-style-type: trad-chinese-informal;
-}
+  list-style-type: trad-chinese-informal; }
 
 #list-style-type__cjk-decimal {
-  list-style-type: cjk-decimal;
-}
+  list-style-type: cjk-decimal; }
 
 #list-style-type__tamil {
-  list-style-type: tamil;
-}
+  list-style-type: tamil; }
 
 #list-style-type__telugu {
-  list-style-type: telugu;
-}
+  list-style-type: telugu; }
 
 #list-style-type__thai {
-  list-style-type: thai;
-}
+  list-style-type: thai; }
 
 #list-style-type__tibetan {
-  list-style-type: tibetan;
-}
+  list-style-type: tibetan; }
 
 #list-style-type__kannada {
-  list-style-type: kannada;
-}
+  list-style-type: kannada; }
 
 #list-style-type__none {
-  list-style-type: none;
-}
+  list-style-type: none; }
 
 #list-style-type__string {
-  list-style-type: '文字:';
-}
+  list-style-type: '文字:'; }
 
 #list-style-type__symbol {
-  list-style-type: "\1F44D:";
-}
+  list-style-type: "\1F44D:"; }
 
 #list-style-type__disclosure-open {
-  list-style-type: disclosure-open;
-}
+  list-style-type: disclosure-open; }
 
 #list-style-type__disclosure-closed {
-  list-style-type: disclosure-closed;
-}
+  list-style-type: disclosure-closed; }
 
 @counter-style exam {
   system: cyclic;
   symbols: "❤️" "✨" "🔥" "😊" "😂" "🥺" "❤️‍🔥" "👍" "🥰" "🐻" "🍔" "⚽" "💨" "🎨" " 🐶";
   prefix: " ";
   suffix: ":  ";
-  fallback: disc;
-}
+  fallback: disc; }
 
 @counter-style cyclicSystem {
   system: cyclic;
-  symbols: "🐇" "🐢";
-}
+  symbols: "🐇" "🐢"; }
 
 @counter-style cyclicSystemImg {
   system: cyclic;
-  symbols: A "1" "Ⓑ" D E;
-}
+  symbols: A "1" "Ⓑ" D E; }
 
 @counter-style fixedSystem {
   system: fixed 2;
-  symbols: "🐇" "🐢";
-}
+  symbols: "🐇" "🐢"; }
 
 @counter-style symbolicSystem {
   system: symbolic;
-  symbols: "🐇" "🐢";
-}
+  symbols: "🐇" "🐢"; }
 
 @counter-style alphabeticSystemBasic {
   system: alphabetic;
   symbols: Ⓐ Ⓑ Ⓒ Ⓓ Ⓔ Ⓕ Ⓖ Ⓗ Ⓘ Ⓙ Ⓚ Ⓛ Ⓜ Ⓝ Ⓞ Ⓟ Ⓠ Ⓡ Ⓢ Ⓣ Ⓤ Ⓥ Ⓦ Ⓧ Ⓨ Ⓩ;
-  suffix: "";
-}
+  suffix: ""; }
 
 @counter-style alphabeticSystem {
   system: alphabetic;
   symbols: "🐇" "🐢";
-  suffix: "";
-}
+  suffix: ""; }
 
 @counter-style numericSystemBasic {
   system: numeric;
   symbols: 0 1 2 3 4 5;
-  suffix: ": ";
-}
+  suffix: ": "; }
 
 @counter-style numericSystem {
   system: numeric;
   symbols: a b c d e;
-  suffix: ": ";
-}
+  suffix: ": "; }
 
 @counter-style additiveSystem {
   system: additive;
   additive-symbols: 10 Ⅹ, 5 Ⅴ, 1 Ⅰ;
-  suffix: ": ";
-}
+  suffix: ": "; }
 
 #list-style-type-custom ul {
   display: -webkit-box;
@@ -344,53 +270,41 @@ h3 {
           flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  height: 105px;
-}
+  height: 105px; }
 
 #list-style-type-custom li {
   font-size: 0.6rem;
   width: 20%;
   font-weight: 600;
-  color: #452096;
-}
+  color: #452096; }
 
 #list-style-type-custom__exam {
-  list-style-type: exam;
-}
+  list-style-type: exam; }
 
 #list-style-type-custom__cyclicSystem {
-  list-style-type: cyclicSystem;
-}
+  list-style-type: cyclicSystem; }
 
 #list-style-type-custom__cyclicSystemImg {
-  list-style-type: cyclicSystemImg;
-}
+  list-style-type: cyclicSystemImg; }
 
 #list-style-type-custom__fixedSystem {
-  list-style-type: fixedSystem;
-}
+  list-style-type: fixedSystem; }
 
 #list-style-type-custom__symbolicSystem {
-  list-style-type: symbolicSystem;
-}
+  list-style-type: symbolicSystem; }
 
 #list-style-type-custom__alphabeticSystemBasic {
-  list-style-type: alphabeticSystemBasic;
-}
+  list-style-type: alphabeticSystemBasic; }
 
 #list-style-type-custom__alphabeticSystem {
-  list-style-type: alphabeticSystem;
-}
+  list-style-type: alphabeticSystem; }
 
 #list-style-type-custom__numericSystemBasic {
-  list-style-type: numericSystemBasic;
-}
+  list-style-type: numericSystemBasic; }
 
 #list-style-type-custom__numericSystem {
-  list-style-type: numericSystem;
-}
+  list-style-type: numericSystem; }
 
 #list-style-type-custom__additiveSystem {
-  list-style-type: additiveSystem;
-}
+  list-style-type: additiveSystem; }
 /*# sourceMappingURL=list.css.map */
