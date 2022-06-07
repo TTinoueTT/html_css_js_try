@@ -8,35 +8,72 @@
     <title>PseudoElement</title>
   </head>
   <body>
-    <main>
+    <main id="pseudoElement">
+      <div class="sample01"></div>
+
       <section class="before-after">
         <h2>擬似要素 ::before, ::after について</h2>
+
         <div class="before-after__basis">
-          <a href="">これが被要素です</a>
+          <h3>基本のbefore,afterの付け方</h3>
+          <p>
+            1つ目がa要素<br />
+            2つ目がdiv <br />
+          </p>
+          <a href="">これがインラインの被要素です</a>
+          <div>これがブロックの被要素です</div>
         </div>
 
         <div class="before-after__practice">
+          <h3>カスタム属性を指定した方法</h3>
+          <p>
+            擬似要素をつくる要素に data-xxx でカスタムの属性値を与える<br />
+            例. data-content属性を与えた span要素 の擬似要素の content プロパティを <br />
+            attr()関数で指定して、html側でcontentの内容を記述できる<br />
+          </p>
           <p>
             Here we have some
             <span tabindex="0" data-content="クリック => ::before, hover =>  ::after">text</span>
             with a few
             <span tabindex="0" data-content="small popups that appear when hovering">tooltips</span>.
           </p>
+        </div>
 
+        <div>
           <h3>div要素のbackground指定で画像を背景にしたDOM</h3>
           <p>
             元となるdivにdisplay:flexをかけると、その::before, ::afterはflexの子要素の振る舞いをする<br />
             擬似要素にさらに::before, ::afterはできない<br />
-            また擬似要素は
+            また擬似要素はもとの要素がブロック要素ならブロック要素<br />
+            もとの要素がインライン要素ならインライン要素になる<br />
           </p>
-          <div class="gecko"></div>
+          <div class="gecko" @click="transitionStateToggle">
+            <div class="gecko__child">子要素です</div>
+          </div>
         </div>
       </section>
 
       <section>
         <h2>::backdrop</h2>
-        <p>ある要素が全画面モードで表示された時にその直下で、表示されるボックス要素 モーダルのような見た目を作る時にその直下の背景となる擬似要素</p>
+
+        <div class="backdrop-practice">
+          <h3>dialog要素を利用した擬似要素</h3>
+          <p>
+            dialog要素をshowModal()で表示した時の背後のスタイルに使用される擬似要素<br />
+            全画面モードで表示されたdialog要素の直下で、表示されるボックス要素<br />
+            モーダルのような見た目を作る時のその直下の背景<br />
+          </p>
+          <dialog ref="dialog">
+            <h2>ダイアログです</h2>
+            <button @click="dialogToggle()">閉じる</button>
+          </dialog>
+          <button @click="dialogToggle()">開く</button>
+        </div>
       </section>
+
+      <section></section>
     </main>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="PseudoElement.js"></script>
   </body>
 </html>

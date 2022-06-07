@@ -3,10 +3,14 @@
   height: 300px;
   background-image: url(hotoke_gouzanze_myouou.png);
   background-repeat: no-repeat;
-  background-size: contain; }
+  background-size: contain;
+}
 
 .filter-function ul {
-  list-style-type: none; }
-  .filter-function ul li select {
-    width: 30%; }
+  list-style-type: none;
+}
+
+.filter-function ul li select {
+  width: 30%;
+}
 /*# sourceMappingURL=filter_function.css.map */
