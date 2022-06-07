@@ -10,6 +10,7 @@
   <body>
     <section class="filter-function" id="filterFunction">
       <div class="filter-function__image" ref="image"></div>
+      <button @click="clickHandler">ボタン</button>
       <ul>
         <li>
           <label for="filter-selecter">フィルター関数を選択:</label>
@@ -18,8 +19,8 @@
           </select>
         </li>
         <li>
-          <input type="range" data-unit="px" ref="slider" />
-          <output ref="output" v-text="outputValue"></output>
+          <input type="range" @input="setImage" data-unit="px" ref="slider" />
+          <output ref="output"></output>
         </li>
         <li>
           <p>現在の値:<code ref="code"></code></p>
