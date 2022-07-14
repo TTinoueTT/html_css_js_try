@@ -5,12 +5,9 @@
   background-repeat: no-repeat;
   background-size: contain;
 }
-
 .filter-function ul {
   list-style-type: none;
 }
-
 .filter-function ul li select {
   width: 30%;
-}
-/*# sourceMappingURL=filter_function.css.map */
+}/*# sourceMappingURL=filter_function.css.map */

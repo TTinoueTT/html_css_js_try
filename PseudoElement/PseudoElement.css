@@ -8,30 +8,18 @@ section > h2 {
   background-color: #591895;
   color: aliceblue;
 }
-
 section > div {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
 section > div > h3 {
   margin-top: 5%;
   padding: 0 2%;
   color: aliceblue;
   background-color: #515151;
 }
-
 section > div > h3 + p {
   padding: 2%;
   border: 1px dotted black;
@@ -45,27 +33,22 @@ section > div > h3 + p {
   content: "::beforeです <=";
   color: blue;
 }
-
 .before-after__basis a::after {
   content: "=> ::affterです";
   color: green;
 }
-
 .before-after__basis div::before {
   content: "::beforeです <=";
-  color: #5151c3;
+  color: rgb(81, 81, 195);
 }
-
 .before-after__basis div::after {
   content: "=> ::affterです";
-  color: #236123;
+  color: rgb(35, 97, 35);
 }
-
 .before-after__practice span[data-content] {
   position: relative;
   color: brown;
 }
-
 .before-after__practice span[data-content]:active::before {
   content: attr(data-content);
   position: absolute;
@@ -73,7 +56,6 @@ section > div > h3 + p {
   border-radius: 5px;
   border-style: double;
 }
-
 .before-after__practice span[data-content]:hover::after, .before-after__practice span[data-content]:focus::after {
   content: attr(data-content);
   position: absolute;
@@ -81,27 +63,20 @@ section > div > h3 + p {
   border-radius: 5px;
   border-style: dotted;
 }
-
 .before-after .gecko {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   position: relative;
   width: 50%;
-  aspect-ratio: 100 / 94.63;
+  aspect-ratio: 100/94.63;
   margin: 0 10%;
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url(../images/tokage_crested_gecko.png);
-  -webkit-transition: all 2s ease;
   transition: all 2s ease;
 }
-
 .before-after .gecko:hover {
-  -webkit-filter: hue-rotate(180deg);
-          filter: hue-rotate(180deg);
+  filter: hue-rotate(180deg);
 }
-
 .before-after .gecko::before {
   content: "::beforeです";
   width: 50%;
@@ -110,12 +85,9 @@ section > div > h3 + p {
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url(../images/tokage_crested_gecko.png);
-  -webkit-filter: hue-rotate(-90deg);
-          filter: hue-rotate(-90deg);
-  -webkit-transform: translateX(-80%);
-          transform: translateX(-80%);
+  filter: hue-rotate(-90deg);
+  transform: translateX(-80%);
 }
-
 .before-after .gecko::after {
   content: "::afterです";
   width: 50%;
@@ -124,12 +96,9 @@ section > div > h3 + p {
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url(../images/tokage_crested_gecko.png);
-  -webkit-filter: hue-rotate(90deg);
-          filter: hue-rotate(90deg);
-  -webkit-transform: translateX(80%);
-          transform: translateX(80%);
+  filter: hue-rotate(90deg);
+  transform: translateX(80%);
 }
-
 .before-after .gecko__child {
   width: 50%;
   height: 53%;
@@ -145,17 +114,13 @@ section > div > h3 + p {
   left: 5%;
   width: 30%;
 }
-
 .backdrop-practice dialog::-webkit-backdrop {
   background-color: rgba(68, 45, 16, 0.382);
 }
-
 .backdrop-practice dialog::backdrop {
   background-color: rgba(68, 45, 16, 0.382);
 }
-
 .backdrop-practice button {
   width: 40%;
   padding: 5%;
-}
-/*# sourceMappingURL=PseudoElement.css.map */
+}/*# sourceMappingURL=PseudoElement.css.map */
