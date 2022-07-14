@@ -38,15 +38,14 @@ const vFilter = Vue.createApp ({
 
       this.$refs.image.style.filter = this.$refs.select.value + 
       '(' + this.$refs.slider.value + this.$refs.slider.getAttribute('data-unit') + ')' ;
-      
-
-      console.log(this.$refs.image.style.filter);
-      // console.log(this.$refs.slider.value);
-      // console.log(this.$refs.output.textContent);
     },
 
     selectFilterFunction: function () {
       this.setSlider(this.$refs.select.value);
+      this.setImage(this.$refs.select.value);
+    },
+
+    setFunctionValue: function () {
       this.setImage(this.$refs.select.value);
     },
 
@@ -58,6 +57,7 @@ const vFilter = Vue.createApp ({
         this.$refs.slider.max = 30;
         this.$refs.slider.step = 1;
         this.$refs.slider.setAttribute('data-unit','px');
+
       //基準値が1のグループ
       } else if (filter === 'brightness' || filter === 'contrast' || filter === 'saturate') {
         this.$refs.slider.value = 1;
@@ -101,17 +101,11 @@ const vFilter = Vue.createApp ({
     setImage: function (filter) {
       // imageにfilterプロパティの設定
       // filter: xxxx; の xxxx を 宣言する、 例. filter: blur(8px);
-      //
       if (filter === 'drop-shadow') {
         
-        console.log("shadow");
-        // 
-        // this.$refs.image.style.filter = `${this.$refs.select.value}
-        // (${Math.round(this.$refs.slider.value)}${this.$refs.slider.getAttribute('data-unit')}
-        // ${Math.round(this.$refs.slider.value)}${this.$refs.slider.getAttribute('data-unit')}
-        // ${Math.round(Math.abs(this.$refs.slider.value/2))}${this.$refs.slider.getAttribute('data-unit')})`;
-
-        this.$refs.image.style.filter = this.$refs.select.value
+        // console.log("shadow");
+        console.log(this.$refs.image.style.filter);
+        this.$refs.image.style.filter = this.$refs.select.value +
         '(' + Math.round(this.$refs.slider.value) + this.$refs.slider.getAttribute('data-unit') + ' ' +
         Math.round(this.$refs.slider.value) + this.$refs.slider.getAttribute('data-unit') + ' ' +
         Math.round(Math.abs(this.$refs.slider.value/2)) + this.$refs.slider.getAttribute('data-unit') + ')';

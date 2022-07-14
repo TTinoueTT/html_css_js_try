@@ -1,0 +1,28 @@
+form {
+  -ms-writing-mode: tb-rl;
+      writing-mode: vertical-rl;
+}
+form > .field {
+  width: 80px;
+}
+form > .field > .label {
+  display: block;
+}
+form > .field > .inputfield {
+  -ms-writing-mode: initial;
+      writing-mode: initial;
+  transform: rotate(90deg);
+  transform-origin: top left;
+  width: 120px;
+  height: 20px;
+  margin-right: -140px;
+}
+form > .field > button {
+  -ms-writing-mode: initial;
+      writing-mode: initial;
+  transform: rotate(90deg);
+  transform-origin: top left;
+  width: 80px;
+  height: 30px;
+  margin-right: -80px;
+}/*# sourceMappingURL=mode_vertical.css.map */
