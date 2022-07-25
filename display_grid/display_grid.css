@@ -1,0 +1,38 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main > h1 {
+  width: 100%;
+}
+main > section {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  align-items: center;
+}
+main > section > h2 {
+  width: 100%;
+  color: aliceblue;
+  background-color: darkblue;
+}
+
+.grid__parent {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100vw;
+  height: 100vw;
+}
+.grid__parent__child:nth-child(2n+1) {
+  background-color: rgb(189, 226, 43);
+}
+.grid__parent__child:nth-child(2n) {
+  background-color: blueviolet;
+}/*# sourceMappingURL=display_grid.css.map */

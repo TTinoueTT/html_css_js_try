@@ -1,0 +1,292 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & > h1 {
+        width: 100%;
+    }
+    & > section {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        align-items: center;
+
+        & > h2 {
+            width: 100%;
+            color: aliceblue;
+            background-color: darkblue;
+        }
+
+        & > h3 {
+            width: 100%;
+            color: aliceblue;
+            background-color: rgb(96, 102, 7);
+        }
+
+        & > p {
+            width: 100%;
+            font-size: 85%;
+            text-align: left;
+            & span {
+                font-weight: 600;
+                color: rgb(228, 116, 37);
+            }
+        }
+    }
+}
+
+// ===============================================
+.liner-gradient {
+    display: grid;
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    height: 175vw;
+
+    &__parent {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        @mixin after_content_style($linerGradient) {
+            content: "";
+            width: 70%;
+            height: 70%;
+            background: $linerGradient;
+            border: 1px solid black;
+        }
+
+        $startColor: #d44ae7;
+        $endColor: #f8e4a1;
+
+        $gradientList: linear-gradient(to bottom, $startColor, $endColor),
+            linear-gradient(to top, $startColor, $endColor), linear-gradient(to left, $startColor, $endColor),
+            linear-gradient(to right, $startColor, $endColor), linear-gradient(to bottom, $startColor, 50%, $endColor),
+            linear-gradient(to bottom, $startColor, 30%, $endColor);
+
+        $i: 1;
+        @each $gradientValue in $gradientList {
+            &:nth-child(#{$i}) {
+                &::before {
+                    content: attr(data-content);
+                }
+
+                &::after {
+                    @include after_content_style($gradientValue);
+                }
+            }
+            $i: $i + 1;
+        }
+    }
+
+    &__rainbow {
+        grid-row: 3;
+        grid-column: 1 / span 3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        &::before {
+            content: attr(data-content);
+        }
+
+        &::after {
+            content: "";
+            width: 90%;
+            height: 70%;
+            background: linear-gradient(
+                to right,
+                red,
+                orange 13%,
+                yellow 26%,
+                green 45%,
+                aqua 60%,
+                rgb(76, 0, 255) 73%,
+                rgb(209, 29, 164)
+            );
+            border: 1px solid black;
+        }
+
+        &.practice {
+            grid-row: 4;
+            background-color: rgb(23, 23, 45);
+
+            &::before {
+                color: azure;
+            }
+
+            &::after {
+                content: "";
+                width: 90%;
+                height: 70%;
+                background: linear-gradient(
+                    to right,
+                    rgba(23, 23, 45, 0.5),
+                    orange 3%,
+                    orange 96%,
+                    rgba(23, 23, 45, 0.5)
+                );
+                border: 1px solid black;
+            }
+        }
+    }
+
+    &__oblique {
+        grid-row: 5;
+        grid-column: 1 / span 3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        &::before {
+            content: attr(data-content);
+        }
+
+        &::after {
+            content: "";
+            width: 60%;
+            height: 80%;
+            background: linear-gradient(
+                to bottom right,
+                red,
+                orange 13%,
+                yellow 26%,
+                green 45%,
+                aqua 60%,
+                rgb(76, 0, 255) 73%,
+                rgb(209, 29, 164)
+            );
+            border: 1px solid black;
+        }
+
+        &.mount-deg {
+            grid-row: 6;
+            grid-column: 1 / span 3;
+
+            &::before {
+                content: attr(data-content);
+            }
+
+            &::after {
+                background: linear-gradient(
+                    25deg,
+                    red,
+                    orange 13%,
+                    yellow 26%,
+                    green 45%,
+                    aqua 60%,
+                    rgb(76, 0, 255) 73%,
+                    rgba(209, 29, 164, 0.501)
+                );
+            }
+        }
+
+        &.overlay-pic1 {
+            grid-row: 7;
+            grid-column: 1 / span 3;
+
+            &::before {
+                content: attr(data-content);
+            }
+
+            &::after {
+                background: linear-gradient(
+                        25deg,
+                        red,
+                        rgba(255, 166, 0, 0.5) 13%,
+                        rgba(255, 255, 0, 0.6) 26%,
+                        rgba(0, 128, 0, 0.724) 45%,
+                        rgba(0, 255, 255, 0.816) 60%,
+                        rgba(76, 0, 255, 0.901) 73%,
+                        rgba(209, 29, 164, 0.501)
+                    ),
+                    url(../images/tokage_crested_gecko.png);
+                background-size: contain;
+                background-position: center center;
+                // background-repeat: no-repeat;
+            }
+        }
+
+        &.overlay-pic2 {
+            grid-row: 8;
+            grid-column: 1 / span 3;
+
+            &::before {
+                content: attr(data-content);
+            }
+
+            &::after {
+                background: url(../images/tokage_crested_gecko.png),
+                    linear-gradient(
+                        25deg,
+                        red,
+                        orange 13%,
+                        yellow 26%,
+                        green 45%,
+                        aqua 60%,
+                        rgb(76, 0, 255) 73%,
+                        rgba(209, 29, 164, 0.501)
+                    );
+                background-size: contain;
+                background-position: center center;
+                // background-repeat: no-repeat;
+            }
+        }
+    }
+}
+
+// ===============================================
+.radial-gradient {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    height: 70vw;
+
+    &__parent {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        @mixin after_content_style($radialGradient) {
+            content: attr(after-content);
+            width: 70%;
+            height: 70%;
+            background: $radialGradient;
+            background-size: contain;
+            background-repeat: no-repeat;
+            border: 1px solid black;
+        }
+
+        $startColor: #d44ae7;
+        $endColor: #f8e4a1;
+
+        $gradientList: radial-gradient($startColor, $endColor), radial-gradient($startColor 20%, $endColor 70%),
+            radial-gradient($startColor 10%, $endColor 90%), radial-gradient(red, blue 40%, green),
+            (url(../images/tokage_crested_gecko.png), radial-gradient(#e76f4aa3, #a1f8aa9e)),
+            (radial-gradient(#a1f8aa9e, #e76f4aa3), url(../images/tokage_crested_gecko.png));
+
+        $i: 1;
+        @each $gradientValue in $gradientList {
+            &:nth-child(#{$i}) {
+                &::before {
+                    content: attr(before-content);
+                    font-size: 55%;
+                }
+
+                &::after {
+                    @include after_content_style($gradientValue);
+                }
+            }
+            $i: $i + 1;
+        }
+    }
+}
