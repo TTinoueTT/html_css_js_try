@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="transform_rotate.css" />
+        <title>transform_rotate</title>
+    </head>
+    <body>
+        <main>
+            <h1>transform: rotate(xxdeg)の実験</h1>
+            <section>
+                <h2>２次元の周回起動</h2>
+                <!--  -->
+                <h3>rotate</h3>
+                <div class="rotate">
+                    <div class="rotate__child" data-content="rotateX(45deg)"></div>
+                    <div class="rotate__child" data-content="rotateX(90deg)"></div>
+                    <div class="rotate__child" data-content="rotateX(120deg)"></div>
+                    <div class="rotate__child" data-content="rotateY(45deg)"></div>
+                    <div class="rotate__child" data-content="rotateY(90deg)"></div>
+                    <div class="rotate__child" data-content="rotateY(120deg)"></div>
+                    <div class="rotate__child" data-content="rotateZ(45deg)"></div>
+                    <div class="rotate__child" data-content="rotateZ(90deg)"></div>
+                    <div class="rotate__child" data-content="rotateZ(120deg)"></div>
+                </div>
+                <!--  -->
+                <h3>rotate transform-origin</h3>
+                <div class="rotate-axis-change">
+                    <div class="rotate-axis-change__child"></div>
+                    <div class="rotate-axis-change__child"></div>
+                    <div class="rotate-axis-change__child"></div>
+                    <div class="rotate-axis-change__child"></div>
+                    <div class="rotate-axis-change__child"></div>
+                    <div class="rotate-axis-change__child"></div>
+                    <div class="rotate-axis-change__child"></div>
+                    <div class="rotate-axis-change__child"></div>
+                    <div class="rotate-axis-change__child"></div>
+                </div>
+                <!--  -->
+                <h3>回転の相殺によるメリーゴーランドアニメーション</h3>
+                <p>
+                    回転する要素にanimationプロパティで transform: rotate(360deg); <br />
+                    その子要素のアニメーションで transform: rotate(-360deg);
+                </p>
+                <div class="rotate-2dimension">
+                    <div class="rotate-2dimension__parent">
+                        <div class="rotate-2dimension__parent__child"></div>
+                        <div class="rotate-2dimension__parent__child"></div>
+                        <div class="rotate-2dimension__parent__child"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>周回起動を3D表現</h2>
+                <h3>rotateを3Dで実験</h3>
+                <div class="rotate-3d">
+                    <div class="rotate-3d__parent" data-content="rotateX(45deg)"></div>
+                    <div class="rotate-3d__parent" data-content="rotateX(90deg)"></div>
+                    <div class="rotate-3d__parent" data-content="rotateX(120deg)"></div>
+                    <div class="rotate-3d__parent" data-content="rotateY(45deg)"></div>
+                    <div class="rotate-3d__parent" data-content="rotateY(90deg)"></div>
+                    <div class="rotate-3d__parent" data-content="rotateY(120deg)"></div>
+                    <div class="rotate-3d__parent" data-content="rotateZ(45deg)"></div>
+                    <div class="rotate-3d__parent" data-content="rotateZ(90deg)"></div>
+                    <div class="rotate-3d__parent" data-content="rotateZ(120deg)"></div>
+                </div>
+
+                <h3>メリゴーランドを3dで</h3>
+                <div class="rotate-3dimension">
+                    <div class="rotate-3dimension__grant-parent">
+                        <!-- <div class="rotate-3dimension__grant-parent__parent">
+                            <div class="rotate-3dimension__grant-parent__parent__child"></div>
+                            <div class="rotate-3dimension__grant-parent__parent__child"></div>
+                            <div class="rotate-3dimension__grant-parent__parent__child"></div> -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
