@@ -2,6 +2,9 @@
     margin: 0%;
     padding: 0%;
 }
+:root {
+    --image-url: ;
+}
 main {
     display: flex;
     flex-direction: column;
@@ -289,4 +292,16 @@ main {
             $i: $i + 1;
         }
     }
+}
+
+.attr-test {
+    // background-image: url(../images/tokage_crested_gecko.png);
+    background-image: attr(bg-url);
+    // background-image: url(var(--i));
+    background-size: contain;
+    background-position: center center;
+    width: 100%;
+    height: 20vw;
+    background-color: attr(bg-color color);
+    // background-color: var(--color);
 }
