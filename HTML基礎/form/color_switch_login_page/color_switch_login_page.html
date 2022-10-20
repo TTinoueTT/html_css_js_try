@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="color_switch_login_page.css" />
+        <title>color_switch_login_page</title>
+    </head>
+    <body>
+        <div class="login">
+            <h2 class="login__title" id="text">Login</h2>
+            <div class="login__inputbox">
+                <input type="text" placeholder="Username" />
+            </div>
+            <div class="login__inputbox">
+                <input type="password" placeholder="Password" />
+            </div>
+            <div class="login__inputbox">
+                <input type="submit" value="Login" id="btn" />
+            </div>
+            <div class="login__group">
+                <a href="#">Forget Password</a>
+                <a href="#">Signup</a>
+            </div>
+        </div>
+        <div class="colors">
+            <span class="active" style="--ctr: #1dd1a1" onclick="changeColor('#1dd1a1')"></span>
+            <span style="--ctr: #ff6b6b" onclick="changeColor('#ff6b6b')"></span>
+            <span style="--ctr: #2e86de" onclick="changeColor('#2e86de')"></span>
+            <span style="--ctr: #f368e0" onclick="changeColor('#f368e0')"></span>
+            <span style="--ctr: #ff9f43" onclick="changeColor('#ff9f43')"></span>
+        </div>
+
+        <script>
+            let btn = document.getElementById("btn");
+            let text = document.getElementById("text");
+            function changeColor(color) {
+                document.body.style.background = color;
+                btn.style.background = color;
+                text.style.borderColor = color;
+
+                document.querySelectorAll("span").forEach((item) => {
+                    item.classList.remove("active");
+                });
+
+                event.target.classList.add("active");
+            }
+        </script>
+    </body>
+</html>

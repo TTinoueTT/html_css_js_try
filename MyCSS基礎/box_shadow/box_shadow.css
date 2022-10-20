@@ -1,0 +1,65 @@
+body {
+  background-color: rgb(129, 129, 129);
+}
+
+.basic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 30vh;
+}
+.basic__wrapper {
+  padding: 2rem;
+  border: 1px solid black;
+}
+.basic__wrapper .shadow-box {
+  display: flex;
+  align-items: center;
+  background-color: cornsilk;
+  width: 20rem;
+  height: 5rem;
+  padding: 1rem;
+  margin: 2rem;
+}
+.basic__wrapper .shadow-box::before {
+  content: attr(before-content);
+  font-size: 0.3rem;
+  width: 100%;
+}
+.basic__wrapper .shadow-box.--1 {
+  box-shadow: 5px 5px blue;
+}
+.basic__wrapper .shadow-box.--2 {
+  box-shadow: 5px 5px 5px blue;
+}
+.basic__wrapper .shadow-box.--3 {
+  box-shadow: 5px 5px 5px blue, 10px 10px 10px rgb(64, 255, 0);
+}
+.basic__wrapper .shadow-box.--4 {
+  box-shadow: -5px -5px blue;
+}
+.basic__wrapper .shadow-box.--5 {
+  box-shadow: inset 5px 5px 5px blue;
+}
+.basic__wrapper .shadow-box.--6 {
+  box-shadow: inset 5px 5px 5px blue, inset 10px 10px 10px rgb(64, 255, 0);
+}
+.basic__wrapper .shadow-box.--7 {
+  box-shadow: 5px 5px 5px #f44336, -5px -5px 5px #fff, inset 5px 5px 5px #9c27b0, inset -5px -5px 5px rgb(86, 173, 139);
+}
+.basic__wrapper .shadow-box.--8 {
+  box-shadow: 0.5rem 0.5rem blue;
+  border-radius: 50%;
+}
+.basic__wrapper .shadow-box.--9 {
+  box-shadow: 5px 5px blue, 10px 10px rgb(64, 255, 0), 15px 15px rgb(242, 255, 0), 20px 20px rgb(255, 51, 0), 25px 25px rgb(210, 46, 183);
+}
+.basic__wrapper .shadow-box.--10 {
+  box-shadow: 5px 5px blue, 10px 10px rgb(64, 255, 0), 15px 15px rgb(242, 255, 0), 20px 20px rgb(255, 51, 0), 25px 25px rgb(210, 46, 183), inset 5px 5px blue, inset 10px 10px rgb(64, 255, 0), inset 15px 15px rgb(242, 255, 0), inset 20px 20px rgb(255, 51, 0), inset 25px 25px rgb(210, 46, 183);
+}
+.basic__wrapper .shadow-box.--11 {
+  box-shadow: 5px 5px blue, 10px 10px rgb(64, 255, 0), 15px 15px rgb(242, 255, 0), 20px 20px rgb(255, 51, 0), 25px 25px rgb(210, 46, 183), inset -5px -5px blue, inset -10px -10px rgb(64, 255, 0), inset -15px -15px rgb(242, 255, 0), inset -20px -20px rgb(255, 51, 0), inset -25px -25px rgb(210, 46, 183);
+}
+.basic__wrapper .shadow-box.--12 {
+  box-shadow: inset 5px 5px blue, inset 10px 10px rgb(64, 255, 0), inset 15px 15px rgb(242, 255, 0), inset 20px 20px rgb(255, 51, 0), inset 25px 25px rgb(210, 46, 183), inset -5px -5px blue, inset -10px -10px rgb(64, 255, 0), inset -15px -15px rgb(242, 255, 0), inset -20px -20px rgb(255, 51, 0), inset -25px -25px rgb(210, 46, 183);
+}/*# sourceMappingURL=box_shadow.css.map */
