@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #1dd1a1;
+    transition: 0.5s;
+
+    .login {
+        position: relative;
+        background: #fff;
+        padding: 50px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+
+        &__title {
+            font-weight: 500;
+            border-left: 15px solid #1dd1a1;
+            line-height: 1em;
+            padding-left: 10px;
+            transition: 0.5s;
+            color: #333;
+        }
+        &__inputbox {
+            position: relative;
+
+            & input {
+                position: relative;
+                width: 100%;
+                padding: 10px 15px;
+                outline: none;
+                border: 2px solid #555;
+                font-size: 1em;
+                color: #333;
+
+                &#btn {
+                    border: none;
+                    background: #1dd1a1;
+                    color: #fff;
+                    transition: 0.5s;
+                    font-size: 1.1em;
+                    font-weight: 500;
+                    cursor: pointer;
+                }
+            }
+        }
+        &__group {
+            display: flex;
+            justify-content: space-between;
+
+            & a {
+                color: #333;
+                text-decoration: none;
+                &:nth-child(2) {
+                    font-weight: 500;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    & .colors {
+        position: absolute;
+        right: 0;
+        padding: 10px;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        & span {
+            position: relative;
+            width: 20px;
+            height: 20px;
+            background-color: var(--ctr);
+            margin: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+
+            &.active {
+                border: 3px solid #333;
+                scale: 150%;
+                transition: 0.5s;
+            }
+        }
+    }
+}
