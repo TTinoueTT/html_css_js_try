@@ -38,6 +38,10 @@ main {
                 font-weight: 600;
                 color: rgb(228, 116, 37);
             }
+
+            & li {
+                font-size: 0.8rem;
+            }
         }
     }
 }
@@ -305,3 +309,135 @@ main {
     background-color: attr(bg-color color);
     // background-color: var(--color);
 }
+
+.test2 {
+    background-image: var(--bg-url);
+    background-size: contain;
+    background-position: center center;
+    width: 100%;
+    height: 20vw;
+}
+
+.variable-test {
+    // background-image: url(../images/tokage_crested_gecko.png);
+    background-image: var(--bg-url);
+    // background-image: url(var(--i));
+    background-size: contain;
+    background-position: center center;
+    width: 100%;
+    height: 20vw;
+    background-color: var(--bg-color);
+    color: var(--form-i-color);
+    // background-color: var(--color);
+    & > span {
+        color: var(--color);
+
+        & > i {
+            color: var(--color);
+        }
+    }
+}
+
+.variable-test2 {
+    $bg-img-url: var(--bg-url);
+
+    background-image: url($bg-img-url);
+    background-size: contain;
+    background-position: center center;
+    width: 100%;
+    height: 20vw;
+    background-color: var(--bg-color);
+    color: var(--form-i-color);
+    & > span {
+        color: var(--color);
+
+        & > i {
+            color: var(--color);
+        }
+    }
+}
+
+// ===============================================
+.background-image {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    height: 70vw;
+
+    &__parent {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border: 1px solid;
+
+        @mixin before-style {
+            content: attr(before-content);
+            position: absolute;
+            top: 0;
+            font-size: 0.7rem;
+        }
+
+        @mixin after-style {
+            content: attr(after-content);
+            width: 50%;
+            height: 50%;
+            background: {
+                // image: var(--bg-img1), var(--bg-img2);
+                size: 100%, 100%;
+                color: #a4a683;
+                repeat: no-repeat;
+            }
+
+            padding: 10%;
+            // border: 20px dashed #4949d27a;
+        }
+
+        &.bg1-on-bg2 {
+            &::before {
+                @include before-style;
+            }
+            &::after {
+                background-image: var(--bg-img1), var(--bg-img2);
+                @include after-style;
+            }
+        }
+
+        &.bg2-on-bg1 {
+            &::before {
+                @include before-style;
+            }
+            &::after {
+                background-image: var(--bg-img2), var(--bg-img1);
+                @include after-style;
+            }
+        }
+
+        &.bg-with-gradient-and-bgcolor {
+            &::before {
+                @include before-style;
+            }
+            &::after {
+                background-image: var(--bg-img2), var(--bg-img1), linear-gradient(to bottom, #d44ae7, #f8e4a1);
+                @include after-style;
+            }
+        }
+
+        &.bg1-on-bg2-on-bg3-on-bg4 {
+            &::before {
+                @include before-style;
+            }
+            &::after {
+                background-image: var(--bg-img1), var(--bg-img2), var(--bg-img3), var(--bg-img4);
+                @include after-style;
+            }
+        }
+    }
+}
+
+// ===============================================
+
+@import "./background_origin";
+@import "./background_position";

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="iframe.css" />
+        <title>iframe要素</title>
+    </head>
+    <body>
+        <section>
+            <!-- <iframe src="https://developer.mozilla.org/ja/docs/Web/HTML/Element/iframe" frameborder="0"></iframe> -->
+
+            <!-- <iframe src="https://docs.google.com/spreadsheets/d/1GunTehOVzO45Z0t-hA0t2KxHJB6skOGJwfHuwtZ4Hw0/edit#gid=1527309579" frameborder="0" title="capo_task_management_sheets"> </iframe> -->
+            <!-- <iframe src="https://dev-hayatomo.rensa.jp.net/" width="600" height="200"></iframe> -->
+            <!-- <iframe src="https://inouetoshihiro.art" width="600" height="200"></iframe> -->
+            <!-- <iframe src="../form/hhhhh.html" width="600" height="900"></iframe> -->
+
+            <iframe src="./inline_contents/contents.html" frameborder="1"></iframe>
+            <iframe src="./inline_contents/contents.html" width="400" height="200"></iframe>
+
+            <h1>果物</h1>
+            <ul>
+                <li><a href="./inline_contents/strawberry.html" target="fruits" frameborder="0">いちご</a></li>
+                <li><a href="./inline_contents/orange.html" target="fruits" frameborder="0">オレンジ</a></li>
+            </ul>
+
+            <iframe id="iframe_id" src="./inline_contents/fruits.html" name="fruits" width="400" height="200"></iframe>
+
+            <iframe class="iframe" src="./inline_contents/postMessage.html" frameborder="0"></iframe>
+        </section>
+
+        <script>
+            // 親から子に渡す
+            var iframe = document.querySelector(".iframe");
+            iframe.postMessage(
+                {
+                    action: "SyncMessage",
+                    message: "Hello",
+                },
+                "*"
+            );
+
+            //読み込み完了してから変数を取得するようにする
+            // document.addEventListener("DOMContentLoaded", (event) => {
+            //     document.getElementById("iframe_id").onload = () => {
+            //         //iframe内の変数にアクセスする
+            //         var vg = document.getElementById("iframe_id").contentWindow.varGlobal;
+            //         console.log(vg);
+            //     };
+            // });
+        </script>
+    </body>
+</html>

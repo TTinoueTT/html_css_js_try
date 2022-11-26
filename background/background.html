@@ -72,7 +72,110 @@
                 </div>
                 <!-- <p class="attr-test" bg-url="../images/tokage_crested_gecko.png" style="--i: ../images/tokage_crested_gecko.png">attr関数のテスト</p> -->
                 <!-- <p class="attr-test" bg-url="../images/tokage_crested_gecko.png" style="--color: red">attr関数のテスト</p> -->
-                <p class="attr-test" bg-url="../images/tokage_crested_gecko.png" bg-color="red">attr関数のテスト</p>
+                <p class="attr-test" bg-url="url(../images/tokage_crested_gecko.png)" bg-color="red">attr関数のテスト</p>
+                <!-- 失敗中 -->
+                <p class="test2" style="--bg-url: '../images/tokage_crested_gecko.png'">test2テキスト</p>
+
+                <p class="variable-test" style="--bg-url: url(../images/tokage_crested_gecko.png); --bg-color: #f74444; --color: #1b1757">
+                    カスタムプロパティ変数のテスト
+                    <span
+                        >子要素の文字色を変更させる
+                        <i style="--form-i-color: #fff">またその子要素</i>
+                    </span>
+                </p>
+                <p class="variable-test2" style="--bg-url: ../images/tokage_crested_gecko.png; --bg-color: #f74444; --color: #1b1757">
+                    カスタムプロパティ変数のテスト
+                    <span
+                        >子要素の文字色を変更させる
+                        <i style="--form-i-color: #fff">またその子要素</i>
+                    </span>
+                </p>
+            </section>
+
+            <section>
+                <h2>background-image</h2>
+                <div class="background-image">
+                    <div
+                        class="background-image__parent bg1-on-bg2"
+                        style="--bg-img1: url(../images/monster05.png); --bg-img2: url(../images/monster08.png)"
+                        before-content="background-image: bg1-on-bg2;"
+                    ></div>
+                    <div
+                        class="background-image__parent bg2-on-bg1"
+                        style="--bg-img1: url(../images/monster05.png); --bg-img2: url(../images/monster08.png)"
+                        before-content="background-image: bg2-on-bg1;"
+                    ></div>
+                    <div
+                        class="background-image__parent bg-with-gradient-and-bgcolor"
+                        style="--bg-img1: url(../images/monster05.png); --bg-img2: url(../images/monster08.png)"
+                        before-content="background-image: bg-with-gradient-and-bgcolor;"
+                    ></div>
+                    <div
+                        class="background-image__parent bg1-on-bg2-on-bg3-on-bg4"
+                        style="
+                            --bg-img1: url(../images/monster05.png);
+                            --bg-img2: url(../images/monster08.png);
+                            --bg-img3: url(../images/setsubun_oni_kowai.png);
+                            --bg-img4: url(../images/monster03.png);
+                        "
+                        before-content="background-imageで4枚の写真をかさねる"
+                    ></div>
+                </div>
+            </section>
+
+            <section>
+                <h2>background-origin</h2>
+
+                <div class="background-origin">
+                    <div class="background-origin__parent border-box" style="--bg-img: url(../images/eye_ganseihirou_computer_woman.png)" before-content="background-origin: border-box;"></div>
+                    <div class="background-origin__parent padding-box" style="--bg-img: url(../images/eye_ganseihirou_computer_woman.png)" before-content="background-origin: padding-box;"></div>
+                    <div class="background-origin__parent content-box" style="--bg-img: url(../images/eye_ganseihirou_computer_woman.png)" before-content="background-origin: content-box;"></div>
+                </div>
+            </section>
+
+            <section>
+                <h2>background-position</h2>
+                <p>
+                    background-position は CSS のプロパティで、それぞれの背景画像の初期位置を設定します。位置は background-origin で設定された位置レイヤーからの相対です <br>
+                    指定する値は位置を X軸 Y軸を指定し、<br>
+                    <ul>
+                        <li>引数1つなら、X軸を指定し、自動で2つめの引数は中央(center)となる</li>
+                        <li>引数2つなら、1つ目はX軸、2つ目がY軸</li>
+                        <li>引数3つなら、その値の指定方法によるので以下を参照する</li>
+                    </ul>
+
+                </p>
+                <div class="background-position">
+                    <div class="background-position__parent top" style="--bg-img1: url(../images/monster05.png)" before-content="background-position: top;">
+                        <p>topのみの指定</p>
+                    </div>
+                    <div class="background-position__parent left" style="--bg-img1: url(../images/monster05.png)" before-content="background-position: left;">
+                        <p>leftのみの指定</p>
+                    </div>
+                    <div class="background-position__parent bottom-right" style="--bg-img1: url(../images/monster05.png)" before-content="background-position: bottom right;">
+                        <p>bottom right の指定</p>
+                    </div>
+                    <div class="background-position__parent bottom10-right15" style="--bg-img1: url(../images/monster05.png)" before-content="background-position: bottom 10% right 10%;">
+                        <p>bottom 10% right 10% の指定</p>
+                    </div>
+                    <div class="background-position__parent center" style="--bg-img1: url(../images/monster05.png)" before-content="background-position: center;">
+                        <p>center の指定</p>
+                    </div>
+                    <div class="background-position__parent center20" style="--bg-img1: url(../images/monster05.png)" before-content="background-position: center 20%;">
+                        <p>center 20% の指定</p>
+                    </div>
+                    <div class="background-position__parent keyword-absolute" style="--bg-img1: url(../images/monster05.png)" before-content="background-position: 20px;">
+                        <p>左端から Xpx の指定</p>
+                    </div>
+                    <div class="background-position__parent keyword-absolute2" style="--bg-img1: url(../images/monster05.png)" before-content="background-position: 20px 100px;">
+                        <p>左端から Xpx, 上端から Ypx の指定</p>
+                    </div>
+                    <div class="background-position__parent keyword-absolute3" style="--bg-img1: url(../images/monster05.png)" before-content="background-position: top 20px right 100px;">
+                        <p>topから Xpx, rightから Ypx の指定</p>
+                    </div>
+
+
+                </div>
             </section>
         </main>
     </body>

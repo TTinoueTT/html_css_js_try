@@ -1,3 +1,53 @@
+
 {
-  "liveServer.settings.port": 5501
+  "liveServer.settings.port": 5501,
+  "trailing-spaces.trimOnSave": true,
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+
+
+
+  "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true,
+  },
+  "atlascode.jira.lastCreateSiteAndProject": {
+      "siteId": "",
+      "projectKey": ""
+  },
+
+  "gitlens.advanced.messages": {
+      "suppressGitMissingWarning": true
+  },
+
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  "editor.renderWhitespace": "all",
+  // "editor.wordWrapColumn": 200,
+  "editor.wordWrap": "off",
+
+
+
+  "[scss]": {
+      "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter",
+      "editor.formatOnSave": true,
+  },
+  "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true,
+  },
+  "[html]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true,
+  },
+  "[vue]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true,
+      // "editor.wordWrap": "off",
+  },
+  "[php]": {
+      "editor.defaultFormatter": "bmewburn.vscode-intelephense-client",
+      "editor.formatOnSave": true,
+  },
+  "editor.minimap.maxColumn": 60,
+  // "prettier.printWidth": 200,
 }
