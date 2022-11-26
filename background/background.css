@@ -40,6 +40,9 @@ main > section > p span {
   font-weight: 600;
   color: rgb(228, 116, 37);
 }
+main > section > p li {
+  font-size: 0.8rem;
+}
 
 .liner-gradient {
   display: grid;
@@ -298,4 +301,356 @@ main > section > p span {
   width: 100%;
   height: 20vw;
   background-color: attr(bg-color color);
+}
+
+.test2 {
+  background-image: var(--bg-url);
+  background-size: contain;
+  background-position: center center;
+  width: 100%;
+  height: 20vw;
+}
+
+.variable-test {
+  background-image: var(--bg-url);
+  background-size: contain;
+  background-position: center center;
+  width: 100%;
+  height: 20vw;
+  background-color: var(--bg-color);
+  color: var(--form-i-color);
+}
+.variable-test > span {
+  color: var(--color);
+}
+.variable-test > span > i {
+  color: var(--color);
+}
+
+.variable-test2 {
+  background-image: url(var(--bg-url));
+  background-size: contain;
+  background-position: center center;
+  width: 100%;
+  height: 20vw;
+  background-color: var(--bg-color);
+  color: var(--form-i-color);
+}
+.variable-test2 > span {
+  color: var(--color);
+}
+.variable-test2 > span > i {
+  color: var(--color);
+}
+
+.background-image {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  height: 70vw;
+}
+.background-image__parent {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid;
+}
+.background-image__parent.bg1-on-bg2::before {
+  content: attr(before-content);
+  position: absolute;
+  top: 0;
+  font-size: 0.7rem;
+}
+.background-image__parent.bg1-on-bg2::after {
+  background-image: var(--bg-img1), var(--bg-img2);
+  content: attr(after-content);
+  width: 50%;
+  height: 50%;
+  background-size: 100%, 100%;
+  background-color: #a4a683;
+  background-repeat: no-repeat;
+  padding: 10%;
+}
+.background-image__parent.bg2-on-bg1::before {
+  content: attr(before-content);
+  position: absolute;
+  top: 0;
+  font-size: 0.7rem;
+}
+.background-image__parent.bg2-on-bg1::after {
+  background-image: var(--bg-img2), var(--bg-img1);
+  content: attr(after-content);
+  width: 50%;
+  height: 50%;
+  background-size: 100%, 100%;
+  background-color: #a4a683;
+  background-repeat: no-repeat;
+  padding: 10%;
+}
+.background-image__parent.bg-with-gradient-and-bgcolor::before {
+  content: attr(before-content);
+  position: absolute;
+  top: 0;
+  font-size: 0.7rem;
+}
+.background-image__parent.bg-with-gradient-and-bgcolor::after {
+  background-image: var(--bg-img2), var(--bg-img1), linear-gradient(to bottom, #d44ae7, #f8e4a1);
+  content: attr(after-content);
+  width: 50%;
+  height: 50%;
+  background-size: 100%, 100%;
+  background-color: #a4a683;
+  background-repeat: no-repeat;
+  padding: 10%;
+}
+.background-image__parent.bg1-on-bg2-on-bg3-on-bg4::before {
+  content: attr(before-content);
+  position: absolute;
+  top: 0;
+  font-size: 0.7rem;
+}
+.background-image__parent.bg1-on-bg2-on-bg3-on-bg4::after {
+  background-image: var(--bg-img1), var(--bg-img2), var(--bg-img3), var(--bg-img4);
+  content: attr(after-content);
+  width: 50%;
+  height: 50%;
+  background-size: 100%, 100%;
+  background-color: #a4a683;
+  background-repeat: no-repeat;
+  padding: 10%;
+}
+
+.background-origin {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  height: 35vw;
+}
+.background-origin__parent {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid;
+}
+.background-origin__parent.border-box::before {
+  content: attr(before-content);
+  position: absolute;
+  top: 0;
+  font-size: 0.7rem;
+}
+.background-origin__parent.border-box::after {
+  content: attr(after-content);
+  width: 50%;
+  height: 50%;
+  background-image: var(--bg-img);
+  background-color: #44bbbb;
+  background-repeat: no-repeat;
+  padding: 10%;
+  border: 20px dashed rgba(73, 73, 210, 0.4784313725);
+  background-origin: border-box;
+}
+.background-origin__parent.padding-box::before {
+  content: attr(before-content);
+  position: absolute;
+  top: 0;
+  font-size: 0.7rem;
+}
+.background-origin__parent.padding-box::after {
+  content: attr(after-content);
+  width: 50%;
+  height: 50%;
+  background-image: var(--bg-img);
+  background-color: #44bbbb;
+  background-repeat: no-repeat;
+  padding: 10%;
+  border: 20px dashed rgba(73, 73, 210, 0.4784313725);
+  background-origin: padding-box;
+}
+.background-origin__parent.content-box::before {
+  content: attr(before-content);
+  position: absolute;
+  top: 0;
+  font-size: 0.7rem;
+}
+.background-origin__parent.content-box::after {
+  content: attr(after-content);
+  width: 50%;
+  height: 50%;
+  background-image: var(--bg-img);
+  background-color: #44bbbb;
+  background-repeat: no-repeat;
+  padding: 10%;
+  border: 20px dashed rgba(73, 73, 210, 0.4784313725);
+  background-origin: content-box;
+}
+
+.background-position {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  height: 100vw;
+}
+.background-position__parent {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid;
+}
+.background-position__parent > p {
+  position: absolute;
+  top: 50%;
+  font-size: 0.5rem;
+}
+.background-position__parent.top::before {
+  content: attr(before-content);
+  position: absolute;
+  top: 0;
+  font-size: 0.5rem;
+}
+.background-position__parent.top::after {
+  background-position: top;
+  content: attr(after-content);
+  width: 75%;
+  height: 75%;
+  background-image: var(--bg-img1);
+  background-size: 20%, 20%;
+  background-color: #95e386;
+  background-repeat: no-repeat;
+}
+.background-position__parent.left::before {
+  content: attr(before-content);
+  position: absolute;
+  top: 0;
+  font-size: 0.5rem;
+}
+.background-position__parent.left::after {
+  background-position: left;
+  content: attr(after-content);
+  width: 75%;
+  height: 75%;
+  background-image: var(--bg-img1);
+  background-size: 20%, 20%;
+  background-color: #95e386;
+  background-repeat: no-repeat;
+}
+.background-position__parent.bottom-right::before {
+  content: attr(before-content);
+  position: absolute;
+  top: 0;
+  font-size: 0.5rem;
+}
+.background-position__parent.bottom-right::after {
+  background-position: bottom right;
+  content: attr(after-content);
+  width: 75%;
+  height: 75%;
+  background-image: var(--bg-img1);
+  background-size: 20%, 20%;
+  background-color: #95e386;
+  background-repeat: no-repeat;
+}
+.background-position__parent.bottom10-right15::before {
+  content: attr(before-content);
+  position: absolute;
+  top: 0;
+  font-size: 0.5rem;
+}
+.background-position__parent.bottom10-right15::after {
+  background-position: bottom 10% right 10%;
+  content: attr(after-content);
+  width: 75%;
+  height: 75%;
+  background-image: var(--bg-img1);
+  background-size: 20%, 20%;
+  background-color: #95e386;
+  background-repeat: no-repeat;
+}
+.background-position__parent.center::before {
+  content: attr(before-content);
+  position: absolute;
+  top: 0;
+  font-size: 0.5rem;
+}
+.background-position__parent.center::after {
+  background-position: center;
+  content: attr(after-content);
+  width: 75%;
+  height: 75%;
+  background-image: var(--bg-img1);
+  background-size: 20%, 20%;
+  background-color: #95e386;
+  background-repeat: no-repeat;
+}
+.background-position__parent.center20::before {
+  content: attr(before-content);
+  position: absolute;
+  top: 0;
+  font-size: 0.5rem;
+}
+.background-position__parent.center20::after {
+  background-position: center 20%;
+  content: attr(after-content);
+  width: 75%;
+  height: 75%;
+  background-image: var(--bg-img1);
+  background-size: 20%, 20%;
+  background-color: #95e386;
+  background-repeat: no-repeat;
+}
+.background-position__parent.keyword-absolute::before {
+  content: attr(before-content);
+  position: absolute;
+  top: 0;
+  font-size: 0.5rem;
+}
+.background-position__parent.keyword-absolute::after {
+  background-position: 20px;
+  content: attr(after-content);
+  width: 75%;
+  height: 75%;
+  background-image: var(--bg-img1);
+  background-size: 20%, 20%;
+  background-color: #95e386;
+  background-repeat: no-repeat;
+}
+.background-position__parent.keyword-absolute2::before {
+  content: attr(before-content);
+  position: absolute;
+  top: 0;
+  font-size: 0.5rem;
+}
+.background-position__parent.keyword-absolute2::after {
+  background-position: 20px 100px;
+  content: attr(after-content);
+  width: 75%;
+  height: 75%;
+  background-image: var(--bg-img1);
+  background-size: 20%, 20%;
+  background-color: #95e386;
+  background-repeat: no-repeat;
+}
+.background-position__parent.keyword-absolute3::before {
+  content: attr(before-content);
+  position: absolute;
+  top: 0;
+  font-size: 0.5rem;
+}
+.background-position__parent.keyword-absolute3::after {
+  background-position: top 20px right 100px;
+  content: attr(after-content);
+  width: 75%;
+  height: 75%;
+  background-image: var(--bg-img1);
+  background-size: 20%, 20%;
+  background-color: #95e386;
+  background-repeat: no-repeat;
 }/*# sourceMappingURL=background.css.map */
