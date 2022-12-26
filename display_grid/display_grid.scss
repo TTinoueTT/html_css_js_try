@@ -34,6 +34,8 @@ main {
         height: 100vw;
         // align-items: center;
 
+        @import "./gap";
+
         &__child {
             // grid-row: 1 / 3; /* 3列 */
             // grid-column: 1 / 2; /*  */

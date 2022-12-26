@@ -45,6 +45,18 @@ section > div > h3 + p {
   content: "=> ::affterです";
   color: rgb(35, 97, 35);
 }
+.before-after__basis .kaigyou::before {
+  display: block;
+  content: "::before\aです <=";
+  white-space: pre;
+  color: rgb(81, 81, 195);
+}
+.before-after__basis .kaigyou::after {
+  display: block;
+  content: "=> ::affter\aです";
+  white-space: pre;
+  color: rgb(35, 97, 35);
+}
 .before-after__practice span[data-content] {
   position: relative;
   color: brown;
@@ -64,48 +76,48 @@ section > div > h3 + p {
   border-style: dotted;
 }
 .before-after .gecko {
-  display: flex;
   position: relative;
   width: 50%;
-  aspect-ratio: 100/94.63;
+  aspect-ratio: 800/757;
   margin: 0 10%;
+  border: 1px dashed #515151;
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url(../images/tokage_crested_gecko.png);
   transition: all 2s ease;
 }
-.before-after .gecko:hover {
-  filter: hue-rotate(180deg);
-}
 .before-after .gecko::before {
   content: "::beforeです";
-  width: 50%;
-  height: 53%;
-  border: 1px double #515151;
+  display: block;
+  width: 33%;
+  aspect-ratio: 800/757;
+  border: 1px dashed #515151;
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url(../images/tokage_crested_gecko.png);
   filter: hue-rotate(-90deg);
-  transform: translateX(-80%);
 }
 .before-after .gecko::after {
   content: "::afterです";
-  width: 50%;
-  height: 53%;
-  border: 1px double #515151;
+  display: block;
+  width: 33%;
+  aspect-ratio: 800/757;
+  border: 1px dashed #515151;
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url(../images/tokage_crested_gecko.png);
   filter: hue-rotate(90deg);
-  transform: translateX(80%);
 }
 .before-after .gecko__child {
-  width: 50%;
-  height: 53%;
-  border: 1px double #515151;
+  width: 33%;
+  aspect-ratio: 800/757;
+  border: 1px dashed #515151;
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url(../images/tokage_crested_gecko.png);
+}
+.before-after .gecko:hover {
+  filter: hue-rotate(180deg);
 }
 
 .backdrop-practice dialog {

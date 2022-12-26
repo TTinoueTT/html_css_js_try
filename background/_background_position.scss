@@ -1,9 +1,9 @@
 .background-position {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
     width: 100%;
-    height: 100vw;
+    height: 120vw;
 
     &__parent {
         position: relative;
@@ -131,5 +131,38 @@
                 @include after-style;
             }
         }
+
+        &.animation {
+            &::before {
+                @include before-style;
+            }
+            &::after {
+                background-position: center;
+                @include after-style;
+                // transition: all ;
+                animation: bgPositionAnim 3s linear 1000ms infinite alternate;
+            }
+        }
     }
+}
+
+@keyframes bgPositionAnim {
+    0% {
+        background-position: center;
+    }
+    25% {
+        background-position: top;
+    }
+    50% {
+        background-position: left;
+    }
+    75% {
+        background-position: bottom;
+    }
+    100% {
+        background-position: right;
+    }
+
+    // 100% {
+    // }
 }

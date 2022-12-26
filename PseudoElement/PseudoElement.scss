@@ -5,24 +5,24 @@
 }
 
 section {
-  &>h2 {
+  & > h2 {
     background-color: #591895;
     color: aliceblue;
   }
 
-  &>div {
+  & > div {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    &>h3 {
+    & > h3 {
       margin-top: 5%;
       padding: 0 2%;
       color: aliceblue;
       background-color: #515151;
 
-      &+p {
+      & + p {
         padding: 2%;
         border: 1px dotted black;
         border-radius: 10px;
@@ -34,120 +34,7 @@ section {
   }
 }
 
-//背景画像ありのブロック要素を作る時のルールセット
-@mixin bg-content($imgUrl: "") {
-  background: {
-    repeat: no-repeat;
-    size: contain;
-    image: url(#{$imgUrl});
-  }
-}
-
-// 以下特有のスタイル
-
-.before-after {
-
-  // ************* //
-  &__basis {
-    & a {
-      &::before {
-        content: "::beforeです <=";
-        color: blue;
-      }
-
-      &::after {
-        content: "=> ::affterです";
-        color: green;
-      }
-    }
-
-    & div {
-      &::before {
-        content: "::beforeです <=";
-        color: rgb(81, 81, 195);
-      }
-
-      &::after {
-        content: "=> ::affterです";
-        color: rgb(35, 97, 35);
-      }
-    }
-  }
-
-  // ************* //
-  &__practice {
-    & span[data-content] {
-      position: relative;
-      color: brown;
-
-      &:active::before {
-        content: attr(data-content);
-        position: absolute;
-        background-color: beige;
-        border-radius: 5px;
-        border-style: double;
-      }
-
-      &:hover::after,
-      &:focus::after {
-        content: attr(data-content);
-        position: absolute;
-        background-color: aqua;
-        border-radius: 5px;
-        border-style: dotted;
-      }
-    }
-  }
-
-  // ************* //
-  & .gecko {
-    display: flex;
-    position: relative;
-    width: 50%;
-    aspect-ratio: 100 / 94.63;
-    margin: 0 10%;
-    @include bg-content("../images/tokage_crested_gecko.png");
-    transition: all 2s ease;
-
-    &:hover {
-      filter: hue-rotate(180deg);
-    }
-
-    &::before {
-      content: "::beforeです";
-      // position: absolute;
-      // left: 100%;
-      width: 50%;
-      height: 53%;
-      // aspect-ratio: 100 / 94.63;
-      border: 1px double #515151;
-      @include bg-content("../images/tokage_crested_gecko.png");
-      filter: hue-rotate(-90deg);
-      transform: translateX(-80%);
-    }
-
-    &::after {
-      content: "::afterです";
-      // position: absolute;
-      // left: 100%;
-      width: 50%;
-      height: 53%;
-      // aspect-ratio: 100 / 94.63;
-      border: 1px double #515151;
-      @include bg-content("../images/tokage_crested_gecko.png");
-      filter: hue-rotate(90deg);
-      transform: translateX(80%);
-    }
-
-    &__child {
-      width: 50%;
-      height: 53%;
-      border: 1px double #515151;
-      @include bg-content("../images/tokage_crested_gecko.png");
-    }
-  }
-
-}
+@import "./before_after";
 
 .backdrop-practice {
   & dialog {

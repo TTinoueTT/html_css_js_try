@@ -1,41 +1,63 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>タブ切り替えメニュー</title>
-    <link rel="stylesheet" href="tab_changemenue.css" />
-  </head>
-  <body>
-    <div class="tab_container">
-      <input id="tab1" type="radio" name="tab_item" checked />
-      <label class="tab_item" for="tab1">タブ1</label>
-      <input id="tab2" type="radio" name="tab_item" />
-      <label class="tab_item" for="tab2">タブ2</label>
-      <input id="tab3" type="radio" name="tab_item" />
-      <label class="tab_item" for="tab3">タブ3</label>
-      <input id="tab4" type="radio" name="tab_item" />
-      <label class="tab_item" for="tab4">タブ4</label>
-      <div class="tab_content" id="tab1_content">
-        <div class="tab_content_description">
-          <p class="c-txtsp">タブ1の内容</p>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>タブ切り替えメニュー</title>
+        <link rel="stylesheet" href="tab_changemenue.css" />
+    </head>
+    <body>
+        <div class="tab-container">
+            <!-- タブ -->
+            <input id="tab1" type="radio" name="tab_item" checked />
+            <input id="tab2" type="radio" name="tab_item" />
+            <input id="tab3" type="radio" name="tab_item" />
+            <input id="tab4" type="radio" name="tab_item" />
+            <ul class="menu">
+                <label for="tab1" class="menu__tab" style="--bg-url: url('../images/monster01.png')"></label>
+                <label for="tab2" class="menu__tab" style="--bg-url: url('../images/monster05.png')"></label>
+                <label for="tab3" class="menu__tab" style="--bg-url: url('../images/monster08.png')"></label>
+                <label for="tab4" class="menu__tab" style="--bg-url: url('../images/monster11.png')"></label>
+            </ul>
+            <!-- コンテンツ -->
+            <div class="tab-content" id="tab1_content">
+                <div class="tab-content__description">
+                    <p>
+                        タブ1の内容タブ1の内容タブ1の内容タブ1の内容タブ1の内容タブ1の内容タブ1の内容タブ1の内容タブ1の内容タブ1の内容タブ1の内容タブ1の内容
+                        タブ1の内容タブ1の内容タブ1の内容タブ1の内容タブ1の内容タブ1の内容タブ1の内容タブ1の内容タブ1の内容タブ1の内容タブ1の内容タブ1の内容
+                        タブ1の内容タブ1の内容タブ1の内容タブ1の内容タブ1の内容タブ1の内容タブ1の内容タブ1の内容タブ1の内容タブ1の内容タブ1の内容タブ1の内容
+                        タブ1の内容タブ1の内容タブ1の内容タブ1の内容タブ1の内容タブ1の内容タブ1の内容タブ1の内容タブ1の内容タブ1の内容タブ1の内容タブ1の内容
+                        タブ1の内容タブ1の内容タブ1の内容タブ1の内容タブ1の内容タブ1の内容タブ1の内容タブ1の内容タブ1の内容タブ1の内容タブ1の内容タブ1の内容
+                    </p>
+                </div>
+            </div>
+
+            <div class="tab-content" id="tab2_content">
+                <div class="tab-content__description">
+                    <p>
+                        タブ2の内容タブ2の内容タブ2の内容タブ2の内容タブ2の内容タブ2の内容タブ2の内容タブ2の内容タブ2の内容タブ2の内容タブ2の内容タブ2の内容タブ2の内容タブ2の内容
+                        タブ2の内容タブ2の内容タブ2の内容タブ2の内容タブ2の内容タブ2の内容タブ2の内容タブ2の内容タブ2の内容タブ2の内容タブ2の内容タブ2の内容タブ2の内容タブ2の内容
+                        タブ2の内容タブ2の内容タブ2の内容タブ2の内容タブ2の内容タブ2の内容タブ2の内容タブ2の内容タブ2の内容タブ2の内容タブ2の内容タブ2の内容タブ2の内容タブ2の内容
+                    </p>
+                </div>
+            </div>
+
+            <div class="tab-content" id="tab3_content">
+                <div class="tab-content__description">
+                    <p>
+                        タブ3の内容タブ3の内容タブ3の内容タブ3の内容タブ3の内容タブ3の内容タブ3の内容タブ3の内容タブ3の内容タブ3の内容タブ3の内容タブ3の内容タブ3の内容タブ3の内容
+                        タブ3の内容タブ3の内容タブ3の内容タブ3の内容タブ3の内容タブ3の内容タブ3の内容タブ3の内容タブ3の内容タブ3の内容タブ3の内容タブ3の内容タブ3の内容タブ3の内容
+                        タブ3の内容タブ3の内容タブ3の内容タブ3の内容タブ3の内容タブ3の内容タブ3の内容タブ3の内容タブ3の内容タブ3の内容タブ3の内容タブ3の内容タブ3の内容タブ3の内容
+                    </p>
+                </div>
+                タブ3の内容
+            </div>
+
+            <div class="tab-content" id="tab4_content">
+                <div class="tab-content__description">
+                    <p>タブ4の内容</p>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="tab_content" id="tab2_content">
-        <div class="tab_content_description">
-          <p class="c-txtsp">タブ2の内容</p>
-        </div>
-      </div>
-      <div class="tab_content" id="tab3_content">
-        <div class="tab_content_description">
-          <p class="c-txtsp">タブ3の内容</p>
-        </div>
-      </div>
-      <div class="tab_content" id="tab4_content">
-        <div class="tab_content_description">
-          <p class="c-txtsp">タブ4の内容</p>
-        </div>
-      </div>
-    </div>
-  </body>
+    </body>
 </html>
