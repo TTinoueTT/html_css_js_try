@@ -1,47 +1,56 @@
-.tab_container {
-  padding-bottom: 1em;
-  background-color: #fff;
-  border: 1px solid #37beb0;
-  margin: 0 auto;
+.tab-container {
+  background-color: #c1c1c1;
+  border: 1px solid #000000;
+  display: grid;
 }
-
-.tab_item {
-  width: calc(100%/4);
-  padding: 15px 0;
-  border-bottom: 3px solid #37beb0;
-  background-color: #ececec;
-  text-align: center;
-  color: #37beb0;
-  display: block;
-  float: left;
-  text-align: center;
-  font-weight: bold;
-  transition: all 0.2s ease;
+.tab-container input[type=radio] {
+  opacity: 20%;
 }
-
-.tab_item:hover {
-  opacity: 0.75;
-}
-
-input[name="tab_item"] {
-  display: none;
-}
-
-.tab_content {
-  display: none;
-  padding: 1em 1em 0;
-  clear: both;
-  overflow: hidden;
-}
-
-#tab1:checked~#tab1_content,
-#tab2:checked~#tab2_content,
-#tab3:checked~#tab3_content,
-#tab4:checked~#tab4_content {
+.tab-container #tab1:checked ~ #tab1_content,
+.tab-container #tab2:checked ~ #tab2_content,
+.tab-container #tab3:checked ~ #tab3_content,
+.tab-container #tab4:checked ~ #tab4_content {
   display: block;
 }
-
-.tab_container input:checked+.tab_item {
-  background-color: #37beb0;
+.tab-container #tab1:checked ~ .menu label[for=tab1],
+.tab-container #tab2:checked ~ .menu label[for=tab2],
+.tab-container #tab3:checked ~ .menu label[for=tab3],
+.tab-container #tab4:checked ~ .menu label[for=tab4] {
+  background-color: #b18229;
+}
+.tab-container .menu {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+.tab-container .menu__tab {
+  flex: 1;
+  position: relative;
   color: #fff;
+  background-color: #29a2a9;
+  padding: 3%;
+  border: 1px solid black;
+  background-image: var(--bg-url);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  aspect-ratio: 1;
 }
+.tab-container .tab-content {
+  display: none;
+  width: 100%;
+  aspect-ratio: 2/1;
+  overflow: scroll;
+}
+.tab-container .tab-content:nth-child(1) {
+  background-color: rgb(115, 64, 177);
+}
+.tab-container .tab-content:nth-child(2) {
+  background-color: rgb(191, 102, 102);
+}
+.tab-container .tab-content:nth-child(3) {
+  background-color: rgb(97, 149, 57);
+}
+.tab-container .tab-content:nth-child(4) {
+  background-color: rgb(129, 136, 53);
+}/*# sourceMappingURL=tab_changemenue.css.map */

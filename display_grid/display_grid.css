@@ -30,6 +30,11 @@ main > section > h2 {
   width: 100vw;
   height: 100vw;
 }
+.grid__parent.gap {
+  -moz-column-gap: 5%;
+       column-gap: 5%;
+  row-gap: 5%;
+}
 .grid__parent__child:nth-child(2n+1) {
   background-color: rgb(189, 226, 43);
 }
