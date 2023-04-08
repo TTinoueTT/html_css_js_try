@@ -353,7 +353,6 @@ main > section > p {
   transform-origin: 50% 50%;
   transform-style: preserve-3d;
   perspective: 80vw;
-  animation: merry-go-round-3d 10s linear 0s infinite forwards;
 }
 .rotate-3dimension__grant-parent > span {
   position: absolute;
