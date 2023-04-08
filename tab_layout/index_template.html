@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+        <style>
+            .tab-bar {
+                width: 100vw;
+                display: flex;
+                height: 3rem;
+            }
+
+            .tab-bar .tab {
+                width: 5rem;
+
+                /* background-color: aqua; */
+            }
+
+            .tab-bar .tab:nth-child(1) {
+                background-color: aqua;
+            }
+            .tab-bar .tab:nth-child(2) {
+                background-color: rgb(208, 0, 255);
+            }
+            .tab-bar .tab:nth-child(3) {
+                background-color: rgb(255, 217, 0);
+            }
+            .tab.selected {
+                background: rgb(232, 33, 33);
+            }
+
+            .content {
+            }
+
+            .content-a {
+                width: 100%;
+                height: 30vw;
+                background-image: url("../images/monster01.png");
+                background-color: bisque;
+                border: 1px solid;
+            }
+            .content-b {
+                width: 100%;
+                height: 30vw;
+                background-image: url("../images/monster01.png");
+                background-color: bisque;
+                border: 1px solid;
+            }
+            .content-c {
+                width: 100%;
+                height: 30vw;
+                background-image: url("../images/monster01.png");
+                background-color: bisque;
+                border: 1px solid;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="tab-bar">
+            <div class="tab selected">タブA</div>
+            <div class="tab">タブB</div>
+            <div class="tab">タブC</div>
+        </div>
+        <div class="content-a"></div>
+        <div class="content-b"></div>
+        <div class="content-c"></div>
+
+        <script></script>
+    </body>
+</html>

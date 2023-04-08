@@ -1,0 +1,185 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .main {
+        overflow: hidden;
+        position: relative;
+        display: grid;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+      }
+      .main .title {
+        text-align: center;
+      }
+      .main .buttons {
+        display: flex;
+        justify-content: center;
+      }
+      .main .buttons button {
+        cursor: pointer;
+        line-height: 2rem;
+        padding: 0 0.5rem;
+        font-size: 80%;
+        border: none;
+        border-bottom: 1px solid #666;
+        color: #666;
+        background-color: #8881;
+        transition: all 500ms;
+      }
+      .main .buttons button:hover {
+        font-size: 90%;
+        border-bottom: 2px solid #666;
+        background-color: #8883;
+      }
+      .main .buttons button.selected {
+        font-size: 100%;
+        border-bottom: 4px solid #666;
+        background-color: #1d2946;
+      }
+
+      .main .modal {
+        position: absolute;
+        display: grid;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+
+        transition: all 500ms;
+        transform: rotate(-30deg);
+        opacity: 0;
+        pointer-events: none;
+      }
+      .main .modal.show {
+        transform: rotate(5deg);
+        opacity: 1;
+        pointer-events: visible;
+      }
+      .main .modal .contents {
+        overflow: scroll;
+        width: 90%;
+        height: 84%;
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: white;
+        border: 3px double #888;
+        filter: drop-shadow(30px 10px 4px #000);
+      }
+      .main .modal .contents .close-button {
+        cursor: pointer;
+        width: 100%;
+        margin-right: 1rem;
+        font-size: 150%;
+        text-align: right;
+        color: #666;
+        border: none;
+        background-color: yellowgreen;
+      }
+      .main .modal .contents .content {
+        overflow: hidden;
+        font-size: 80%;
+        color: #888;
+        line-height: 1.6rem;
+
+        padding: 0 1rem;
+        max-height: 0;
+        opacity: 0;
+      }
+      .main .modal .contents .content.show {
+        padding: 1rem;
+        max-height: 100%;
+        opacity: 1;
+      }
+      .main .modal .contents .content .content-title {
+        font-size: 110%;
+        border-bottom: 2px solid #888;
+      }
+      .main .modal .contents .content .content-sub-title {
+        font-size: 100%;
+        border-bottom: 1px dotted #888;
+      }
+      .main .modal .contents .content .content-description {
+        font-size: 80%;
+      }
+      .main .modal .contents .content .content-img {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="main">
+      <div class="modal">
+        <div class="contents">
+          <button onclick="modalClose()" class="close-button">×</button>
+          <div class="content" data-index="1">
+            <h2 class="content-title">インボイス制度の概要</h2>
+            <p class="content-description">
+              インボイス制度（適格請求書保存方式）は、消費税を納めるときに仕入れで支払った消費税の額を控除するために必要な手続きとして、2023年10月1日から導入される制度です。消費税の正確な納付を目的としたもので、この制度のもとでは、消費税額などの記載要件を満たした請求書を売り手側が発行し保存しておけば、記載された消費税額について買い手側が「仕入額控除」を受けられるという仕組みになっています。
+            </p>
+            <img class="content-img" src="https://oi.otsuka-shokai.co.jp/ow/erpnavi/category/apparel/sp/solving-problems/archive/img/220427-01-01.png" />
+          </div>
+          <div class="content" data-index="2">
+            <h2 class="content-title">インボイス制度のメリット</h2>
+            <h3 class="content-sub-title">1.電子インボイス導入による業務効率化</h3>
+            <p class="content-description">
+              制度施行後に仕入税額控除を受けるためには、インボイスを出せる相手と取引する必要があります。このため、制度施行後は取引先の選定に「適格請求書発行事業者かどうか」が大きなポイントになることが予想されます。つまり、要件を満たす新たな取引先として選ばれれば、ビジネスチャンスが広がる可能性があります。
+            </p>
+            <h3 class="content-sub-title">2.新たな取引先が見つかる可能性がある</h3>
+            <p class="content-description">
+              インボイス制度では、電子データ形式の適格請求書（電子インボイス）の送付や保管が認められています。これにより、請求書の印刷・郵送費用の削減や発送業務の効率化、保管スペースの削減などのメリットが生まれます。
+            </p>
+          </div>
+          <div class="content" data-index="3">
+            <h2 class="content-title">インボイス制度のデメリット</h2>
+            <h3 class="content-sub-title">1.業務負担が増える</h3>
+            <p class="content-description">
+              インボイスの交付と写しの保存、受領（じゅりょう）した適格請求書の保存、適格返還請求書の交付などの業務が新たに発生し、経理業務が煩雑（はんざつ）になる恐れがあります。また請求書のフォーマットを現行の形式と変える必要があります。
+            </p>
+            <h3 class="content-sub-title">2.仕入税額の控除が減少する恐れがある</h3>
+            <p class="content-description">
+              インボイスの発行を行っていない事業者が取引相手であった場合には、仕入税額控除を受けられないので、納税額が増えることになります。その結果、利益率が悪化したり、資金繰りが困難になったりする恐れがあります。
+            </p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h1 class="title">インボイス制度とは?</h1>
+        <div class="buttons">
+          <button onclick="openModal(1)">概要</button>
+          <button onclick="openModal(2)">メリット</button>
+          <button onclick="openModal(3)">デメリット</button>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      let modalElement = document.getElementsByClassName("modal")[0];
+      let modalContents = document.getElementsByClassName("content");
+      let buttonElements = document.getElementsByClassName("button");
+
+      let openModal = function (index) {
+        for (let i = 0; i < modalContents.length; i++) {
+          modalContents[i].classList.remove("show");
+          if (parseInt(modalContents[i].dataset.index) == index) {
+            modalContents[i].classList.add("show");
+          }
+        }
+        modalElement.classList.add("show");
+      };
+
+      let modalClose = function () {
+        modalElement.classList.remove("show");
+      };
+    </script>
+  </body>
+</html>

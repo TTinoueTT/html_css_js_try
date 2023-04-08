@@ -23,8 +23,7 @@ section .loader__text {
   width: 340px;
   height: 340px;
   border-radius: 50%;
-  -webkit-animation: animateText 25s linear infinite;
-          animation: animateText 25s linear infinite;
+  animation: animateText 25s linear infinite;
 }
 section .loader__text b {
   position: absolute;
@@ -60,17 +59,7 @@ section .loader__item__colorize {
   background: linear-gradient(#42abff, #ff4f8b, #ffeb3b);
   border-radius: 50%;
   filter: blur(5px);
-  -webkit-animation: animate 1s linear infinite;
-          animation: animate 1s linear infinite;
-}
-
-@-webkit-keyframes animate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  animation: animate 1s linear infinite;
 }
 
 @keyframes animate {
@@ -79,14 +68,6 @@ section .loader__item__colorize {
   }
   100% {
     transform: rotate(360deg);
-  }
-}
-@-webkit-keyframes animateText {
-  0% {
-    transform: rotate(360deg);
-  }
-  100% {
-    transform: rotate(0deg);
   }
 }
 @keyframes animateText {

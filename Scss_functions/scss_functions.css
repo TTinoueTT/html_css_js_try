@@ -44,21 +44,16 @@ main > section > p li {
   font-size: 0.8rem;
 }
 
-.grid__parent {
+.if-content {
+  width: 100%;
+  height: 80vw;
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
-  width: 100vw;
-  height: 100vw;
+  grid-template: repeat(2, 1fr)/repeat(2, 1fr);
 }
-.grid__parent.gap {
-  -moz-column-gap: 5%;
-       column-gap: 5%;
-  row-gap: 5%;
+.if-content > p {
+  background-color: aquamarine;
+  border: 1px solid pink;
 }
-.grid__parent__child:nth-child(2n+1) {
-  background-color: rgb(189, 226, 43);
-}
-.grid__parent__child:nth-child(2n) {
-  background-color: blueviolet;
-}/*# sourceMappingURL=display_grid.css.map */
+.if-content > p.yellow {
+  color: blueviolet;
+}/*# sourceMappingURL=scss_functions.css.map */

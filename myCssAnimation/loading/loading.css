@@ -1,12 +1,4 @@
 @import url("./_spinner-box.scss");
-@-webkit-keyframes spin {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(359deg);
-  }
-}
 @keyframes spin {
   from {
     transform: rotate(0);
@@ -15,37 +7,12 @@
     transform: rotate(359deg);
   }
 }
-@-webkit-keyframes spin3D {
-  from {
-    transform: rotate3d(0.5, 0.5, 0.5, 360deg);
-  }
-  to {
-    transform: rotate3d(0deg);
-  }
-}
 @keyframes spin3D {
   from {
     transform: rotate3d(0.5, 0.5, 0.5, 360deg);
   }
   to {
     transform: rotate3d(0deg);
-  }
-}
-@-webkit-keyframes configure-clockwise {
-  0% {
-    transform: rotate(0);
-  }
-  25% {
-    transform: rotate(90deg);
-  }
-  50% {
-    transform: rotate(180deg);
-  }
-  75% {
-    transform: rotate(270deg);
-  }
-  100% {
-    transform: rotate(360deg);
   }
 }
 @keyframes configure-clockwise {
@@ -65,23 +32,6 @@
     transform: rotate(360deg);
   }
 }
-@-webkit-keyframes configure-xclockwise {
-  0% {
-    transform: rotate(45deg);
-  }
-  25% {
-    transform: rotate(-45deg);
-  }
-  50% {
-    transform: rotate(-135deg);
-  }
-  75% {
-    transform: rotate(-225deg);
-  }
-  100% {
-    transform: rotate(-315deg);
-  }
-}
 @keyframes configure-xclockwise {
   0% {
     transform: rotate(45deg);
@@ -97,16 +47,6 @@
   }
   100% {
     transform: rotate(-315deg);
-  }
-}
-@-webkit-keyframes pulse {
-  from {
-    opacity: 1;
-    transform: scale(1);
-  }
-  to {
-    opacity: 0.25;
-    transform: scale(0.75);
   }
 }
 @keyframes pulse {
@@ -154,8 +94,7 @@ body {
   border-radius: 50%;
   background: rgb(251, 91, 83);
   background: linear-gradient(0deg, rgba(251, 91, 83, 0.1) 33%, rgb(251, 91, 83) 100%);
-  -webkit-animation: spin3D 2.2s linear 0s infinite;
-          animation: spin3D 2.2s linear 0s infinite;
+  animation: spin3D 2.2s linear 0s infinite;
 }
 .leo-border-2 .leo-core-2 {
   width: 100%;
@@ -175,8 +114,7 @@ body {
   border-radius: 50%;
   background: rgb(63, 249, 220);
   background: linear-gradient(0deg, rgba(63, 249, 220, 0.1) 33%, rgb(63, 249, 220) 100%);
-  -webkit-animation: spin 0.8s linear 0s infinite;
-          animation: spin 0.8s linear 0s infinite;
+  animation: spin 0.8s linear 0s infinite;
 }
 
 .circle-core {
@@ -196,8 +134,7 @@ body {
   justify-content: center;
   align-items: center;
   background: #fb5b53;
-  -webkit-animation: configure-clockwise 3s ease-in-out 0s infinite alternate;
-          animation: configure-clockwise 3s ease-in-out 0s infinite alternate;
+  animation: configure-clockwise 3s ease-in-out 0s infinite alternate;
 }
 
 .configure-border-2 {
@@ -210,8 +147,7 @@ body {
   align-items: center;
   background: rgb(63, 249, 220);
   transform: rotate(45deg);
-  -webkit-animation: configure-xclockwise 3s ease-in-out 0s infinite alternate;
-          animation: configure-xclockwise 3s ease-in-out 0s infinite alternate;
+  animation: configure-xclockwise 3s ease-in-out 0s infinite alternate;
 }
 
 .configure-core {
@@ -236,18 +172,15 @@ body {
 }
 
 .pulse-bubble-1 {
-  -webkit-animation: pulse 0.4s ease 0s infinite alternate;
-          animation: pulse 0.4s ease 0s infinite alternate;
+  animation: pulse 0.4s ease 0s infinite alternate;
 }
 
 .pulse-bubble-2 {
-  -webkit-animation: pulse 0.4s ease 0.2s infinite alternate;
-          animation: pulse 0.4s ease 0.2s infinite alternate;
+  animation: pulse 0.4s ease 0.2s infinite alternate;
 }
 
 .pulse-bubble-3 {
-  -webkit-animation: pulse 0.4s ease 0.4s infinite alternate;
-          animation: pulse 0.4s ease 0.4s infinite alternate;
+  animation: pulse 0.4s ease 0.4s infinite alternate;
 }
 
 /* SOLAR SYSTEM */
@@ -356,6 +289,5 @@ body {
   border: 3px solid #fb5b53;
   border-top: 3px solid transparent;
   border-radius: 50%;
-  -webkit-animation: spin 0.5s linear 0s infinite;
-          animation: spin 0.5s linear 0s infinite;
+  animation: spin 0.5s linear 0s infinite;
 }/*# sourceMappingURL=loading.css.map */
