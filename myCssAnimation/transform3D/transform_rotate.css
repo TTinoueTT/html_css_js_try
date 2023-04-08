@@ -148,8 +148,7 @@ main > section > p {
   width: 30vw;
   height: 30vw;
   border-radius: 50%;
-  -webkit-animation: parentRotate 10s linear infinite;
-          animation: parentRotate 10s linear infinite;
+  animation: parentRotate 10s linear infinite;
 }
 .rotate-2dimension__parent__child {
   display: flex;
@@ -159,8 +158,7 @@ main > section > p {
   border-radius: 50%;
   justify-content: center;
   align-items: center;
-  -webkit-animation: childRotate 10s linear infinite;
-          animation: childRotate 10s linear infinite;
+  animation: childRotate 10s linear infinite;
 }
 .rotate-2dimension__parent__child:nth-child(1) {
   top: 0%;
@@ -184,20 +182,9 @@ main > section > p {
   content: "は";
 }
 
-@-webkit-keyframes parentRotate {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 @keyframes parentRotate {
   100% {
     transform: rotate(360deg);
-  }
-}
-@-webkit-keyframes childRotate {
-  100% {
-    transform: rotate(-360deg);
   }
 }
 @keyframes childRotate {
@@ -328,23 +315,85 @@ main > section > p {
   width: 100%;
   height: 60vw;
   transform-style: preserve-3d;
-  background-color: #5daeae;
+  background-color: rgba(93, 174, 174, 0.2);
   perspective: 100vw;
 }
+.rotate-3dimension .monster {
+  position: absolute;
+  width: 40%;
+  border: 1px solid;
+}
+@keyframes merry-go-round-3d {
+  0% {
+    transform: rotateX(40deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(40deg) rotateZ(360deg);
+  }
+}
+@keyframes counter-rotate {
+  0% {
+    transform: rotateX(40deg) rotateZ(360deg);
+  }
+  100% {
+    transform: rotateX(40deg) rotateZ(0deg);
+  }
+}
 .rotate-3dimension__grant-parent {
-  background-color: beige;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(245, 245, 220, 0.2588235294);
   width: 50vw;
   height: 50vw;
   border-radius: 50%;
   border: 1px solid black;
-  transform: rotateX(60deg);
-  transform-origin: 0% 0%;
+  transform: rotateX(40deg);
+  transform-origin: 50% 50%;
+  transform-style: preserve-3d;
+  perspective: 80vw;
+  animation: merry-go-round-3d 10s linear 0s infinite forwards;
+}
+.rotate-3dimension__grant-parent > span {
+  position: absolute;
+  border: 1px solid;
+  border-radius: 50%;
+  font-size: 3.5rem;
+  transform: translate(-50%, -50%) rotateX(-20deg);
+  background-color: rgba(54, 151, 79, 0.736);
+  width: 4rem;
+  height: 4rem;
+  text-align: center;
+  line-height: 116%;
+}
+.rotate-3dimension__grant-parent > span:nth-of-type(1) {
+  top: 0;
+  left: 50%;
+}
+.rotate-3dimension__grant-parent > span:nth-of-type(2) {
+  top: 40%;
+  left: 95%;
+}
+.rotate-3dimension__grant-parent > span:nth-of-type(3) {
+  top: 81%;
+  left: 80%;
+}
+.rotate-3dimension__grant-parent > span:nth-of-type(4) {
+  top: 81%;
+  left: 16%;
+}
+.rotate-3dimension__grant-parent > span:nth-of-type(5) {
+  top: 38%;
+  left: 1%;
 }
 .rotate-3dimension__grant-parent__parent {
   position: relative;
+  background-color: rgba(255, 149, 0, 0.572);
   width: 30vw;
   height: 30vw;
   border-radius: 50%;
+  border: 1px dotted;
 }
 .rotate-3dimension__grant-parent__parent__child {
   display: flex;

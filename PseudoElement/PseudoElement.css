@@ -126,9 +126,6 @@ section > div > h3 + p {
   left: 5%;
   width: 30%;
 }
-.backdrop-practice dialog::-webkit-backdrop {
-  background-color: rgba(68, 45, 16, 0.382);
-}
 .backdrop-practice dialog::backdrop {
   background-color: rgba(68, 45, 16, 0.382);
 }

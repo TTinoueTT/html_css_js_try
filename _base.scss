@@ -1,0 +1,47 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+:root {
+    --image-url: ;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & > h1 {
+        width: 100%;
+    }
+    & > section {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        align-items: center;
+
+        & > h2 {
+            width: 100%;
+            color: aliceblue;
+            background-color: darkblue;
+        }
+
+        & > h3 {
+            width: 100%;
+            color: aliceblue;
+            background-color: rgb(96, 102, 7);
+        }
+
+        & > p {
+            width: 100%;
+            font-size: 85%;
+            text-align: left;
+            & span {
+                font-weight: 600;
+                color: rgb(228, 116, 37);
+            }
+
+            & li {
+                font-size: 0.8rem;
+            }
+        }
+    }
+}

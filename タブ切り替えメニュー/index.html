@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+        <style>
+            .tabs {
+                display: flex;
+                justify-content: left;
+            }
+            .tabs .tab {
+                cursor: pointer;
+                margin: 0;
+                height: 2rem;
+                padding: 0.3rem 1rem;
+                color: #666;
+                background-color: #8883;
+                border: none;
+                transition: all 500ms;
+                font-size: 70%;
+                transform: scale(1);
+            }
+            .tabs .tab:hover {
+                background-color: #8885;
+            }
+            .tabs .tab.selected {
+                color: white;
+                background-color: #888c;
+                font-size: 80%;
+                transform: scale(1.05);
+            }
+
+            .contents {
+                position: relative;
+                max-width: 1200px;
+                border: 1px solid #8883;
+            }
+            .contents .content {
+                position: absolute;
+                transition: all 500ms;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                transform: scaleX(0.95);
+            }
+            .contents .content.show {
+                opacity: 1;
+                transform: scaleX(1);
+            }
+            .contents .content img {
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <div class="tabs">
+                <button class="tab selected">タブ1</button>
+                <button class="tab">タブ2</button>
+                <button class="tab">タブ3</button>
+            </div>
+            <div class="contents">
+                <div class="content show" data-id="1"><img src="https://liginc.co.jp/wp-content/uploads/2015/05/797.png" /></div>
+                <div class="content" data-id="2"><img src="https://www.tsuzukiblog.org/wp-content/uploads/2020/03/shutterstock_1005938026.jpg" /></div>
+                <div class="content" data-id="3">
+                    <img
+                        src="https://renote.net/files/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdThKIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--77bbde7ceb2e5e2123d0118c4d8bd903a1e5d232/images.jpeg"
+                    />
+                </div>
+            </div>
+        </main>
+
+        <script>
+            let tabs = document.getElementsByClassName("tab");
+            let contents = document.getElementsByClassName("content");
+
+            let initTabState = function () {
+                for (let i = 0; i < tabs.length; i++) {
+                    tabs[i].classList.remove("selected");
+                    contents[i].classList.remove("show");
+                }
+            };
+
+            for (let i = 0; i < tabs.length; i++) {
+                tabs[i].addEventListener("click", () => {
+                    initTabState();
+                    tabs[i].classList.add("selected");
+                    contents[i].classList.add("show");
+                });
+            }
+        </script>
+    </body>
+</html>
