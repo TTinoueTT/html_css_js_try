@@ -1,0 +1,134 @@
+.rotate-3dimension {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 60vw;
+    transform-style: preserve-3d;
+    background-color: rgb(93 174 174 / 20%);
+    perspective: 100vw;
+
+    & .monster {
+        position: absolute;
+        width: 40%;
+        border: 1px solid;
+        // transform: rotateX(-20deg);
+
+        // animation: counter-rotate 10s linear 0s infinite forwards;
+    }
+
+    @keyframes merry-go-round-3d {
+        0% {
+            transform: rotateX(40deg) rotateZ(0deg);
+        }
+        100% {
+            transform: rotateX(40deg) rotateZ(360deg);
+        }
+    }
+
+    @keyframes counter-rotate {
+        0% {
+            transform: rotateX(40deg) rotateZ(360deg);
+        }
+        100% {
+            transform: rotateX(40deg) rotateZ(0deg);
+        }
+    }
+
+    &__grant-parent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #f5f5dc42;
+        width: 50vw;
+        height: 50vw;
+        border-radius: 50%;
+        border: 1px solid black;
+        transform: rotateX(40deg);
+        // transform-origin: 0% 0%;
+        transform-origin: 50% 50%;
+        transform-style: preserve-3d;
+        perspective: 80vw;
+        // animation: merry-go-round-3d 10s linear 0s infinite forwards;
+
+        & > span {
+            position: absolute;
+            border: 1px solid;
+            border-radius: 50%;
+            font-size: 3.5rem;
+            transform: translate(-50%, -50%) rotateX(-20deg);
+            background-color: rgba(54, 151, 79, 0.736);
+            width: 4rem;
+            height: 4rem;
+            text-align: center;
+            line-height: 116%;
+
+            &:nth-of-type(1) {
+                top: 0;
+                left: 50%;
+            }
+            &:nth-of-type(2) {
+                top: 40%;
+                left: 95%;
+                // transform: translate(-50%, -50%) rotateX(-20deg);
+            }
+            &:nth-of-type(3) {
+                top: 81%;
+                left: 80%;
+            }
+            &:nth-of-type(4) {
+                top: 81%;
+                left: 16%;
+            }
+            &:nth-of-type(5) {
+                top: 38%;
+                left: 1%;
+            }
+        }
+
+        &__parent {
+            position: relative;
+            background-color: rgba(255, 149, 0, 0.572);
+            width: 30vw;
+            height: 30vw;
+            border-radius: 50%;
+            border: 1px dotted;
+            // animation: parentRotate 10s linear infinite;
+
+            &__child {
+                display: flex;
+                position: absolute;
+                width: 30%;
+                height: 30%;
+                border-radius: 50%;
+                justify-content: center;
+                align-items: center;
+                transform: rotateX(62deg);
+                // animation: childRotate 10s linear infinite;
+
+                &:nth-child(1) {
+                    top: 0%;
+                    left: 0%;
+                    &::before {
+                        content: "い";
+                    }
+                }
+                &:nth-child(2) {
+                    top: 35%;
+                    left: 82%;
+                    &::before {
+                        content: "ろ";
+                    }
+                }
+                &:nth-child(3) {
+                    top: 80%;
+                    left: 20%;
+                    &::before {
+                        content: "は";
+                    }
+                }
+            }
+        }
+    }
+}
