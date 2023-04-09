@@ -24,19 +24,31 @@
                     <div class="rotate__child" data-content="rotateZ(45deg)"></div>
                     <div class="rotate__child" data-content="rotateZ(90deg)"></div>
                     <div class="rotate__child" data-content="rotateZ(120deg)"></div>
+                    <div class="rotate__child" data-content="rotate(45deg)"></div>
+                    <div class="rotate__child" data-content="rotate(90deg)"></div>
+                    <div class="rotate__child" data-content="rotate(120deg)"></div>
                 </div>
                 <!--  -->
-                <h3>rotate transform-origin</h3>
+                <h3>rotate transform-originを利用した</h3>
                 <div class="rotate-axis-change">
-                    <div class="rotate-axis-change__child"></div>
-                    <div class="rotate-axis-change__child"></div>
-                    <div class="rotate-axis-change__child"></div>
-                    <div class="rotate-axis-change__child"></div>
-                    <div class="rotate-axis-change__child"></div>
-                    <div class="rotate-axis-change__child"></div>
-                    <div class="rotate-axis-change__child"></div>
-                    <div class="rotate-axis-change__child"></div>
-                    <div class="rotate-axis-change__child"></div>
+                    <!-- rotateX(45deg) -->
+                    <div class="rotate-axis-change__child" data-line1="rotateX(45deg)" data-line2="transform-origin: center"></div>
+                    <div class="rotate-axis-change__child" data-line1="rotateX(45deg)" data-line2="transform-origin: top"></div>
+                    <div class="rotate-axis-change__child" data-line1="rotateX(45deg)" data-line2="transform-origin: bottom"></div>
+                    <div class="rotate-axis-change__child" data-line1="rotateX(45deg)" data-line2="transform-origin: left"></div>
+                    <div class="rotate-axis-change__child" data-line1="rotateX(45deg)" data-line2="transform-origin: right"></div>
+                    <!-- rotateY(45deg) -->
+                    <div class="rotate-axis-change__child" data-line1="rotateY(45deg)" data-line2="transform-origin: center"></div>
+                    <div class="rotate-axis-change__child" data-line1="rotateY(45deg)" data-line2="transform-origin: top"></div>
+                    <div class="rotate-axis-change__child" data-line1="rotateY(45deg)" data-line2="transform-origin: bottom"></div>
+                    <div class="rotate-axis-change__child" data-line1="rotateY(45deg)" data-line2="transform-origin: left"></div>
+                    <div class="rotate-axis-change__child" data-line1="rotateY(45deg)" data-line2="transform-origin: right"></div>
+                    <!-- rotateZ(45deg) -->
+                    <div class="rotate-axis-change__child" data-line1="rotateZ(45deg)" data-line2="transform-origin: center"></div>
+                    <div class="rotate-axis-change__child" data-line1="rotateZ(45deg)" data-line2="transform-origin: top"></div>
+                    <div class="rotate-axis-change__child" data-line1="rotateZ(45deg)" data-line2="transform-origin: bottom"></div>
+                    <div class="rotate-axis-change__child" data-line1="rotateZ(45deg)" data-line2="transform-origin: left"></div>
+                    <div class="rotate-axis-change__child" data-line1="rotateZ(45deg)" data-line2="transform-origin: right"></div>
                 </div>
                 <!--  -->
                 <h3>回転の相殺によるメリーゴーランドアニメーション</h3>
@@ -77,13 +89,26 @@
                         <span class="char">は</span>
                         <span class="char">に</span>
                         <span class="char">ほ</span>
-                        <!-- <div class="rotate-3dimension__grant-parent__parent">
-                            <div class="rotate-3dimension__grant-parent__parent__child"></div>
-                            <div class="rotate-3dimension__grant-parent__parent__child"></div>
-                            <div class="rotate-3dimension__grant-parent__parent__child"></div>
-                        </div> -->
                     </div>
                 </div>
+                <script>
+                    function showRotate3dimensionGrantParent() {
+                        let timeout = 500;
+                        setTimeout(() => {
+                            document.querySelector(".rotate-3dimension__grant-parent").classList.add("hide");
+                        }, (timeout += 2000));
+                        setTimeout(() => {
+                            document.querySelector(".rotate-3dimension__grant-parent").classList.remove("hide");
+                        }, (timeout += 2000));
+                        setTimeout(() => {
+                            showRotate3dimensionGrantParent();
+                        }, (timeout += 2000));
+                    }
+
+                    document.addEventListener("DOMContentLoaded", () => {
+                        showRotate3dimensionGrantParent();
+                    });
+                </script>
             </section>
 
             <section>
