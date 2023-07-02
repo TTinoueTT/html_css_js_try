@@ -13,11 +13,11 @@ main .character-anim__first-text {
   width: 100%;
   overflow-wrap: normal;
 }
-main .character-anim__first-text > span {
+main .character-anim__first-text span {
   opacity: 0%;
   color: transparent;
   transition: all 800ms linear;
 }
-main .character-anim__first-text > span.show {
+main .character-anim__first-text span.show {
   opacity: 100%;
 }/*# sourceMappingURL=characterAnim.css.map */

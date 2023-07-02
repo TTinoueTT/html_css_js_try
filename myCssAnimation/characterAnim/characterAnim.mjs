@@ -1,4 +1,5 @@
 
+export const name = "square";
 /**
  * @param {string} textId 処理対象のHTML要素のid属性
  * @returns {array} 改行を使用した場合(<br>)には、配列中の奇数番目要素は "<br/>" になる
@@ -21,6 +22,7 @@ const CreateTextArray = (textId) => {
  * @param {string} text 処理される配列要素
  * @param {string} textId 追加をされていくhtml要素
  * @param {number} appearanceSpeed setIntervalの間隔
+ * @param {string} textColor 表示するテキストの色
  * @returns Promise型
  */
 const TypewriterPromise = (text, textId, appearanceSpeed = 200, textColor = "#000") => {
@@ -54,11 +56,12 @@ const TypewriterPromise = (text, textId, appearanceSpeed = 200, textColor = "#00
 }
 
 /**
- *
+ * TypewriterPromise を非同期で実行する
  * @param {string} textId 取得する id要素
- * @param {number} appearanceSpeed TypewriterPromise に渡す、引数
+ * @param {number} appearanceSpeed TypewriterPromise に渡す引数
+ * @param {string} textColor TypewriterPromise に渡す引数
  */
-export async function AsyncTypewriter(textId, appearanceSpeed, textColor) {
+export const AsyncTypewriter = async (textId, appearanceSpeed, textColor) => {
     const assignArray = CreateTextArray(textId);
     document.getElementById(textId).innerHTML = '';
 
@@ -66,7 +69,6 @@ export async function AsyncTypewriter(textId, appearanceSpeed, textColor) {
         const text = assignArray[index];
         await TypewriterPromise(text, textId, appearanceSpeed, textColor);
     }
-
 }
 
 // ここから実行部分

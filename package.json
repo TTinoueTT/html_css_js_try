@@ -1,0 +1,25 @@
+{
+  "name": "html_css_js_try",
+  "version": "1.0.0",
+  "description": "HTMLとCSSを使用した練習用のリポジトリ(javascriptも使用)",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TTinoueTT/html_css_js_try.git"
+  },
+  "keywords": [
+    "html_css_js_try"
+  ],
+  "author": "toshihiro.inoue <t.artwork.ceramica@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TTinoueTT/html_css_js_try/issues"
+  },
+  "homepage": "https://github.com/TTinoueTT/html_css_js_try#readme",
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
+}
