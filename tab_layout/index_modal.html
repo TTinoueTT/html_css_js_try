@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+        <style>
+            .layer {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 110vh;
+                background-color: rgba(126, 126, 126, 0.582);
+                display: none;
+            }
+
+            .layer.show {
+                display: block;
+            }
+
+            .layer .content {
+                background-color: antiquewhite;
+                position: absolute;
+                width: 80%;
+                height: 80%;
+            }
+
+            .tab {
+                background-color: brown;
+                border: 1px solid;
+            }
+
+            .layer .content.content-a {
+                background-color: blue;
+                display: block;
+            }
+            .layer .content.content-b {
+                background-color: rgb(0, 255, 208);
+                display: block;
+            }
+            .layer .content.content-c {
+                background-color: rgb(255, 0, 162);
+                display: block;
+            }
+
+            .layer .content.content-a.show {
+                display: block;
+            }
+            .layer .content.content-b.show {
+                display: block;
+            }
+            .layer .content.content-c.show {
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="tab-bar">
+            <div class="tab">タブA</div>
+            <div class="tab">タブB</div>
+            <div class="tab">タブC</div>
+        </div>
+
+        <div class="layer">
+            <div class="content content-a"></div>
+            <div class="content content-b"></div>
+            <div class="content content-c"></div>
+        </div>
+
+        <script>
+            let tabs = document.querySelectorAll(".tab-bar .tab");
+            let contents = document.querySelectorAll(".layer .content");
+
+            console.log(tabs);
+            console.log(contents);
+
+            for (let i = 0; i < tabs.length; i++) {
+                let tab = tabs[i];
+                tab.addEventListener("click", () => {
+                    document.querySelector(".layer").classList.add("show");
+                    contents[i].classList.add("show");
+                });
+            }
+
+            document.querySelector(".layer").addEventListener("click", () => {
+                document.querySelector(".layer").classList.remove("show");
+            });
+
+            // tabs.forEach((tab) => {
+            //     tab.addEventListener("click", () => {
+            //         document.querySelector(".layer").classList.add("show");
+            //     });
+            // });
+            // window.addEventListener();
+        </script>
+    </body>
+</html>

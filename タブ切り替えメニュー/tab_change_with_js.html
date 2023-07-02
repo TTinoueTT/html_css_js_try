@@ -1,0 +1,88 @@
+<!--
+Tab Layout を作ってください。
+条件 1 : 選択中の tab がわかるようにしてください。
+条件 2 : tab にマウスカーソルがあたったら色が変化するようにしてください。
+条件 3 : 「tab layout 作り方」みたいな直接的な検索は禁止します。
+条件 4 : tab を変更したら表示内容が変更されるようにしてください。
+条件 5 : tab の切り替えは js で行ってください。
+条件 6 : 選択可能部位はマウスカーソルが pointer となるようにしてください。
+ -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>tab_change_with_js</title>
+        <style>
+            /* タブ */
+            .tab-list {
+                display: flex;
+            }
+
+            .tab-list .tab {
+                padding: 0 2%;
+                background-color: aquamarine;
+                cursor: pointer;
+            }
+            .tab-list .tab:hover {
+                background-color: rgb(255, 127, 234);
+            }
+
+            .tab-list .tab.select {
+                background-color: blanchedalmond;
+                /* padding: 0 2%; */
+            }
+            .tab-list .tab.select:hover {
+                background-color: rgb(255, 127, 234);
+                /* padding: 0 2%; */
+            }
+
+            /* コンテンツ(タブの中身) */
+            .content-list {
+                width: 80vw;
+                height: 20vh;
+            }
+
+            .content-list .content {
+                width: 100%;
+                display: none;
+            }
+
+            .content-list .content.show {
+                /* width: 100%; */
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="tab-list">
+            <div class="tab select">タブ1</div>
+            <div class="tab">タブ2</div>
+            <div class="tab">タブ3</div>
+        </div>
+        <div class="content-list">
+            <div class="content show">タブ1 の コンテンツ</div>
+            <div class="content">タブ2 の コンテンツ</div>
+            <div class="content">タブ3 の コンテンツ</div>
+        </div>
+
+        <script>
+            const tabs = document.querySelectorAll(".tab-list .tab");
+            const contents = document.querySelectorAll(".content-list .content");
+            for (let i = 0; i < tabs.length; i++) {
+                const tab = tabs[i];
+                tab.addEventListener("click", () => {
+                    tabs.forEach((element) => {
+                        if (element.classList.contains("select")) element.classList.remove("select");
+                    });
+                    tab.classList.add("select");
+                    contents.forEach((content) => {
+                        if (content.classList.contains("show")) content.classList.remove("show");
+                    });
+                    contents[i].classList.add("show");
+                });
+            }
+        </script>
+    </body>
+</html>

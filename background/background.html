@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>background</title>
+        <link rel="stylesheet" href="background.css" />
+    </head>
+    <body>
+        <main>
+            <h1>background</h1>
+            <section>
+                <h2>background-color: liner-gradient(XXX);</h2>
+                <p>
+                    <span>第1引数に方向、第2引数に開始色、第３引数に終了色</span><br />
+                    下方向 => to bottom <br />
+                    上方向 => to top <br />
+                    左方向 => to left <br />
+                    右方向 => to right <br />
+                    <br />
+                    <span>終了色の始まる位置を指定できる</span>
+                    終了色の始まる位置を、第３引数に指定して、第４引数に終了色を指定する<br />
+                    <br />
+                    <span>斜めのグラデーション</span><br />
+                    開始位置を top left のように指定すると左上となり、to bottom right でも左上から、右下の意味になる<br />
+                    to で終わりの方向を指定して記述している場合は、それに揃えると保守につながる<br />
+                    また、斜め方向は具体的な角度も指定できる<br />
+                    <br />
+                    <span>degの値は</span><br />
+                    0deg => 下から上<br />
+                    45deg => 左下から右上 <br />
+                    90deg => 左から右 <br />
+                    180deg => 上から下<br />
+                </p>
+                <div class="liner-gradient">
+                    <div class="liner-gradient__parent" data-content="to bottom"></div>
+                    <div class="liner-gradient__parent" data-content="to top"></div>
+                    <div class="liner-gradient__parent" data-content="to left"></div>
+                    <div class="liner-gradient__parent" data-content="to right"></div>
+                    <div class="liner-gradient__parent" data-content="to right, 50%"></div>
+                    <div class="liner-gradient__parent" data-content="to right, 30%"></div>
+                    <div class="liner-gradient__rainbow" data-content="3色以上のグラデーション"></div>
+                    <div class="liner-gradient__rainbow practice" data-content="3色以上のグラデーションの応用"></div>
+                    <div class="liner-gradient__oblique" data-content="to bottm right"></div>
+                    <div class="liner-gradient__oblique mount-deg" data-content="第１引数を25degに"></div>
+                    <div class="liner-gradient__oblique overlay-pic1" data-content="画像を持つ"></div>
+                    <div class="liner-gradient__oblique overlay-pic2" data-content="画像を持つ"></div>
+                </div>
+            </section>
+            <section>
+                <h2>background-color: radial-gradient(XXX);</h2>
+                <p>
+                    radial-gradientは円状に変化する色のグラデーションをつける<br />
+                    グラデーションで変化する範囲を指定できる<br />
+                    例えば、radial-gradient(中央色 20%, 外側色 70%)とすれば、中心から見て0〜20%は中央色で塗られ、<br />
+                    20〜70%がグラデーションに、70〜100%は外側色で塗られる<br />
+                    複数色の円形グラデーションをかける場合はlinear-gradientと書き方はほとんど同じ<br />
+                    色を変えたい順にカンマ区切りで色指定<br />
+                    例えば、3色なら中心から0〜40%で「中央の開始色 → 中間色」に、40〜100%で「中間色 → 終了色」にグラデーションがかかっている<br />
+                    <span>画像がある場合</span><br />
+                    background: xxx-gradient(xxxx), url(xxx); と書くと画像を用いながらグラデシーション色もかけられる<br />
+                    url関数が先か後でxxx-gradientのレイヤーが決まる<br />
+                </p>
+                <div class="radial-gradient">
+                    <div class="radial-gradient__parent" before-content="radial-gradient(中央色, 外側色)" after-content=""></div>
+                    <div class="radial-gradient__parent" before-content="radial-gradient(中央色 20%, 外側色 70%)" after-content=""></div>
+                    <div class="radial-gradient__parent" before-content="radial-gradient(中央色 10%, 外側色 90%)" after-content=""></div>
+                    <div class="radial-gradient__parent" before-content="radial-gradient(red, blue 40%, green)" after-content=""></div>
+                    <div class="radial-gradient__parent" before-content="url関数が先" after-content="gradientは透明色です"></div>
+                    <div class="radial-gradient__parent" before-content="url関数が後" after-content="gradientは透明色です"></div>
+                </div>
+                <!-- <p class="attr-test" bg-url="../images/tokage_crested_gecko.png" style="--i: ../images/tokage_crested_gecko.png">attr関数のテスト</p> -->
+                <!-- <p class="attr-test" bg-url="../images/tokage_crested_gecko.png" style="--color: red">attr関数のテスト</p> -->
+                <p class="attr-test" bg-url="url(../images/tokage_crested_gecko.png)" bg-color="red">attr関数のテスト</p>
+                <!-- 失敗中 -->
+                <p class="test2" style="--bg-url: '../images/tokage_crested_gecko.png'">test2テキスト</p>
+
+                <p class="variable-test" style="--bg-url: url(../images/tokage_crested_gecko.png); --bg-color: #f74444; --color: #1b1757">
+                    カスタムプロパティ変数のテスト
+                    <span
+                        >子要素の文字色を変更させる
+                        <i style="--form-i-color: #fff">またその子要素</i>
+                    </span>
+                </p>
+                <p class="variable-test2" style="--bg-url: ../images/tokage_crested_gecko.png; --bg-color: #f74444; --color: #1b1757">
+                    カスタムプロパティ変数のテスト
+                    <span
+                        >子要素の文字色を変更させる
+                        <i style="--form-i-color: #fff">またその子要素</i>
+                    </span>
+                </p>
+            </section>
+
+            <section>
+                <h2>background-image</h2>
+                <div class="background-image">
+                    <div
+                        class="background-image__parent bg1-on-bg2"
+                        style="--bg-img1: url(../images/monster05.png); --bg-img2: url(../images/monster08.png)"
+                        before-content="background-image: bg1-on-bg2;"
+                    ></div>
+                    <div
+                        class="background-image__parent bg2-on-bg1"
+                        style="--bg-img1: url(../images/monster05.png); --bg-img2: url(../images/monster08.png)"
+                        before-content="background-image: bg2-on-bg1;"
+                    ></div>
+                    <div
+                        class="background-image__parent bg-with-gradient-and-bgcolor"
+                        style="--bg-img1: url(../images/monster05.png); --bg-img2: url(../images/monster08.png)"
+                        before-content="background-image: bg-with-gradient-and-bgcolor;"
+                    ></div>
+                    <div
+                        class="background-image__parent bg1-on-bg2-on-bg3-on-bg4"
+                        style="
+                            --bg-img1: url(../images/monster05.png);
+                            --bg-img2: url(../images/monster08.png);
+                            --bg-img3: url(../images/setsubun_oni_kowai.png);
+                            --bg-img4: url(../images/monster03.png);
+                        "
+                        before-content="background-imageで4枚の写真をかさねる"
+                    ></div>
+                </div>
+            </section>
+
+            <section>
+                <h2>background-origin</h2>
+
+                <div class="background-origin">
+                    <div class="background-origin__parent border-box" style="--bg-img: url(../images/eye_ganseihirou_computer_woman.png)" before-content="background-origin: border-box;"></div>
+                    <div class="background-origin__parent padding-box" style="--bg-img: url(../images/eye_ganseihirou_computer_woman.png)" before-content="background-origin: padding-box;"></div>
+                    <div class="background-origin__parent content-box" style="--bg-img: url(../images/eye_ganseihirou_computer_woman.png)" before-content="background-origin: content-box;"></div>
+                </div>
+            </section>
+
+            <section>
+                <h2>background-position</h2>
+                <p>
+                    background-position は CSS のプロパティで、それぞれの背景画像の初期位置を設定します。位置は background-origin で設定された位置レイヤーからの相対です <br />
+                    指定する値は位置を X軸 Y軸を指定し、<br />
+                </p>
+                <ul>
+                    <li>引数1つなら、X軸を指定し、自動で2つめの引数は中央(center)となる</li>
+                    <li>引数2つなら、1つ目はX軸、2つ目がY軸</li>
+                    <li>引数3つなら、その値の指定方法によるので以下を参照する</li>
+                </ul>
+
+                <div class="background-position">
+                    <div class="background-position__parent top" style="--bg-img1: url(../images/monster05.png)" before-content="background-position: top;">
+                        <p>topのみの指定</p>
+                    </div>
+                    <div class="background-position__parent left" style="--bg-img1: url(../images/monster05.png)" before-content="background-position: left;">
+                        <p>leftのみの指定</p>
+                    </div>
+                    <div class="background-position__parent bottom-right" style="--bg-img1: url(../images/monster05.png)" before-content="background-position: bottom right;">
+                        <p>bottom right の指定</p>
+                    </div>
+                    <div class="background-position__parent bottom10-right15" style="--bg-img1: url(../images/monster05.png)" before-content="background-position: bottom 10% right 10%;">
+                        <p>bottom 10% right 10% の指定</p>
+                    </div>
+                    <div class="background-position__parent center" style="--bg-img1: url(../images/monster05.png)" before-content="background-position: center;">
+                        <p>center の指定</p>
+                    </div>
+                    <div class="background-position__parent center20" style="--bg-img1: url(../images/monster05.png)" before-content="background-position: center 20%;">
+                        <p>center 20% の指定</p>
+                    </div>
+                    <div class="background-position__parent keyword-absolute" style="--bg-img1: url(../images/monster05.png)" before-content="background-position: 20px;">
+                        <p>左端から Xpx の指定</p>
+                    </div>
+                    <div class="background-position__parent keyword-absolute2" style="--bg-img1: url(../images/monster05.png)" before-content="background-position: 20px 100px;">
+                        <p>左端から Xpx, 上端から Ypx の指定</p>
+                    </div>
+                    <div class="background-position__parent keyword-absolute3" style="--bg-img1: url(../images/monster05.png)" before-content="background-position: top 20px right 100px;">
+                        <p>topから Xpx, rightから Ypx の指定</p>
+                    </div>
+                    <div class="background-position__parent animation" style="--bg-img1: url(../images/monster05.png)" before-content="今までのbackground-positionを利用した移動アニメーション"></div>
+                </div>
+            </section>
+
+            <section>
+                <h2>サンプルアニメーション</h2>
+                <p>アニメーションの検証</p>
+
+                <div class="sample-anim">
+                    <div class="sample-anim__path"></div>
+
+                    <div class="sample-anim__object"></div>
+                    <!-- <div></div> -->
+                </div>
+
+                <svg id="path" width="500" height="500">
+                    <path d="M50,50  Q70,200 150,100  T270,70" fill="none" stroke="#CF3721" stroke-width="3" />
+                </svg>
+                <div id="object"></div>
+            </section>
+        </main>
+    </body>
+</html>

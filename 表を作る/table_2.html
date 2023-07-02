@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="プログラミング学習サービスのドットインストールです"
+    />
+    <title>ドキュメント</title>
+    <link
+      rel="shortcut icon"
+      href="../HTML基礎/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="table.css" />
+  </head>
+
+  <body>
+    <p>ヘッダーのあるシンプルな表</p>
+    <table border="1">
+      <tr>
+        <th>名</th>
+        <th>姓</th>
+      </tr>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+      </tr>
+      <tr>
+        <td>Jane</td>
+        <td>Doe</td>
+      </tr>
+    </table>
+
+    <p>thead、tfoot、tbody のある表</p>
+    <table>
+      <thead>
+        <tr>
+          <th>ヘッダー 1</th>
+          <th>ヘッダー 2</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>本体 1</td>
+          <td>本体 2</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>フッター 1</td>
+          <td>フッター 2</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <p>colgroup のある表</p>
+    <table>
+      <colgroup span="4"></colgroup>
+      <tr>
+        <th>国</th>
+        <th>首都</th>
+        <th>人口</th>
+        <th></th>
+      </tr>
+      <tr>
+        <td>アメリカ合衆国</td>
+        <td>ワシントン D.C.</td>
+        <td>3 億 9 百万人</td>
+        <td>英語</td>
+      </tr>
+      <tr>
+        <td>スウェーデン</td>
+        <td>ストックホルム</td>
+        <td>9 百万人</td>
+        <td>スウェーデン語</td>
+      </tr>
+    </table>
+
+    <p>colgroup と col のある表</p>
+    <table>
+      <colgroup>
+        <col style="background-color: #0f0" />
+        <col span="2" />
+      </colgroup>
+      <tr>
+        <th>Lime</th>
+        <th>Lemon</th>
+        <th>Orange</th>
+      </tr>
+      <tr>
+        <td>Green</td>
+        <td>Yellow</td>
+        <td>Orange</td>
+      </tr>
+    </table>
+
+    <p>caption のあるシンプルな表</p>
+    <table>
+      <caption>
+        素晴らしいキャプション
+      </caption>
+      <tr>
+        <td>素晴らしいデータ</td>
+      </tr>
+    </table>
+    <script src="table.js"></script>
+  </body>
+</html>

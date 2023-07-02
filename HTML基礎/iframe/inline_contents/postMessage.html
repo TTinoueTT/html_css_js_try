@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>fruits</title>
+    </head>
+    <body class="post-message">
+        <p>postMessage</p>
+
+        <script>
+            window.addEventListener("message", function (e) {
+                // if (event.origin !== "/Users/t_inoue/Library/CloudStorage/GoogleDrive-t.artwork.ceramica@gmail.com/%E3%83%9E%E3%82%A4%E3%83%88%E3%82%99%E3%83%A9%E3%82%A4%E3%83%95%E3%82%99/trys/HTML&CSS-try/HTML%E5%9F%BA%E7%A4%8E/iframe/iframe.html")
+                //     //送信元のドメインが明確な場合は、チェックすることが強く推奨されています
+                //     return;
+                switch (e.data.action) {
+                    case "SyncMessage":
+                        messageInput.value = e.data.message;
+                        break;
+                }
+            });
+        </script>
+    </body>
+    <style>
+        .post-message {
+            background-color: rgb(177, 162, 193);
+        }
+    </style>
+</html>

@@ -1,0 +1,79 @@
+body {
+    background-color: rgb(129, 129, 129);
+}
+.basic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 30vh;
+
+    &__wrapper {
+        padding: 2rem;
+        border: 1px solid black;
+
+        & .shadow-box {
+            display: flex;
+            align-items: center;
+            background-color: cornsilk;
+            width: 20rem;
+            height: 5rem;
+            padding: 1rem;
+            margin: 2rem;
+
+            &::before {
+                content: attr(before-content);
+                font-size: 0.3rem;
+                width: 100%;
+            }
+
+            &.--1 {
+                box-shadow: 5px 5px blue;
+            }
+            &.--2 {
+                box-shadow: 5px 5px 5px blue;
+            }
+            &.--3 {
+                box-shadow: 5px 5px 5px blue, 10px 10px 10px rgb(64, 255, 0);
+            }
+            &.--4 {
+                box-shadow: -5px -5px blue;
+            }
+            &.--5 {
+                box-shadow: inset 5px 5px 5px blue;
+            }
+            &.--6 {
+                box-shadow: inset 5px 5px 5px blue, inset 10px 10px 10px rgb(64, 255, 0);
+            }
+            &.--7 {
+                box-shadow: 5px 5px 5px #f44336, -5px -5px 5px #fff, inset 5px 5px 5px #9c27b0,
+                    inset -5px -5px 5px rgb(86, 173, 139);
+            }
+            &.--8 {
+                box-shadow: 0.5rem 0.5rem blue;
+                border-radius: 50%;
+            }
+            &.--9 {
+                box-shadow: 5px 5px blue, 10px 10px rgb(64, 255, 0), 15px 15px rgb(242, 255, 0),
+                    20px 20px rgb(255, 51, 0), 25px 25px rgb(210, 46, 183);
+            }
+            &.--10 {
+                box-shadow: 5px 5px blue, 10px 10px rgb(64, 255, 0), 15px 15px rgb(242, 255, 0),
+                    20px 20px rgb(255, 51, 0), 25px 25px rgb(210, 46, 183), inset 5px 5px blue,
+                    inset 10px 10px rgb(64, 255, 0), inset 15px 15px rgb(242, 255, 0), inset 20px 20px rgb(255, 51, 0),
+                    inset 25px 25px rgb(210, 46, 183);
+            }
+            &.--11 {
+                box-shadow: 5px 5px blue, 10px 10px rgb(64, 255, 0), 15px 15px rgb(242, 255, 0),
+                    20px 20px rgb(255, 51, 0), 25px 25px rgb(210, 46, 183), inset -5px -5px blue,
+                    inset -10px -10px rgb(64, 255, 0), inset -15px -15px rgb(242, 255, 0),
+                    inset -20px -20px rgb(255, 51, 0), inset -25px -25px rgb(210, 46, 183);
+            }
+            &.--12 {
+                box-shadow: inset 5px 5px blue, inset 10px 10px rgb(64, 255, 0), inset 15px 15px rgb(242, 255, 0),
+                    inset 20px 20px rgb(255, 51, 0), inset 25px 25px rgb(210, 46, 183), inset -5px -5px blue,
+                    inset -10px -10px rgb(64, 255, 0), inset -15px -15px rgb(242, 255, 0),
+                    inset -20px -20px rgb(255, 51, 0), inset -25px -25px rgb(210, 46, 183);
+            }
+        }
+    }
+}

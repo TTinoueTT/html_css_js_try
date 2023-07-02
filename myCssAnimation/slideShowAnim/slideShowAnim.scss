@@ -1,0 +1,91 @@
+@import "./base";
+.slide-show-container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+
+    &__image-box {
+        display: flex;
+        position: relative;
+        width: 100%;
+        aspect-ratio: 5/1;
+        transition: all 400ms;
+
+        &__content {
+            $contentWidth: 80%;
+            display: block;
+            width: $contentWidth;
+            aspect-ratio: 4/1;
+            background-image: var(--bg-url);
+            background-size: contain;
+            // background-repeat: no-repeat;
+            margin: 0 calc((100% - #{$contentWidth}) / 2);
+        }
+    }
+
+    &__back-btn,
+    &__next-btn {
+        position: absolute;
+        height: 20%;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background-color: #ffffffbf;
+        transform: translateY(-50%);
+        cursor: pointer;
+        border: 1px solid;
+
+        &:active {
+            background-color: darken(#ffffffbf, 90%);
+            color: #dce9f7;
+        }
+
+        &::before {
+            content: attr(before-content);
+            font-size: 3.5vw;
+            font-weight: bold;
+            // border: 1px solid;
+            margin: auto;
+        }
+    }
+
+    &__back-btn {
+        left: 2%;
+    }
+
+    &__next-btn {
+        right: 2%;
+    }
+
+    &__indicator {
+        display: flex;
+        justify-content: center;
+        margin: 5%;
+
+        &__point {
+            width: 3%;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background-color: #666;
+            border: 2px solid #333;
+            margin: 0% 3%;
+            cursor: pointer;
+
+            &:has(input[type="radio"]:checked) {
+                background-color: #dce9f7;
+            }
+
+            & input[type="radio"] {
+                display: none;
+            }
+        }
+    }
+}
+
+.ionicon {
+    width: 40%;
+    background-color: aqua;
+    border-radius: 50%;
+    border: 1px solid;
+}
+.svg-data {
+}

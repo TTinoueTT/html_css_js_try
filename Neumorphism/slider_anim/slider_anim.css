@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #edf1f4;
+  min-height: 100vh;
+}
+body .loader {
+  display: flex;
+  flex-direction: row;
+}
+body .loader__item {
+  overflow: hidden;
+  position: relative;
+  width: 2.5rem;
+  height: 12.5rem;
+  margin: 1.2rem;
+  border-radius: 1.2rem;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.02), transparent);
+  border: 2px solid #edf1f4;
+  box-shadow: 1rem 1rem 2.5rem rgba(0, 0, 0, 0.1), -1rem -1rem 2.5rem #fff, inset -0.3rem -0.3rem 0.3rem rgba(255, 255, 255, 0.5), inset 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.05);
+}
+body .loader__item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 1.2rem;
+  box-shadow: 1rem 1rem 2.5rem rgba(0, 0, 0, 0.1), -1rem -1rem 2.5rem #fff, inset -0.3rem -0.3rem 0.3rem rgba(255, 255, 255, 0.5), inset 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.05);
+  z-index: 10;
+}
+body .loader__item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: inset -0.3rem -0.3rem 0.3rem rgba(0, 0, 0, 0.2), 0 26rem 0 25rem #2196f3;
+  animation: animate 2.5s ease-in-out infinite;
+  transform: translateY(10.25rem);
+  animation-delay: calc(-0.5s * var(--i));
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(10.25rem);
+    filter: hue-rotate(180deg);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(10.25rem);
+    filter: hue-rotate(0deg);
+  }
+}/*# sourceMappingURL=slider_anim.css.map */

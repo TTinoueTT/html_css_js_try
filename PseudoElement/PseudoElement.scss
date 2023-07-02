@@ -1,0 +1,55 @@
+// 基本設定
+* {
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  & > h2 {
+    background-color: #591895;
+    color: aliceblue;
+  }
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & > h3 {
+      margin-top: 5%;
+      padding: 0 2%;
+      color: aliceblue;
+      background-color: #515151;
+
+      & + p {
+        padding: 2%;
+        border: 1px dotted black;
+        border-radius: 10px;
+        margin: 2%;
+        font-size: 80%;
+        background-color: beige;
+      }
+    }
+  }
+}
+
+@import "./before_after";
+
+.backdrop-practice {
+  & dialog {
+    padding: 5%;
+    top: 5%;
+    left: 5%;
+    width: 30%;
+
+    &::backdrop {
+      background-color: rgba(68, 45, 16, 0.382);
+    }
+  }
+
+  & button {
+    width: 40%;
+    padding: 5%;
+  }
+}

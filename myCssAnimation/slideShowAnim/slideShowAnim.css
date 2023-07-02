@@ -1,0 +1,108 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main > h1 {
+  width: 100%;
+}
+main > section {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  align-items: center;
+}
+main > section > h2 {
+  width: 100%;
+  color: aliceblue;
+  background-color: darkblue;
+}
+main > section > h3 {
+  width: 100%;
+  color: aliceblue;
+  background-color: rgb(96, 102, 7);
+}
+main > section > p {
+  width: 100%;
+  font-size: 85%;
+  text-align: left;
+}
+
+.slide-show-container {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.slide-show-container__image-box {
+  display: flex;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 5/1;
+  transition: all 400ms;
+}
+.slide-show-container__image-box__content {
+  display: block;
+  width: 80%;
+  aspect-ratio: 4/1;
+  background-image: var(--bg-url);
+  background-size: contain;
+  margin: 0 calc((100% - 80%) / 2);
+}
+.slide-show-container__back-btn, .slide-show-container__next-btn {
+  position: absolute;
+  height: 20%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7490196078);
+  transform: translateY(-50%);
+  cursor: pointer;
+  border: 1px solid;
+}
+.slide-show-container__back-btn:active, .slide-show-container__next-btn:active {
+  background-color: rgba(26, 26, 26, 0.7490196078);
+  color: #dce9f7;
+}
+.slide-show-container__back-btn::before, .slide-show-container__next-btn::before {
+  content: attr(before-content);
+  font-size: 3.5vw;
+  font-weight: bold;
+  margin: auto;
+}
+.slide-show-container__back-btn {
+  left: 2%;
+}
+.slide-show-container__next-btn {
+  right: 2%;
+}
+.slide-show-container__indicator {
+  display: flex;
+  justify-content: center;
+  margin: 5%;
+}
+.slide-show-container__indicator__point {
+  width: 3%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: #666;
+  border: 2px solid #333;
+  margin: 0% 3%;
+  cursor: pointer;
+}
+.slide-show-container__indicator__point:has(input[type=radio]:checked) {
+  background-color: #dce9f7;
+}
+.slide-show-container__indicator__point input[type=radio] {
+  display: none;
+}
+
+.ionicon {
+  width: 40%;
+  background-color: aqua;
+  border-radius: 50%;
+  border: 1px solid;
+}/*# sourceMappingURL=slideShowAnim.css.map */

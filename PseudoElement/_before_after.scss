@@ -1,0 +1,132 @@
+//背景画像ありのブロック要素を作る時のルールセット
+@mixin bg-content($imgUrl: "") {
+    background: {
+        repeat: no-repeat;
+        size: contain;
+        image: url(#{$imgUrl});
+    }
+}
+
+// 以下特有のスタイル
+
+.before-after {
+    // ************* //
+    &__basis {
+        & a {
+            &::before {
+                content: "::beforeです <=";
+                color: blue;
+            }
+
+            &::after {
+                content: "=> ::affterです";
+                color: green;
+            }
+        }
+
+        & div {
+            &::before {
+                content: "::beforeです <=";
+                color: rgb(81, 81, 195);
+            }
+
+            &::after {
+                content: "=> ::affterです";
+                color: rgb(35, 97, 35);
+            }
+        }
+
+        & .kaigyou {
+            &::before {
+                display: block;
+                content: "::before\Aです <=";
+                white-space: pre;
+                color: rgb(81, 81, 195);
+            }
+
+            &::after {
+                display: block;
+                content: "=> ::affter\Aです";
+                white-space: pre;
+                color: rgb(35, 97, 35);
+            }
+        }
+    }
+
+    // ************* //
+    &__practice {
+        & span[data-content] {
+            position: relative;
+            color: brown;
+
+            &:active::before {
+                content: attr(data-content);
+                position: absolute;
+                background-color: beige;
+                border-radius: 5px;
+                border-style: double;
+            }
+
+            &:hover::after,
+            &:focus::after {
+                content: attr(data-content);
+                position: absolute;
+                background-color: aqua;
+                border-radius: 5px;
+                border-style: dotted;
+            }
+        }
+    }
+
+    // ************* //
+    & .gecko {
+        // display: flex;
+        position: relative;
+        width: 50%;
+        aspect-ratio: 800/757;
+        margin: 0 10%;
+        border: 1px dashed #515151;
+        @include bg-content("../images/tokage_crested_gecko.png");
+        transition: all 2s ease;
+
+        &::before {
+            content: "::beforeです";
+            display: block;
+            width: 33%;
+            aspect-ratio: 800/757;
+            border: 1px dashed #515151;
+            @include bg-content("../images/tokage_crested_gecko.png");
+            filter: hue-rotate(-90deg);
+            // transform: translateX(-80%);
+        }
+
+        &::after {
+            content: "::afterです";
+            display: block;
+            width: 33%;
+            aspect-ratio: 800/757;
+            border: 1px dashed #515151;
+            @include bg-content("../images/tokage_crested_gecko.png");
+            filter: hue-rotate(90deg);
+            // transform: translateX(80%);
+        }
+
+        &__child {
+            width: 33%;
+            aspect-ratio: 800/757;
+            border: 1px dashed #515151;
+            @include bg-content("../images/tokage_crested_gecko.png");
+        }
+
+        &:hover {
+            filter: hue-rotate(180deg);
+            // &::before {
+            //     filter: hue-rotate(180deg);
+            // }
+
+            // &::after {
+            //     filter: hue-rotate(180deg);
+            // }
+        }
+    }
+}

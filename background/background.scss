@@ -1,0 +1,420 @@
+@import "../base";
+
+// ===============================================
+.liner-gradient {
+    display: grid;
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    height: 175vw;
+
+    &__parent {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        @mixin after_content_style($linerGradient) {
+            content: "";
+            width: 70%;
+            height: 70%;
+            background: $linerGradient;
+            border: 1px solid black;
+        }
+
+        $startColor: #d44ae7;
+        $endColor: #f8e4a1;
+
+        $gradientList: linear-gradient(to bottom, $startColor, $endColor),
+            linear-gradient(to top, $startColor, $endColor), linear-gradient(to left, $startColor, $endColor),
+            linear-gradient(to right, $startColor, $endColor), linear-gradient(to bottom, $startColor, 50%, $endColor),
+            linear-gradient(to bottom, $startColor, 30%, $endColor);
+
+        $i: 1;
+        @each $gradientValue in $gradientList {
+            &:nth-child(#{$i}) {
+                &::before {
+                    content: attr(data-content);
+                }
+
+                &::after {
+                    @include after_content_style($gradientValue);
+                }
+            }
+            $i: $i + 1;
+        }
+    }
+
+    &__rainbow {
+        grid-row: 3;
+        grid-column: 1 / span 3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        &::before {
+            content: attr(data-content);
+        }
+
+        &::after {
+            content: "";
+            width: 90%;
+            height: 70%;
+            background: linear-gradient(
+                to right,
+                red,
+                orange 13%,
+                yellow 26%,
+                green 45%,
+                aqua 60%,
+                rgb(76, 0, 255) 73%,
+                rgb(209, 29, 164)
+            );
+            border: 1px solid black;
+        }
+
+        &.practice {
+            grid-row: 4;
+            background-color: rgb(23, 23, 45);
+
+            &::before {
+                color: azure;
+            }
+
+            &::after {
+                content: "";
+                width: 90%;
+                height: 70%;
+                background: linear-gradient(
+                    to right,
+                    rgba(23, 23, 45, 0.5),
+                    orange 3%,
+                    orange 96%,
+                    rgba(23, 23, 45, 0.5)
+                );
+                border: 1px solid black;
+            }
+        }
+    }
+
+    &__oblique {
+        grid-row: 5;
+        grid-column: 1 / span 3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        &::before {
+            content: attr(data-content);
+        }
+
+        &::after {
+            content: "";
+            width: 60%;
+            height: 80%;
+            background: linear-gradient(
+                to bottom right,
+                red,
+                orange 13%,
+                yellow 26%,
+                green 45%,
+                aqua 60%,
+                rgb(76, 0, 255) 73%,
+                rgb(209, 29, 164)
+            );
+            border: 1px solid black;
+        }
+
+        &.mount-deg {
+            grid-row: 6;
+            grid-column: 1 / span 3;
+
+            &::before {
+                content: attr(data-content);
+            }
+
+            &::after {
+                background: linear-gradient(
+                    25deg,
+                    red,
+                    orange 13%,
+                    yellow 26%,
+                    green 45%,
+                    aqua 60%,
+                    rgb(76, 0, 255) 73%,
+                    rgba(209, 29, 164, 0.501)
+                );
+            }
+        }
+
+        &.overlay-pic1 {
+            grid-row: 7;
+            grid-column: 1 / span 3;
+
+            &::before {
+                content: attr(data-content);
+            }
+
+            &::after {
+                background: linear-gradient(
+                        25deg,
+                        red,
+                        rgba(255, 166, 0, 0.5) 13%,
+                        rgba(255, 255, 0, 0.6) 26%,
+                        rgba(0, 128, 0, 0.724) 45%,
+                        rgba(0, 255, 255, 0.816) 60%,
+                        rgba(76, 0, 255, 0.901) 73%,
+                        rgba(209, 29, 164, 0.501)
+                    ),
+                    url(../images/tokage_crested_gecko.png);
+                background-size: contain;
+                background-position: center center;
+                // background-repeat: no-repeat;
+            }
+        }
+
+        &.overlay-pic2 {
+            grid-row: 8;
+            grid-column: 1 / span 3;
+
+            &::before {
+                content: attr(data-content);
+            }
+
+            &::after {
+                background: url(../images/tokage_crested_gecko.png),
+                    linear-gradient(
+                        25deg,
+                        red,
+                        orange 13%,
+                        yellow 26%,
+                        green 45%,
+                        aqua 60%,
+                        rgb(76, 0, 255) 73%,
+                        rgba(209, 29, 164, 0.501)
+                    );
+                background-size: contain;
+                background-position: center center;
+                // background-repeat: no-repeat;
+            }
+        }
+    }
+}
+
+// ===============================================
+.radial-gradient {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    height: 70vw;
+
+    &__parent {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        @mixin after_content_style($radialGradient) {
+            content: attr(after-content);
+            width: 70%;
+            height: 70%;
+            background: $radialGradient;
+            background-size: contain;
+            background-repeat: no-repeat;
+            border: 1px solid black;
+        }
+
+        $startColor: #d44ae7;
+        $endColor: #f8e4a1;
+
+        $gradientList: radial-gradient($startColor, $endColor), radial-gradient($startColor 20%, $endColor 70%),
+            radial-gradient($startColor 10%, $endColor 90%), radial-gradient(red, blue 40%, green),
+            (url(../images/tokage_crested_gecko.png), radial-gradient(#e76f4aa3, #a1f8aa9e)),
+            (radial-gradient(#a1f8aa9e, #e76f4aa3), url(../images/tokage_crested_gecko.png));
+
+        $i: 1;
+        @each $gradientValue in $gradientList {
+            &:nth-child(#{$i}) {
+                &::before {
+                    content: attr(before-content);
+                    font-size: 55%;
+                }
+
+                &::after {
+                    @include after_content_style($gradientValue);
+                }
+            }
+            $i: $i + 1;
+        }
+    }
+}
+
+.attr-test {
+    // background-image: url(../images/tokage_crested_gecko.png);
+    background-image: attr(bg-url);
+    // background-image: url(var(--i));
+    background-size: contain;
+    background-position: center center;
+    width: 100%;
+    height: 20vw;
+    background-color: attr(bg-color color);
+    // background-color: var(--color);
+}
+
+.test2 {
+    background-image: var(--bg-url);
+    background-size: contain;
+    background-position: center center;
+    width: 100%;
+    height: 20vw;
+}
+
+.variable-test {
+    // background-image: url(../images/tokage_crested_gecko.png);
+    background-image: var(--bg-url);
+    // background-image: url(var(--i));
+    background-size: contain;
+    background-position: center center;
+    width: 100%;
+    height: 20vw;
+    background-color: var(--bg-color);
+    color: var(--form-i-color);
+    // background-color: var(--color);
+    & > span {
+        color: var(--color);
+
+        & > i {
+            color: var(--color);
+        }
+    }
+}
+
+.variable-test2 {
+    $bg-img-url: var(--bg-url);
+
+    background-image: url($bg-img-url);
+    background-size: contain;
+    background-position: center center;
+    width: 100%;
+    height: 20vw;
+    background-color: var(--bg-color);
+    color: var(--form-i-color);
+    & > span {
+        color: var(--color);
+
+        & > i {
+            color: var(--color);
+        }
+    }
+}
+
+// ===============================================
+.background-image {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    height: 70vw;
+
+    &__parent {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border: 1px solid;
+
+        @mixin before-style {
+            content: attr(before-content);
+            position: absolute;
+            top: 0;
+            font-size: 0.7rem;
+        }
+
+        @mixin after-style {
+            content: attr(after-content);
+            width: 50%;
+            height: 50%;
+            background: {
+                // image: var(--bg-img1), var(--bg-img2);
+                size: 100%, 100%;
+                color: #a4a683;
+                repeat: no-repeat;
+            }
+
+            padding: 10%;
+            // border: 20px dashed #4949d27a;
+        }
+
+        &.bg1-on-bg2 {
+            &::before {
+                @include before-style;
+            }
+            &::after {
+                background-image: var(--bg-img1), var(--bg-img2);
+                @include after-style;
+            }
+        }
+
+        &.bg2-on-bg1 {
+            &::before {
+                @include before-style;
+            }
+            &::after {
+                background-image: var(--bg-img2), var(--bg-img1);
+                @include after-style;
+            }
+        }
+
+        &.bg-with-gradient-and-bgcolor {
+            &::before {
+                @include before-style;
+            }
+            &::after {
+                background-image: var(--bg-img2), var(--bg-img1), linear-gradient(to bottom, #d44ae7, #f8e4a1);
+                @include after-style;
+            }
+        }
+
+        &.bg1-on-bg2-on-bg3-on-bg4 {
+            &::before {
+                @include before-style;
+            }
+            &::after {
+                background-image: var(--bg-img1), var(--bg-img2), var(--bg-img3), var(--bg-img4);
+                @include after-style;
+            }
+        }
+    }
+}
+
+// ===============================================
+
+@import "./background_origin";
+@import "./background_position";
+
+.sample-anim {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2/1;
+
+    border: 1px solid;
+    &__path {
+        position: relative;
+        height: 5px;
+        background: black;
+        border-top: 1px dashed white;
+        border-bottom: 1px dashed white;
+    }
+
+    &__object {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: red;
+        border-radius: 50%;
+    }
+}

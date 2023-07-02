@@ -1,0 +1,59 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+
+:root {
+  --image-url: ;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main > h1 {
+  width: 100%;
+}
+main > section {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  align-items: center;
+}
+main > section > h2 {
+  width: 100%;
+  color: aliceblue;
+  background-color: darkblue;
+}
+main > section > h3 {
+  width: 100%;
+  color: aliceblue;
+  background-color: rgb(96, 102, 7);
+}
+main > section > p {
+  width: 100%;
+  font-size: 85%;
+  text-align: left;
+}
+main > section > p span {
+  font-weight: 600;
+  color: rgb(228, 116, 37);
+}
+main > section > p li {
+  font-size: 0.8rem;
+}
+
+.if-content {
+  width: 100%;
+  height: 80vw;
+  display: grid;
+  grid-template: repeat(2, 1fr)/repeat(2, 1fr);
+}
+.if-content > p {
+  background-color: aquamarine;
+  border: 1px solid pink;
+}
+.if-content > p.yellow {
+  color: blueviolet;
+}/*# sourceMappingURL=scss_functions.css.map */

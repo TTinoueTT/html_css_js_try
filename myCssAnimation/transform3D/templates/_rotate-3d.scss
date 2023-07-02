@@ -1,0 +1,43 @@
+.rotate-3d {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    height: 100vw;
+
+    @mixin rotate3dChild($rotate_def: rotateX(45deg)) {
+        width: 50%;
+        height: 50%;
+        border: 1px solid black;
+        background-color: rgba(59, 167, 59, 0.784);
+        transform: $rotate_def;
+    }
+
+    &__parent {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        transform-style: preserve-3d;
+        perspective: 100px; // 300 ~ 1000px 以内がお勧め
+        perspective-origin: 50% 50%;
+
+        $rotateList: rotateX(45deg), rotateX(90deg), rotateX(120deg), rotateY(45deg), rotateY(90deg), rotateY(120deg),
+            rotateZ(45deg), rotateZ(90deg), rotateZ(120deg);
+
+        $i: 1;
+        @each $rotateValue in $rotateList {
+            &:nth-child(#{$i}) {
+                &::before {
+                    content: attr(data-content);
+                }
+
+                &::after {
+                    content: "いろは";
+                    @include rotate3dChild($rotateValue);
+                }
+            }
+            $i: $i + 1;
+        }
+    }
+}

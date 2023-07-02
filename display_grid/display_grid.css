@@ -1,0 +1,64 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+
+:root {
+  --image-url: ;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main > h1 {
+  width: 100%;
+}
+main > section {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  align-items: center;
+}
+main > section > h2 {
+  width: 100%;
+  color: aliceblue;
+  background-color: darkblue;
+}
+main > section > h3 {
+  width: 100%;
+  color: aliceblue;
+  background-color: rgb(96, 102, 7);
+}
+main > section > p {
+  width: 100%;
+  font-size: 85%;
+  text-align: left;
+}
+main > section > p span {
+  font-weight: 600;
+  color: rgb(228, 116, 37);
+}
+main > section > p li {
+  font-size: 0.8rem;
+}
+
+.grid__parent {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100vw;
+  height: 100vw;
+}
+.grid__parent.gap {
+  -moz-column-gap: 5%;
+       column-gap: 5%;
+  row-gap: 5%;
+}
+.grid__parent__child:nth-child(2n+1) {
+  background-color: rgb(189, 226, 43);
+}
+.grid__parent__child:nth-child(2n) {
+  background-color: blueviolet;
+}/*# sourceMappingURL=display_grid.css.map */

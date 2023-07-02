@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>email_validation_js</title>
+        <link rel="stylesheet" href="email_validation_js.css" />
+    </head>
+    <body>
+        <div class="box">
+            <h3>Email Validation Check</h3>
+            <form action="#" id="form">
+                <div class="inputBox">
+                    <input type="text" id="email" placeholder="Enter Email Address" onkeyup="validate()" />
+                    <span id="text">Hi</span>
+                </div>
+            </form>
+            <!-- <i class="fa-solid fa-xmark"></i> -->
+            <!-- <ion-icon name="close-circle" src="./close-circle.svg"></ion-icon> -->
+            <!-- <img src="./close-circle.svg" alt="" /> -->
+        </div>
+
+        <script>
+            function validate() {
+                let form = document.getElementById("form");
+                let email = document.getElementById("email").value;
+                let text = document.getElementById("text");
+                let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+                if (email.match(pattern)) {
+                    form.classList.add("valid");
+                    form.classList.remove("invalid");
+                    text.innerHTML = "Your Email Adddress is Vaild.";
+                    text.style.color = "#4caf50";
+                } else {
+                    form.classList.remove("valid");
+                    form.classList.add("invalid");
+                    text.innerHTML = "Please Enter Valid Email Address.";
+                    text.style.color = "#f44336";
+                }
+
+                if (email == "") {
+                    form.classList.remove("valid");
+                    form.classList.remove("invalid");
+                    text.innerHTML = "";
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,133 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main > h1 {
+  width: 100%;
+}
+main > section {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  align-items: center;
+}
+main > section > h2 {
+  width: 100%;
+  color: aliceblue;
+  background-color: darkblue;
+}
+main > section > h3 {
+  width: 100%;
+  color: aliceblue;
+  background-color: rgb(96, 102, 7);
+}
+main > section > p {
+  width: 100%;
+  font-size: 85%;
+  text-align: left;
+}
+
+.circle {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  height: 100vw;
+}
+.circle__child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid;
+}
+.circle__child::before {
+  content: attr(data-line1) "\a" attr(data-line2);
+  white-space: pre-wrap;
+  background-color: antiquewhite;
+  font-size: 11px;
+}
+.circle__child::after {
+  content: "";
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  text-align: center;
+  background-color: #4169e1;
+  background-image: url("../../../images/helmet_light.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: 1px solid rgba(38, 45, 77, 0.503);
+}
+.circle__child:nth-child(1)::after {
+  -webkit-clip-path: circle(80%);
+          clip-path: circle(80%);
+}
+.circle__child:nth-child(2)::after {
+  -webkit-clip-path: circle(50%);
+          clip-path: circle(50%);
+}
+.circle__child:nth-child(3)::after {
+  -webkit-clip-path: circle(20%);
+          clip-path: circle(20%);
+}
+.circle__child:nth-child(4)::after {
+  -webkit-clip-path: circle(30% at center);
+          clip-path: circle(30% at center);
+}
+.circle__child:nth-child(5)::after {
+  -webkit-clip-path: circle(30% at top);
+          clip-path: circle(30% at top);
+}
+.circle__child:nth-child(6)::after {
+  -webkit-clip-path: circle(30% at bottom);
+          clip-path: circle(30% at bottom);
+}
+.circle__child:nth-child(7)::after {
+  -webkit-clip-path: circle(30% at left);
+          clip-path: circle(30% at left);
+}
+.circle__child:nth-child(8)::after {
+  -webkit-clip-path: circle(30% at right);
+          clip-path: circle(30% at right);
+}
+.circle__child:nth-child(9)::after {
+  -webkit-clip-path: circle(30% at top left);
+          clip-path: circle(30% at top left);
+}
+
+.polygon {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  height: 100vw;
+}
+.polygon__child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid;
+}
+.polygon__child::before {
+  content: attr(data-line1) "\a" attr(data-line2);
+  white-space: pre-wrap;
+  background-color: antiquewhite;
+  font-size: 11px;
+}
+.polygon__child.pentagon::after {
+  content: "";
+  position: relative;
+  width: 80%;
+  aspect-ratio: 21/20;
+  background: #4169e1;
+  -webkit-clip-path: polygon(50% 0, 100% 38%, 81% 100%, 19% 100%, 0 38%);
+          clip-path: polygon(50% 0, 100% 38%, 81% 100%, 19% 100%, 0 38%);
+}/*# sourceMappingURL=clip_path.css.map */

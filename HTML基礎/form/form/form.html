@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="プログラミング学習サービスのドットインストールです" />
+        <title>フォーム</title>
+        <link rel="stylesheet" href="form.css" />
+        <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" /> -->
+    </head>
+    <body>
+        <section id="formPractice" class="form-practice">
+            <!-- **************************************** -->
+            <h2>form要素</h2>
+            <div class="form-description">
+                <p>
+                    区間区切り要素 <br />
+                    ウェブサーバーに情報を送信するための対話型コントロールを含む <br />
+                    <small>
+                        ＊対話型コントロール＊ <br />
+                        ユーザの入力を期待する項目がある input textarea など
+                    </small>
+                </p>
+                <h3>formの属性</h3>
+                <hr />
+                <!-- ////////////////////////// -->
+                <h4>action</h4>
+                <p>
+                    > form内で入力したデータの送信先URLを指定する<br />
+                    > form内のbutton、input[type:submit]、input[type:image]のformaction属性で上書き可能<br />
+                </p>
+                <h5>指定できる値</h5>
+                <ul>
+                    <li>絶対URL</li>
+                    <li>相対URL</li>
+                </ul>
+
+                <hr />
+                <!-- ////////////////////////// -->
+                <h4>method</h4>
+                <p>
+                    > actionで指定したURLに送るHTTPメソッドの指定<br />
+                    > get でURLの後ろにデータを付け加えて送信 要求するページをレンダリング<br />
+                    > 例： <code> URL?nameA=valueA&nameB=valueB&nameC=valueC </code>
+                    <br />
+                    > post でURLの後にデータを付け加えないで、ボディ部に格納して送信 <br />
+                    > dialog …dialog要素の中にある場合に使用、送信の操作を行うと、ダイアログが閉じてsubmitイベントを発行 <br />
+                    > データを送信したりフォームをクリアしたりはしない <br />
+                    > form内のbutton、input[type:submit]、input[type:image]のformmethod属性で上書き可能<br />
+                </p>
+                <h5>指定できる値</h5>
+                <ul>
+                    <li>get (デフォルト値)</li>
+                    <li>post</li>
+                    <li>dialog</li>
+                </ul>
+                <hr />
+                <!-- ////////////////////////// -->
+                <h4>target</h4>
+                <p>
+                    > データの送信先でウインドウの開き方を指定<br />
+                    > _blank …新規ウィンドウに開く<br />
+                    > _self …現在のウィンドウに開く<br />
+                    > _parent …<br />
+                    > _top …<br />
+                    > <br />
+                </p>
+                <h5>指定できる値</h5>
+                <ul>
+                    <li>_self (デフォルト値)</li>
+                    <li>_blank</li>
+                    <li>_parent</li>
+                    <li>_top</li>
+                    <li>ウィンドウの名前</li>
+                </ul>
+                <hr />
+                <!-- ////////////////////////// -->
+                <h4>name</h4>
+                <p>
+                    > この値の入力は必須<br />
+                    > このform内の情報をまとめた一意な識別名<br />
+                    > 他のformタグのname属性と重複しないようにする<br />
+                </p>
+                <h5>指定できる値</h5>
+                <ul>
+                    <li>任意で一意な名前(値の指定必須)</li>
+                </ul>
+                <hr />
+                <!-- ////////////////////////// -->
+                <h4>autocomplete</h4>
+                <p>
+                    > 配下の入力要素がブラウザによる値の入力補完をうけるかを示す<br />
+                    > 過去に入力した内容を入力候補として表示する<br />
+                    > <br />
+                </p>
+                <h5>指定できる値</h5>
+                <ul>
+                    <li>on (初期値)</li>
+                    <li>off</li>
+                </ul>
+                <form action="" autocomplete="on">
+                    <input type="text" name="" id="" autocomplete="cc-name" />
+                </form>
+                <hr />
+                <!-- ////////////////////////// -->
+                <h4>novalidate</h4>
+                <p>
+                    > フォームの入力内容の検証を無効にするかどうかの指定<br />
+                    > 特に値を指定しない、属性が付与されたことが検証の無効の意味になる<br />
+                    > <br />
+                </p>
+
+                <hr />
+                <!-- ////////////////////////// -->
+                <h4>accept-charset</h4>
+                <p>
+                    > 文字エンコーディングを指定する属性 <br />
+                    > サーバーの自動判定に任せておけば問題ないが、文字化けする場合には試す <br />
+                    > 半角空白で複数の値を指定できる <br />
+                </p>
+
+                <h5>指定できる値</h5>
+                <ul>
+                    <li>UTF-8</li>
+                    <li>SHIFT-JIS</li>
+                    <li>EUC-JP</li>
+                </ul>
+
+                <hr />
+                <!-- ////////////////////////// -->
+                <h4>enctype</h4>
+                <p>
+                    > 送信データのエンコード・タイプを指定する<br />
+                    > method属性が post のときだけ使用できる<br />
+                    > application/x-www-form-urlencoded …全ての文字をURLエンコード<br />
+                    > multipart/form-data …フォームにファイルを送信する機能がある場合に指定<br />
+                    > text/plain …スペースだけ「+」記号に変換する。その他の特殊文字はエンコードしない<br />
+                </p>
+                <h5>指定できる値</h5>
+                <ul>
+                    <li>application/x-www-form-urlencoded (初期値)</li>
+                    <li>multipart/form-data</li>
+                    <li>text/plain</li>
+                </ul>
+
+                <hr />
+                <!-- ////////////////////////// -->
+                <h4>rel</h4>
+                <p>
+                    > リンク先のリソースと現在の文書との関係を定義<br />
+                    > external …注釈、参照先の文書が現在のサイトの一部ではないことを示す<br />
+                    > help …リンク、リンク先のコンテンツがコンテキスト依存のヘルプを提供することを示す<br />
+                    > license …リンク<br />
+                    > next …リンク<br />
+                    > nofollow …注釈<br />
+                    > opener …注釈<br />
+                    > prev …リンク<br />
+                    > search …リンク<br />
+                    > <br />
+                </p>
+                <h5>指定できる値</h5>
+                <ul>
+                    <li>external</li>
+                </ul>
+
+                <hr />
+                <!-- ////////////////////////// -->
+                <h4>autocapitalize</h4>
+                <p>
+                    > iOS版Safariでのみの機能<br />
+                    > フォーム要素が自動的に大文字化を行うかどうかを制御<br />
+                    > none …自動大文字化機能を無効<br />
+                    > sentences …文の先頭文字を自動的に大文字化<br />
+                    > words …単語の先頭文字を自動的に大文字化<br />
+                    > characters …すべての文字を自動的に大文字化<br />
+                </p>
+                <h5>指定できる値</h5>
+                <ul>
+                    <li>none</li>
+                    <li>setences</li>
+                    <li>words</li>
+                    <li>characters</li>
+                </ul>
+            </div>
+            <!-- **************************************** -->
+            <hr />
+            <div class="form-dialog">
+                <h2>dialog要素でモーダルをつくる</h2>
+                <p>
+                    モーダル機能をHTML上で実装したタグ <br />
+                    chromeのみの実装 <br />
+                    絶対配置 = position:absolute; をデフォルトにしている <br />
+                </p>
+                <h3>dialog要素の属性</h3>
+                <h4>open</h4>
+                <p>
+                    > open属性 …モーダルが可視化される論理値 <br />
+                    > 基本的にJSで属性の付与をすることで、可視、不可視の切り替えを行う <br />
+                </p>
+                <dialog>ネイティブのダイアログ ボックス</dialog>
+                <!-- <button @click="{console.log('Hello')}" >ボタン</button> -->
+            </div>
+
+            <!-- **************************************** -->
+            <hr />
+            <h2>多様なinput:type</h2>
+            <div class="form-practice__type-oneline">
+                <h3>単一行のinputタグ</h3>
+                <p>
+                    typeの種類 [text ,password ,search ,tel ,email ,url] <br />
+                    すべての初期値(value="hello")
+                </p>
+                <ul>
+                    <li><input type="text" value="hello" /> //type="text"</li>
+                    <li><input type="password" value="hello" /> //type="password"</li>
+                    <li><input type="search" name="" id="" value="hello" /> //type="search"</li>
+                    <li><input type="tel" name="" id="" value="hello" /> //type="tel"</li>
+                    <li><input type="email" name="" id="" value="hello" /> //type="email"</li>
+                    <li><input type="url" name="" id="" value="hello" /> //type="url"</li>
+                </ul>
+
+                <p>特有の属性</p>
+                <input type="text" />
+                <input type="text" placeholder="例.ここに入力してください" />
+                <textarea name="" id="" cols="30" rows="10">Hello</textarea>
+            </div>
+
+            <hr />
+
+            <div class="form-practice__type-select">
+                <h3>選択用のフォームのinputタグ</h3>
+                <ul>
+                    <li><input type="checkbox" /> type="checkbox"</li>
+                    <li><input type="radio" /> type="radio"</li>
+                    <li><input type="number" /> type="number"</li>
+                    <li><input type="color" /> type="color"</li>
+                    <li><input type="range" /> type="range"</li>
+                    <li><input type="file" /> type="file"</li>
+                </ul>
+            </div>
+
+            <hr />
+
+            <div class="form-practice__type-selecttime">
+                <h3>時刻用の選択フォームのinputタグ</h3>
+                <ul>
+                    <li><input type="time" /> type="time"</li>
+                    <li><input type="week" /> type="week"</li>
+                    <li><input type="month" /> type="month"</li>
+                    <li><input type="date" /> type="date"</li>
+                    <li><input type="datetime-local" /> type="datetime-local"</li>
+                </ul>
+            </div>
+
+            <div class="form-practice__type-button">
+                <h3>ボタン用のフォームのinputタグ</h3>
+                <ul>
+                    <li><input type="button" /> type="button"</li>
+                    <li><input type="image" /> type="image"</li>
+                    <li><input type="reset" /> type="reset"</li>
+                    <li><input type="submit" /> type="submit"</li>
+                </ul>
+            </div>
+
+            <div class="form-practice__type-hidden">
+                <h3>非表示用のフォームのinputタグ</h3>
+                <ul>
+                    <li><input type="hidden" /> type="hidden"</li>
+                </ul>
+            </div>
+
+            <!-- labelの利用 -->
+            <div class="form-practice__with-label">
+                <h3>label 入力フォームを紐付け</h3>
+                <label for="name">名前</label>
+                <input type="text" id="name" />
+
+                <p>入力フォームを紐付け labelにネストすることでforの省略</p>
+                <label>名前<input type="text" id="name" /></label>
+
+                <label for="color">好きな色</label>
+                <select id="color" size="4" multiple>
+                    <option>色1</option>
+                    <option>色2</option>
+                    <option>色3</option>
+                    <option selected>色4</option>
+                    <option>色5</option>
+                </select>
+            </div>
+
+            <div>
+                <h3>fieldsetタグとlegendタグを指定</h3>
+                <h4>disabled</h4>
+                <p>
+                    > 指定されたfieldsetの入力を受け付けない<br />
+                    > 論理値なので指定する値はない<br />
+                    > <br />
+                </p>
+                <h4>form</h4>
+                <p>
+                    > このfieldsetの所属するform要素を指定<br />
+                    > 指定したいform要素のid属性を指定する<br />
+                    > 指定しない場合は直近の祖先要素のform要素が所属先となる<br />
+                </p>
+                <h5>指定できる値</h5>
+                <ul>
+                    <li>指定したいform要素のid属性名</li>
+                </ul>
+                <h4>name</h4>
+                <p>
+                    > fieldsetの識別子キー名<br />
+                    > <br />
+                </p>
+                <h5>指定できる値</h5>
+                <ul>
+                    <li>所属するform要素内で一意となる名前</li>
+                </ul>
+                <fieldset>
+                    <legend>お使いのスマホ ここがlegend要素です</legend>
+                    <label><input type="checkbox" />iphone</label>
+                    <label><input type="checkbox" checked />Android</label>
+                    <label><input type="checkbox" />その他</label>
+                </fieldset>
+                <p>disabled属性をつけると入力を受け付けない</p>
+                <fieldset disabled>
+                    <legend>お使いのスマホ</legend>
+                    <label><input type="checkbox" />iphone</label>
+                    <label><input type="checkbox" checked />Android</label>
+                    <label><input type="checkbox" />その他</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>一番好きなスマホ</legend>
+                    <!-- name属性で統一することでラジオボタンの選択肢は一つのみになる -->
+                    <label><input type="radio" name="phone" />iphone</label>
+                    <label><input type="radio" name="phone" checked />Android</label>
+                    <label><input type="radio" name="phone" />その他</label>
+                </fieldset>
+            </div>
+
+            <div>
+                <p><input type="color" /></p>
+                <p><input type="date" /></p>
+                <p><input type="number" /></p>
+                <p><input type="range" /></p>
+            </div>
+
+            <div class="form-practice__button-comp">
+                <h3>input[type="button"]とbuttonタグの比較</h3>
+                <p>buttonタグの方が汎用性は高い、シンプルな機能なら、inputのボタンで構わない<br /></p>
+
+                <input type="button" value="OK" />
+                <!-- buttonタグの方が汎用性は高い、シンプルな機能なら、inputのボタンで構わない -->
+                <button>OK</button>
+
+                <p>
+                    disable属性を指定した非活性なボタンの生成<br />
+                    ボタンを複数回を押すことを防ぐ
+                </p>
+                <input type="button" value="OK" disabled />
+                <button disabled>OK</button>
+            </div>
+
+            <div>
+                <h3></h3>
+                <form action="ファイル名(phpやrubyなど)" method="HTTPメソッド">
+                    <label>担当者 <input type="text" name="送信時の識別子" /></label>
+                    <label>タスク <input type="text" name="送信時の識別子" /></label>
+                    <button>追加</button>
+                </form>
+            </div>
+
+            <div>
+                <h2>inputの属性</h2>
+                <h3>pattern属性</h3>
+                <p>> patternにより入力値の判定を行う > patternにより、指定以外の値を入れるとアラートが出て送信できないようになる</p>
+                <label>
+                    (1) 半角全角問わず5文字
+                    <input type="text" name="data1" pattern=".{5}" />
+                </label>
+                <button formaction="#">送信</button>
+                <label>
+                    (2) 全角カタカナ(HTMLがutf-8の場合)
+                    <input type="text" name="data2" pattern="^[ァ-ンヴー]+$ , [\u30A1-\u30FF]*" title="全角カタカナ" />
+                </label>
+                <button formaction="#">送信</button>
+                <label>
+                    (3) 全角ひらがな(HTMLがutf-8の場合)
+                    <input type="text" name="data3" pattern="^[ぁ-ん]+$ , [\u3041-\u309F]*" title="全角ひらがな" />
+                </label>
+                <button formaction="#">送信</button>
+                <label>
+                    (4) 半角英数のみ
+                    <input type="text" name="data4" pattern="^[0-9A-Za-z]+$" title="半角英数のみ" />
+                </label>
+                <button formaction="#">送信</button>
+                <label>
+                    (5) 半角英数7文字
+                    <input type="text" name="data5" pattern="^([a-zA-Z0-9]{7})$" title="半角英数7文字" />
+                </label>
+                <button formaction="#">送信</button>
+                <label>
+                    (6) 半角英数10文字以上
+                    <input type="text" name="data6" pattern="^([a-zA-Z0-9]{10,})$" title="半角英数10文字以上" />
+                </label>
+                <button formaction="#">送信</button>
+                <label>
+                    (7) メールアドレス
+                    <input type="text" name="data7" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="メールアドレス" />
+                </label>
+                <button formaction="#">送信</button>
+                <label>
+                    (8) 電話番号（携帯、固定・ハイフン付き）
+                    <input type="text" name="data8" pattern="\d{2,4}-\d{3,4}-\d{3,4}" title="電話番号" />
+                </label>
+                <button formaction="#">送信</button>
+            </div>
+
+            <div>
+                <h2>inputタグによる</h2>
+                <h3>pattern属性</h3>
+                <p>> patternにより入力値の判定を行う > patternにより、指定以外の値を入れるとアラートが出て送信できないようになる</p>
+                <fieldset>
+                    <legend>一番好きなスマホ</legend>
+                    <!-- name属性で統一することでラジオボタンの選択肢は一つのみになる -->
+                    <label><input type="radio" name="phone" />人生</label>
+                    <label><input type="radio" name="phone" checked />恋愛</label>
+                    <label><input type="radio" name="phone" />結婚</label>
+                    <label><input type="radio" name="phone" />複雑愛</label>
+                </fieldset>
+            </div>
+
+            <div style="background: black; opacity: 0.65; color: #ff9800; font-size: 10%; position: fixed; top: 0; right: 0; width: 20%; border-radius: 5px">
+                <!-- <input type="checkbox" id="menu" style="position: absolute; right: -1rem" />
+        <label for="menu" class="open" style="position: absolute; left: -2rem; font-size: 2rem; background-color: #080401">🐈</label>
+        <label for="menu" class="back"></label> -->
+                <p style="margin: 0">#formPractice</p>
+                <pre v-text="$data" style="margin: 0; padding: 0 4%"></pre>
+            </div>
+        </section>
+        <script src="https://unpkg.com/vue@next"></script>
+        <script src="form.js"></script>
+    </body>
+</html>

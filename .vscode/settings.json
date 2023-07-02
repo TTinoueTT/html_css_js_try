@@ -1,0 +1,74 @@
+{
+    // エディター全般
+    "workbench.settings.useSplitJSON": true,
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "editor.renderWhitespace": "all",
+    "editor.wordWrapColumn": 700,
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.minimap.maxColumn": 30,
+    "diffEditor.wordWrap": "off",
+
+    // フォーマッター
+    "[scss]": {
+        "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter",
+        "editor.formatOnSave": true
+    },
+    "[typescript][html][vue][json][js]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[php]": {
+        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client",
+        "editor.formatOnSave": true
+    },
+
+    // スペルチェックを行うファイル形式
+    "cSpell.enabledLanguageIds": ["php", "blade", "yml", "yaml", "scss", "xml", "shellscript", "javascript", "typescript", "json", "jsonc", "vue"],
+    // 登録した単語
+    "cSpell.words": [
+        // 固有名詞・サービス名
+        "miroku",
+        "maya-reki",
+        "apollon",
+        "yamasaki",
+        "suisho",
+        "tamako",
+        "lovemedo",
+        "sekirara",
+        "ogushi",
+        "noriko",
+        "murano",
+        "hiromi",
+        "mkamaki",
+        "kinoshita",
+        "reon",
+        "hayatomo",
+        "kimura",
+        "fujiko",
+        "minori",
+        "rensa",
+        "docomo",
+        "rakuten",
+        "twiiter",
+        "youtuber",
+        // 変数・定数
+        "preresult",
+        "itemcd",
+        "itemcds",
+        // 日本語
+        "marokusatsu",
+        "shichusuimei",
+        "uranai",
+        "firin",
+        "fukuen",
+        // js・css・ライブラリ
+        "stylesheet",
+        "jquery",
+        "laravel",
+        "autoload"
+        // phpメソッド名
+    ],
+    "cSpell.ignoreRegExpList": ["[０-９Ａ-Ｚａ-ｚぁ-んァ-ヶ亜-熙纊-黑]+"]
+}

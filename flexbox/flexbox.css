@@ -1,0 +1,28 @@
+body {
+  height: 100vh;
+}
+
+h2 {
+  width: max-content;
+}
+
+.container {
+  display: flex;
+  width: auto;
+  height: 100%;
+}
+
+.box1 {
+  background-color: aqua;
+  width: 30%;
+}
+
+.box1 {
+  background-color: rebeccapurple;
+  /* width: 100%; */
+}
+
+.box1 {
+  background-color: rgb(47, 0, 255);
+  /* width: 100%; */
+}

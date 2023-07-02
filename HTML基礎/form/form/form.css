@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+section h2 {
+  background-color: black;
+  color: aliceblue;
+}
+section h3 {
+  background-color: rgb(119, 119, 119);
+  color: aliceblue;
+}
+section h4 {
+  background-color: rgb(189, 189, 189);
+  color: blue;
+}
+section div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+section div h5 {
+  color: rgb(27, 131, 149);
+}
+section div h5 ul {
+  background-color: #333333;
+}
+section div h5 ul:first-child {
+  background-color: #b03939;
+}
+section div > p {
+  font-size: 0.8rem;
+}
+section div hr {
+  background-color: black;
+}
+section div li {
+  font-size: 0.8rem;
+}
+section div code {
+  padding: 0.2rem 0.4rem;
+  background-color: #333333;
+  border-radius: 3px;
+  color: aqua;
+}
+
+.form-practice .form-dialog button {
+  width: 50%;
+}/*# sourceMappingURL=form.css.map */

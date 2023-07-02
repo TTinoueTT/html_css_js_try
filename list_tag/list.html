@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="list.css" />
+    <title>list</title>
+  </head>
+  <body>
+    <hr />
+    <section id="list-style-img">
+      <h2>list-style-img</h2>
+      <ul id="list-style-img__checkmark-list">
+        <li>リストのテスト1</li>
+        <li>リストのテスト2</li>
+        <li>リストのテスト3</li>
+      </ul>
+      <ul id="list-style-img__arrow-forward-circle-list">
+        <li>リストのテスト1</li>
+        <li>リストのテスト2</li>
+        <li>リストのテスト3</li>
+      </ul>
+
+      <ul id="list-style-img__rocket-outline">
+        <li>リストのテスト1</li>
+        <li>リストのテスト2</li>
+        <li>リストのテスト3</li>
+      </ul>
+
+      <ul id="list-style-img__linear-gradient">
+        <li>リストのテスト1</li>
+        <li>リストのテスト2</li>
+        <li>リストのテスト3</li>
+      </ul>
+    </section>
+
+    <hr />
+    <section id="list-style-type">
+      <h2>list-style-type</h2>
+      <h3>disc(塗りつぶされた円形 (既定値))</h3>
+      <ul id="list-style-type__disc">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>circle(中空円)</h3>
+      <ul id="list-style-type__circle">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>square(塗りつぶされた四角形)</h3>
+      <ul id="list-style-type__square">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>decimal(数値)</h3>
+      <ul id="list-style-type__decimal">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>decimal-leading-zero(数値で、先頭がゼロ埋めされる)</h3>
+      <ul id="list-style-type__decimal-leading-zero">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>lower-roman(小文字のローマ数字)</h3>
+      <ul id="list-style-type__lower-roman">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>upper-roman(大文字のローマ数字)</h3>
+      <ul id="list-style-type__upper-roman">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>lower-greek(小文字の古代ギリシャ文字)</h3>
+      <ul id="list-style-type__lower-greek">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>lower-alpha(小文字の ASCII 文字)</h3>
+      <ul id="list-style-type__lower-alpha">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>upper-alpha(大文字の ASCII 文字)</h3>
+      <ul id="list-style-type__upper-alpha">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>arabic-indic(アラビア－インド数字)</h3>
+      <ul id="list-style-type__arabic-indic">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>armenian(伝統的なアルメニア語の数値表記)</h3>
+      <ul id="list-style-type__armenian">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>lower-armenian(アルメニア語の小文字の数値表記)</h3>
+      <ul id="list-style-type__lower-armenian">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>upper-armenian(伝統的なアルメニア語の大文字の数値表記)</h3>
+      <ul id="list-style-type__upper-armenian">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>bengali(ベンガル語の数値表記)</h3>
+      <ul id="list-style-type__bengali">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>cambodian/khmer(カンボジア／クメール語の数値表記)</h3>
+      <ul id="list-style-type__cambodian">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>cjk-earthly-branch(漢字の「十二支」)</h3>
+      <ul id="list-style-type__cjk-earthly-branch">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>cjk-heavenly-stem(漢字の「十干」)</h3>
+      <ul id="list-style-type__cjk-heavenly-stem">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>devanagari(デーヴァナーガリー)</h3>
+      <ul id="list-style-type__devanagari">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>ethiopic-numeric(エチオピア語の数値表記)</h3>
+      <ul id="list-style-type__ethiopic-numeric">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>georgian(伝統的なジョージア語の数値表記)</h3>
+      <ul id="list-style-type__georgian">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>gujarati(グジャラート語の数値表記)</h3>
+      <ul id="list-style-type__gujarati">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>gurmukhi(グルムキー語の数値表記)</h3>
+      <ul id="list-style-type__gurmukhi">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>hebrew(伝統的なヘブライ語の数値表記)</h3>
+      <ul id="list-style-type__hebrew">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>hiragana(ひらがなの辞書順の文字)</h3>
+      <ul id="list-style-type__hiragana">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>hiragana-iroha(ひらがなのいろは順の文字)</h3>
+      <ul id="list-style-type__hiragana-iroha">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>japanese-formal(法律や金融関係の書類に使用される日本の公的な数値表記)</h3>
+      <ul id="list-style-type__japanese-formal">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>japanese-informal(日本語の日常的な数値表記)</h3>
+      <ul id="list-style-type__japanese-informal">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>katakana(カタカナの辞書順)</h3>
+      <ul id="list-style-type__katakana">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>katakana-iroha(カタカナのいろは順)</h3>
+      <ul id="list-style-type__katakana-iroha">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>korean-hangul-formal(韓国語のハングルの数値表記)</h3>
+      <ul id="list-style-type__korean-hangul-formal">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>korean-hanja-formal(韓国語の公的な漢数字)</h3>
+      <ul id="list-style-type__korean-hanja-formal">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>korean-hanja-informal(韓国語の漢数字)</h3>
+      <ul id="list-style-type__korean-hanja-informal">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>lao(ラオス語の数値表記)</h3>
+      <ul id="list-style-type__lao">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>malayalam(マラヤーラム語の数値表記)</h3>
+      <ul id="list-style-type__malayalam">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>mongolian(モンゴル語の数値表記)</h3>
+      <ul id="list-style-type__mongolian">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>myanmar(ミャンマー語 (ビルマ語) の数値表記)</h3>
+      <ul id="list-style-type__myanmar">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>oriya(オリヤー語の数値表記)</h3>
+      <ul id="list-style-type__oriya">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>persian(ペルシャ語の数値表記)</h3>
+      <ul id="list-style-type__persian">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>simp-chinese-formal(公的な簡体字中国語の数値表記)</h3>
+      <ul id="list-style-type__simp-chinese-formal">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>simp-chinese-informal(日常的な簡体字中国語の数値表記)</h3>
+      <ul id="list-style-type__simp-chinese-informal">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>trad-chinese-formal(公的な繁体字中国語の数値表記)</h3>
+      <ul id="list-style-type__trad-chinese-formal">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>trad-chinese-informal(日常的な繁体字中国語の数値表記)</h3>
+      <ul id="list-style-type__trad-chinese-informal">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>cjk-decimal(漢数字)</h3>
+      <ul id="list-style-type__cjk-decimal">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+
+      <h3>tamil(タミル語の数値表記)</h3>
+      <ul id="list-style-type__tamil">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>telugu(テルグ語の数値表記)</h3>
+      <ul id="list-style-type__telugu">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>thai(タイ語の数値表記)</h3>
+      <ul id="list-style-type__thai">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>tibetan(チベット語の数値表記)</h3>
+      <ul id="list-style-type__tibetan">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>kannada(カンナダ語の数値表記、インド カルナータカ州)</h3>
+      <ul id="list-style-type__kannada">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>none(マーカーは表示されない)</h3>
+      <ul id="list-style-type__none">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>'文字列'(文字列をマーカーに指定)</h3>
+      <ul id="list-style-type__string">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>'記号識別子'(記号をデコードしてマーカー記号に)</h3>
+      <ul id="list-style-type__symbol">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>disclosure-open(&lt;details&gt;などの展開ウィジェットを開いていることを示す記号)</h3>
+      <ul id="list-style-type__disclosure-open">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+      <h3>disclosure-closed(&lt;details&gt;などの展開ウィジェットを閉じていることを示す記号)</h3>
+      <ul id="list-style-type__disclosure-closed">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+    </section>
+
+    <hr />
+    <section id="list-style-type-custom">
+      <h2>list-style-type-custom サファリ非対応</h2>
+      <h3>@counter-style の例</h3>
+      <ul id="list-style-type-custom__exam">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+
+      <h3>@counter-style system: cyclic;</h3>
+      <ul id="list-style-type-custom__cyclicSystem">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+
+      <h3>@counter-style system: cyclic; (画像Ver. 実行できず)</h3>
+      <ul id="list-style-type-custom__cyclicSystemImg">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+
+      <h3>@counter-style system: fixed &lt;integer&gt;;</h3>
+      <ul id="list-style-type-custom__fixedSystem">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+
+      <h3>@counter-style system: symbolic;</h3>
+      <ul id="list-style-type-custom__symbolicSystem">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+
+      <h3>@counter-style system: alphabetic; (基本Ver.)</h3>
+      <ul id="list-style-type-custom__alphabeticSystemBasic">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+
+      <h3>@counter-style system: alphabetic;</h3>
+      <ul id="list-style-type-custom__alphabeticSystem">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+
+      <h3>@counter-style system: numeric; (基本Ver.)</h3>
+      <ul id="list-style-type-custom__numericSystemBasic">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+
+      <h3>@counter-style system: numeric; (文字列Ver.)</h3>
+      <ul id="list-style-type-custom__numericSystem">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+
+      <h3>@counter-style system: additive; (基本Ver.)</h3>
+      <ul id="list-style-type-custom__additiveSystem">
+        <li v-for="el in arry" v-text="el"></li>
+      </ul>
+
+      <div
+        style="background: black; opacity: 0.65; color: #ff9800; font-size: 10%; position: fixed; top: 0; right: 0; width: 20%; border-radius: 5px"
+      >
+        <!-- <input type="checkbox" id="menu" style="position: absolute; right: -1rem" />
+        <label for="menu" class="open" style="position: absolute; left: -2rem; font-size: 2rem; background-color: #080401">🐈</label>
+        <label for="menu" class="back"></label> -->
+        <p style="margin: 0">#list-style-type-custom</p>
+        <pre v-text="$data" style="margin: 0; padding: 0 4%"></pre>
+      </div>
+    </section>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="list.js"></script>
+  </body>
+</html>

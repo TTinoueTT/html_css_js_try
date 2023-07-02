@@ -1,0 +1,69 @@
+.night-sky {
+    display: flex;
+    justify-content: center;
+    height: 100vw;
+    width: 100%;
+    background-color: #181839;
+
+    & .star-box {
+        display: flex;
+        justify-content: center;
+        height: 100px;
+        width: 8px;
+        transform: rotateZ(45deg);
+
+        & .star {
+            width: 2px;
+            background: linear-gradient(transparent, rgb(255, 255, 255));
+            // background: white;
+            height: 0;
+            // animation: shooting 0.8s linear 2s infinite;
+            animation: {
+                name: shooting; //keyframesで定義した名前, none
+                duration: 3.8s; // アニメーションの総時間,s(秒数), ms(1/1000秒)
+                timing-function: linear; // イージングの指定
+                // delay: 3s; // 開始の遅延時間, s(秒数), ms(1/1000秒)
+                // direction: reverse; // 再生方向
+                // play-state: paused;
+                iteration-count: infinite; // 整数値, infinite(無限に繰り返す)
+                // fill-mode: backwards;// 再生されていない時の状態
+            }
+        }
+    }
+}
+
+@keyframes shooting {
+    0% {
+        height: 0;
+        opacity: 50%;
+    }
+    79% {
+        height: 0;
+        opacity: 50%;
+    }
+    89% {
+        height: 60px;
+        opacity: 100%;
+    }
+
+    100% {
+        height: 80px;
+        opacity: 0;
+    }
+}
+
+// @keyframes shooting {
+//     0% {
+//         height: 0;
+//         opacity: 50%;
+//     }
+//     50% {
+//         height: 60px;
+//         opacity: 100%;
+//     }
+
+//     100% {
+//         height: 80px;
+//         opacity: 0;
+//     }
+// }

@@ -1,0 +1,28 @@
+p {
+  font-weight: bold;
+  color: skyblue;
+}
+
+table {
+  color: saddlebrown;
+  /* border-collapse: collapse; */
+  /* 表の隙間を削除 */
+  text-align: center;
+  /* 表内文字の中央寄せを指定 */
+}
+
+
+th {
+  color: aliceblue;
+  background: black;
+}
+
+th,
+td {
+  border: solid 1px black;
+  /* 枠線を作る */
+}
+
+.pink {
+  background: pink;
+}

@@ -1,0 +1,135 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+
+section > h2 {
+  background-color: #591895;
+  color: aliceblue;
+}
+section > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+section > div > h3 {
+  margin-top: 5%;
+  padding: 0 2%;
+  color: aliceblue;
+  background-color: #515151;
+}
+section > div > h3 + p {
+  padding: 2%;
+  border: 1px dotted black;
+  border-radius: 10px;
+  margin: 2%;
+  font-size: 80%;
+  background-color: beige;
+}
+
+.before-after__basis a::before {
+  content: "::beforeです <=";
+  color: blue;
+}
+.before-after__basis a::after {
+  content: "=> ::affterです";
+  color: green;
+}
+.before-after__basis div::before {
+  content: "::beforeです <=";
+  color: rgb(81, 81, 195);
+}
+.before-after__basis div::after {
+  content: "=> ::affterです";
+  color: rgb(35, 97, 35);
+}
+.before-after__basis .kaigyou::before {
+  display: block;
+  content: "::before\aです <=";
+  white-space: pre;
+  color: rgb(81, 81, 195);
+}
+.before-after__basis .kaigyou::after {
+  display: block;
+  content: "=> ::affter\aです";
+  white-space: pre;
+  color: rgb(35, 97, 35);
+}
+.before-after__practice span[data-content] {
+  position: relative;
+  color: brown;
+}
+.before-after__practice span[data-content]:active::before {
+  content: attr(data-content);
+  position: absolute;
+  background-color: beige;
+  border-radius: 5px;
+  border-style: double;
+}
+.before-after__practice span[data-content]:hover::after, .before-after__practice span[data-content]:focus::after {
+  content: attr(data-content);
+  position: absolute;
+  background-color: aqua;
+  border-radius: 5px;
+  border-style: dotted;
+}
+.before-after .gecko {
+  position: relative;
+  width: 50%;
+  aspect-ratio: 800/757;
+  margin: 0 10%;
+  border: 1px dashed #515151;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(../images/tokage_crested_gecko.png);
+  transition: all 2s ease;
+}
+.before-after .gecko::before {
+  content: "::beforeです";
+  display: block;
+  width: 33%;
+  aspect-ratio: 800/757;
+  border: 1px dashed #515151;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(../images/tokage_crested_gecko.png);
+  filter: hue-rotate(-90deg);
+}
+.before-after .gecko::after {
+  content: "::afterです";
+  display: block;
+  width: 33%;
+  aspect-ratio: 800/757;
+  border: 1px dashed #515151;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(../images/tokage_crested_gecko.png);
+  filter: hue-rotate(90deg);
+}
+.before-after .gecko__child {
+  width: 33%;
+  aspect-ratio: 800/757;
+  border: 1px dashed #515151;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(../images/tokage_crested_gecko.png);
+}
+.before-after .gecko:hover {
+  filter: hue-rotate(180deg);
+}
+
+.backdrop-practice dialog {
+  padding: 5%;
+  top: 5%;
+  left: 5%;
+  width: 30%;
+}
+.backdrop-practice dialog::backdrop {
+  background-color: rgba(68, 45, 16, 0.382);
+}
+.backdrop-practice button {
+  width: 40%;
+  padding: 5%;
+}/*# sourceMappingURL=PseudoElement.css.map */
