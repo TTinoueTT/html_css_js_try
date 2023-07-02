@@ -58,7 +58,7 @@ const TypewriterPromise = (text, textId, appearanceSpeed = 200, textColor = "#00
  * @param {string} textId 取得する id要素
  * @param {number} appearanceSpeed TypewriterPromise に渡す、引数
  */
-async function AsyncTypewriter(textId, appearanceSpeed, textColor) {
+export async function AsyncTypewriter(textId, appearanceSpeed, textColor) {
     const assignArray = CreateTextArray(textId);
     document.getElementById(textId).innerHTML = '';
 
@@ -70,5 +70,3 @@ async function AsyncTypewriter(textId, appearanceSpeed, textColor) {
 }
 
 // ここから実行部分
-
-AsyncTypewriter("firstText", 200, "#621414");
