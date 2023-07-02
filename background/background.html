@@ -136,15 +136,15 @@
             <section>
                 <h2>background-position</h2>
                 <p>
-                    background-position は CSS のプロパティで、それぞれの背景画像の初期位置を設定します。位置は background-origin で設定された位置レイヤーからの相対です <br>
-                    指定する値は位置を X軸 Y軸を指定し、<br>
-                    <ul>
-                        <li>引数1つなら、X軸を指定し、自動で2つめの引数は中央(center)となる</li>
-                        <li>引数2つなら、1つ目はX軸、2つ目がY軸</li>
-                        <li>引数3つなら、その値の指定方法によるので以下を参照する</li>
-                    </ul>
-
+                    background-position は CSS のプロパティで、それぞれの背景画像の初期位置を設定します。位置は background-origin で設定された位置レイヤーからの相対です <br />
+                    指定する値は位置を X軸 Y軸を指定し、<br />
                 </p>
+                <ul>
+                    <li>引数1つなら、X軸を指定し、自動で2つめの引数は中央(center)となる</li>
+                    <li>引数2つなら、1つ目はX軸、2つ目がY軸</li>
+                    <li>引数3つなら、その値の指定方法によるので以下を参照する</li>
+                </ul>
+
                 <div class="background-position">
                     <div class="background-position__parent top" style="--bg-img1: url(../images/monster05.png)" before-content="background-position: top;">
                         <p>topのみの指定</p>
@@ -173,12 +173,25 @@
                     <div class="background-position__parent keyword-absolute3" style="--bg-img1: url(../images/monster05.png)" before-content="background-position: top 20px right 100px;">
                         <p>topから Xpx, rightから Ypx の指定</p>
                     </div>
-                    <div class="background-position__parent animation" style="--bg-img1: url(../images/monster05.png)" before-content="今までのbackground-positionを利用した移動アニメーション">
-
-                    </div>
-
-
+                    <div class="background-position__parent animation" style="--bg-img1: url(../images/monster05.png)" before-content="今までのbackground-positionを利用した移動アニメーション"></div>
                 </div>
+            </section>
+
+            <section>
+                <h2>サンプルアニメーション</h2>
+                <p>アニメーションの検証</p>
+
+                <div class="sample-anim">
+                    <div class="sample-anim__path"></div>
+
+                    <div class="sample-anim__object"></div>
+                    <!-- <div></div> -->
+                </div>
+
+                <svg id="path" width="500" height="500">
+                    <path d="M50,50  Q70,200 150,100  T270,70" fill="none" stroke="#CF3721" stroke-width="3" />
+                </svg>
+                <div id="object"></div>
             </section>
         </main>
     </body>

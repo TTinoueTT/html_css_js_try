@@ -1,5 +1,5 @@
 {
-    "printWidth": 200,
+    "printWidth": 700,
     "tabWidth": 4,
     "useTabs": false,
     "semi": true,
@@ -18,4 +18,10 @@
     "htmlWhitespaceSensitivity": "css",
     "vueIndentScriptAndStyle": false,
     "endOfLine": "auto",
+    "overrides": [
+        {
+            "files": ".prettierrc",
+            "options": { "parser": "json" }
+        }
+    ]
 }

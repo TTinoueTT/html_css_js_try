@@ -688,4 +688,24 @@ main > section > p li {
   100% {
     background-position: right;
   }
+}
+.sample-anim {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2/1;
+  border: 1px solid;
+}
+.sample-anim__path {
+  position: relative;
+  height: 5px;
+  background: black;
+  border-top: 1px dashed white;
+  border-bottom: 1px dashed white;
+}
+.sample-anim__object {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 50%;
 }/*# sourceMappingURL=background.css.map */
