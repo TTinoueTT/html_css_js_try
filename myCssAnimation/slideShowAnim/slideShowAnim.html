@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="slideShowAnim.css" />
+        <title>slideShowAnim</title>
+    </head>
+    <body>
+        <main>
+            <a href="https://ics.media/entry/210519/"></a>
+            <h1>スライドショーの実験</h1>
+            <section>
+                <h2>横にスライドするアニメーション</h2>
+                <h3>画像が表示され横に流れていく</h3>
+                <ul>
+                    <li>横長のバナー画像が表示されている</li>
+                    <li>画面上では1枚の表示だが、何枚かがスライドして表示される</li>
+                    <li>表示されていた画像が横に流れると次の画像も中央にスライドされて一定時間止まる</li>
+                    <li>一定時間後にまた次の画像が表示される</li>
+                    <li>用意された最後の画像まで移動して、一定時間終わると最初の画像が表示される</li>
+                    <li>画像をクリックするとアニメーションがとまる</li>
+                    <li>表示されている画像は画像の下にあるインジケータのドットで管理されている</li>
+                </ul>
+                <!--  -->
+                <div class="slide-show-container">
+                    <div class="slide-show-container__image-box">
+                        <a
+                            class="slide-show-container__image-box__content"
+                            href="https://4.bp.blogspot.com/-zyd_W4E6BjM/VCIkF1J8sII/AAAAAAAAmjg/X7j73gG6UFs/s800/monster03.png"
+                            style="--bg-url: url('../../images/monster01.png')"
+                        ></a>
+                        <a
+                            class="slide-show-container__image-box__content"
+                            href="https://3.bp.blogspot.com/-uF9VsXtCfz0/VCIkHKJUTSI/AAAAAAAAmjw/Zmw2VGrZyyY/s800/monster05.png"
+                            style="--bg-url: url('../../images/monster05.png')"
+                        ></a>
+                        <a
+                            class="slide-show-container__image-box__content"
+                            href="https://4.bp.blogspot.com/-R7qkuOoCs1k/VCIkIbJW75I/AAAAAAAAmkE/pvE5zePq6Tk/s800/monster08.png"
+                            style="--bg-url: url('../../images/monster08.png')"
+                        ></a>
+                        <a
+                            class="slide-show-container__image-box__content"
+                            href="https://4.bp.blogspot.com/-HRxya4zR5dU/VCIkKKcirWI/AAAAAAAAmkY/ksdUUIJJdcA/s800/monster11.png"
+                            style="--bg-url: url('../../images/monster11.png')"
+                        ></a>
+                        <a
+                            class="slide-show-container__image-box__content"
+                            href="https://4.bp.blogspot.com/-zyd_W4E6BjM/VCIkF1J8sII/AAAAAAAAmjg/X7j73gG6UFs/s800/monster03.png"
+                            style="--bg-url: url('../../images/monster03.png')"
+                        ></a>
+                    </div>
+
+                    <!-- <button id="backBtn" class="slide-show-container__back-btn" before-content="＜"></button> -->
+                    <svg id="backBtn" class="slide-show-container__back-btn" viewBox="0 0 512 512">
+                        <path
+                            d="M117.23 246.7l114.45-69.14a10.78 10.78 0 0116.32 9.31v53.32l103.68-62.63a10.78 10.78 0 0116.32 9.31v138.26a10.78 10.78 0 01-16.32 9.31L248 271.81v53.32a10.78 10.78 0 01-16.32 9.31L117.23 265.3a10.89 10.89 0 010-18.6z"
+                        />
+                    </svg>
+                    <!-- <button id="nextBtn" class="slide-show-container__next-btn" before-content="＞"></button> -->
+                    <svg id="nextBtn" class="slide-show-container__next-btn" viewBox="0 0 512 512">
+                        <path
+                            d="M394.77 246.7l-114.45-69.14a10.78 10.78 0 00-16.32 9.31v53.32l-103.68-62.63a10.78 10.78 0 00-16.32 9.31v138.26a10.78 10.78 0 0016.32 9.31L264 271.81v53.32a10.78 10.78 0 0016.32 9.31l114.45-69.14a10.89 10.89 0 000-18.6z"
+                        />
+                    </svg>
+
+                    <div class="slide-show-container__indicator">
+                        <label class="slide-show-container__indicator__point"><input id="slide1" type="radio" name="slide_item" checked /></label>
+                        <label class="slide-show-container__indicator__point"><input id="slide2" type="radio" name="slide_item" /></label>
+                        <label class="slide-show-container__indicator__point"><input id="slide3" type="radio" name="slide_item" /></label>
+                        <label class="slide-show-container__indicator__point"><input id="slide4" type="radio" name="slide_item" /></label>
+                        <label class="slide-show-container__indicator__point"><input id="slide5" type="radio" name="slide_item" /></label>
+                    </div>
+                </div>
+
+                <script>
+                    /**
+                     * 定義part
+                     **/
+                    const radioBtns = document.getElementsByName("slide_item");
+                    const backBtn = document.getElementById("backBtn");
+                    const nextBtn = document.getElementById("nextBtn");
+                    const slideShowContainerHeight = document.querySelector(".slide-show-container").clientHeight;
+                    const slideShowContainerImageBox = document.querySelector(".slide-show-container__image-box");
+
+                    // ボタンの位置をslideの中央の高さにする
+                    backBtn.style.top = `${(slideShowContainerImageBox.offsetHeight / slideShowContainerHeight / 2) * 100}%`;
+                    nextBtn.style.top = `${(slideShowContainerImageBox.offsetHeight / slideShowContainerHeight / 2) * 100}%`;
+
+                    const nextSlide = () => {
+                        for (let index = 0; index < radioBtns.length; index++) {
+                            const radio = radioBtns[index];
+                            if (radio.checked === true) {
+                                if (index == radioBtns.length - 1) {
+                                    // console.log("last");
+                                    radioBtns[0].checked = true;
+                                    slideShowContainerImageBox.style.transform = `translateX(0%)`;
+                                    break;
+                                } else {
+                                    // console.log("lastではない");
+                                    radioBtns[`${index + 1}`].checked = true;
+                                    slideShowContainerImageBox.style.transform = `translateX(-${(index + 1) * 100}%)`;
+                                    break;
+                                }
+                            }
+                        }
+                        // console.log("nextSlideBtnがクリックされました");
+                    };
+
+                    const backSlide = () => {
+                        for (let index = 0; index < radioBtns.length; index++) {
+                            const radio = radioBtns[index];
+                            if (radio.checked === true) {
+                                if (index == 0) {
+                                    // console.log("first");
+                                    radioBtns[`${radioBtns.length - 1}`].checked = true;
+                                    slideShowContainerImageBox.style.transform = `translateX(-${(radioBtns.length - 1) * 100}%)`;
+                                    break;
+                                } else {
+                                    // console.log("firstではない");
+                                    radioBtns[`${index - 1}`].checked = true;
+                                    slideShowContainerImageBox.style.transform = `translateX(-${(index - 1) * 100}%)`;
+                                    break;
+                                }
+                            }
+                        }
+                        // console.log("backSlideBtnがクリックされました");
+                    };
+
+                    /**
+                     * 処理part
+                     **/
+                    document.addEventListener("DOMContentLoaded", () => {
+                        for (let index = 0; index < radioBtns.length; index++) {
+                            let radio = radioBtns[index];
+                            radio.addEventListener("change", () => {
+                                slideShowContainerImageBox.style.transform = `translateX(-${index * 100}%)`;
+                            });
+                        }
+                        setInterval(nextSlide, 3000);
+                    });
+
+                    backBtn.addEventListener("click", backSlide);
+                    nextBtn.addEventListener("click", nextSlide);
+                </script>
+
+                <!-- <div class="svg-data"> -->
+                <svg class="ionicon" viewBox="0 0 512 512">
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"> -->
+                    <!-- <path d="M256 448c106 0 192-86 192-192S362 64 256 64 64 150 64 256s86 192 192 192z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32" /> -->
+                    <path
+                        d="M117.23 246.7l114.45-69.14a10.78 10.78 0 0116.32 9.31v53.32l103.68-62.63a10.78 10.78 0 0116.32 9.31v138.26a10.78 10.78 0 01-16.32 9.31L248 271.81v53.32a10.78 10.78 0 01-16.32 9.31L117.23 265.3a10.89 10.89 0 010-18.6z"
+                    />
+                </svg>
+                <!-- </div> -->
+            </section>
+        </main>
+    </body>
+</html>
