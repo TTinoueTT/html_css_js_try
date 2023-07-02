@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="svgAnimation.css" />
+        <title>svgAnimation</title>
+    </head>
+    <body>
+        <main>
+            <h1>svg要素を使用したアニメーションの実験</h1>
+            <section>
+                <h2>svg要素の練習</h2>
+                <h3>線を書く</h3>
+                <ul>
+                    <li>x1="開始位置のx座標" y1="開始位置のy座標" x2="終了位置のx座標" y2="終了位置のy座標"</li>
+                    <li>stroke="線の色"</li>
+                    <li>stroke-width="線の太さ"</li>
+                    <li>stroke-linecap="線の先端の形状(butt round square)"</li>
+                    <li>stroke-dasharray="点線の長さ 間隔の長さ"</li>
+                    <li>stroke-dashoffset="点線の開始位置"</li>
+                    <li>stroke-opacity="線の透明度"</li>
+                    <li>stroke-linejoin="角の形状(miter(鋭利) round(角丸) bavel(面取り))"</li>
+                </ul>
+                <!--  -->
+                <div class="svg-basic">
+                    <svg class="svg-basic__parent item" before-content="line要素">
+                        <!--  ノーマル  -->
+                        <line x1="5%" y1="5%" x2="95%" y2="5%" stroke="red" stroke-width="5%" stroke-linecap="butt" stroke-stroke-opacity="1" />
+                        <line x1="5%" y1="15%" x2="95%" y2="15%" stroke="green" stroke-width="5%" stroke-linecap="round" stroke-stroke-opacity="1" />
+                        <line x1="5%" y1="25%" x2="95%" y2="25%" stroke="blue" stroke-width="5%" stroke-linecap="square" stroke-stroke-opacity="1" />
+                        <!-- 点線 -->
+                        <line x1="5%" y1="35%" x2="95%" y2="35%" stroke="red" stroke-width="5%" stroke-stroke-opacity="1" stroke-dasharray="5% 5%" />
+                        <line x1="5%" y1="45%" x2="95%" y2="45%" stroke="green" stroke-width="5%" stroke-stroke-opacity="1" stroke-dasharray="10% 5%" />
+                        <line x1="5%" y1="55%" x2="95%" y2="55%" stroke="pink" stroke-width="5%" stroke-linecap="round" stroke-dasharray="0% 8%" stroke-dashoffset="40%" />
+                        <line x1="5%" y1="65%" x2="95%" y2="65%" stroke="lightgreen" stroke-width="5%" stroke-linecap="round" opacity="1" stroke-dasharray="0 10%" stroke-dashoffset="40" />
+                        <line x1="5%" y1="75%" x2="95%" y2="75%" stroke="lightblue" stroke-width="5%" stroke-linecap="round" opacity="1" stroke-dasharray="0 8% 8%" stroke-dashoffset="40" />
+                    </svg>
+                    <svg class="svg-basic__parent item">
+                        <!--  折れ線を描く  -->
+                        <polyline points="20,20 182,180 20,180" fill="none" stroke="#F52549" stroke-width="15" stroke-linejoin="miter" />
+                    </svg>
+                    <svg class="svg-basic__parent item">
+                        <!--  角丸  -->
+                        <polyline points="20,20 182,180 20,180" fill="" stroke="#F52549" stroke-width="15" stroke-linejoin="round" />
+                    </svg>
+                    <svg class="svg-basic__parent item">
+                        <!--  面取り  -->
+                        <polyline points="20,20 182,180 20,180" fill="#FA6574" stroke="#F52549" stroke-width="15" stroke-linejoin="bevel" />
+                    </svg>
+                </div>
+
+                <h3>pathを利用する</h3>
+                <p>
+                    d属性の中にアルファベットのコマンドと座標を指定すれば直線、折れ線、多角形を表現することができる<br />
+                    コマンド <br />
+                    M 開始位置の座標を指定<br />
+                    L 直線の移動先の座標を指定 <br />
+                    H 水平の移動先の座標を指定<br />
+                    V 垂直の移動先の座標を指定<br />
+                    Z パスを閉じる、終点から始点までの直線を描画<br />
+                </p>
+                <ul>
+                    <li>d属性について</li>
+                </ul>
+                <div class="svg-basic">
+                    <svg class="svg-basic__parent item">
+                        <path d="M10,10 L130,10 L130,150 L10,150 Z" fill="#693D3D" stroke="#46211A" stroke-width="5" />
+                        <path d="M160,10 H280 V150 H160 Z" fill="#BA5536" stroke="#A43820" stroke-width="5" />
+                    </svg>
+
+                    <!-- 2次ベジェ曲線 -->
+                    <svg class="svg-basic__parent item">
+                        <path d="M10,50  Q70,200 120,100  T190,70" fill="none" stroke="#CF3721" stroke-width="3" />
+                    </svg>
+                    <svg class="svg-basic__parent item">
+                        <path d="M130,20 Q220,70 100,115 T70,205" fill="none" stroke="#CF3721" stroke-width="3" />
+                    </svg>
+                </div>
+
+                <script>
+                    /**
+                     * 定義part
+                     **/
+                    // const radioBtns = document.getElementsByName("slide_item");
+                </script>
+            </section>
+
+            <section>
+                <h2>svg要素を使用したアニメーションの実験</h2>
+                <h3>点線の上をオブジェクトが移動する</h3>
+                <ul></ul>
+                <!--  -->
+                <div class="svg-anim">
+                    <svg class="svg-anim__container">
+                        <path d="M40,420 Q82,248 351,316 T620,66" fill="none" stroke="#CF3721" stroke-width="3" />
+                    </svg>
+                    <div class="svg-anim__object"></div>
+                </div>
+
+                <script>
+                    /**
+                     * 定義part
+                     **/
+                    // const radioBtns = document.getElementsByName("slide_item");
+                </script>
+            </section>
+        </main>
+    </body>
+</html>

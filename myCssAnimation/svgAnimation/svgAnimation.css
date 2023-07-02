@@ -1,0 +1,90 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+
+:root {
+  --image-url: ;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main > h1 {
+  width: 100%;
+}
+main > section {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  align-items: center;
+}
+main > section > h2 {
+  width: 100%;
+  color: aliceblue;
+  background-color: darkblue;
+}
+main > section > h3 {
+  width: 100%;
+  color: aliceblue;
+  background-color: rgb(96, 102, 7);
+}
+main > section > p {
+  width: 100%;
+  font-size: 85%;
+  text-align: left;
+}
+main > section > p span {
+  font-weight: 600;
+  color: rgb(228, 116, 37);
+}
+main > section > p li {
+  font-size: 0.8rem;
+}
+
+.svg-basic {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  height: 70vw;
+}
+.svg-basic__parent {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid;
+}
+.svg-basic__parent.item {
+  width: 100%;
+  height: 100%;
+}
+.svg-basic__parent.item::before {
+  content: attr(before-content);
+  position: absolute;
+  top: 0;
+  font-size: 0.7rem;
+}
+.svg-basic__parent.item::after {
+  background-image: var(--bg-img1), var(--bg-img2);
+  content: attr(after-content);
+  width: 50%;
+  height: 50%;
+  background-size: 100%, 100%;
+  background-color: #a4a683;
+  background-repeat: no-repeat;
+  padding: 10%;
+}
+
+.svg-anim {
+  width: 100%;
+  height: 70vw;
+}
+.svg-anim__container {
+  width: 100%;
+  height: 100%;
+}/*# sourceMappingURL=svgAnimation.css.map */
