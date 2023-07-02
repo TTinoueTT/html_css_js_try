@@ -1,0 +1,32 @@
+main {
+    height: 100vh;
+    .character-anim {
+        width: 100%;
+        position: relative;
+        &__first-text {
+            overflow: scroll;
+            // display: flex;
+            // flex-direction: column;
+            // flex-direction: row-reverse;
+            vertical-align: top;
+            color: transparent;
+            writing-mode: vertical-rl;
+
+            width: 100%;
+            // height: 80%;
+
+            overflow-wrap: normal;
+
+            & > span {
+                opacity: 0%;
+                color: transparent;
+                // transition: all 1s;
+                transition: all 800ms linear;
+
+                &.show {
+                    opacity: 100%;
+                }
+            }
+        }
+    }
+}

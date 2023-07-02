@@ -1,0 +1,23 @@
+main {
+  height: 100vh;
+}
+main .character-anim {
+  width: 100%;
+  position: relative;
+}
+main .character-anim__first-text {
+  overflow: scroll;
+  vertical-align: top;
+  color: transparent;
+  writing-mode: vertical-rl;
+  width: 100%;
+  overflow-wrap: normal;
+}
+main .character-anim__first-text > span {
+  opacity: 0%;
+  color: transparent;
+  transition: all 800ms linear;
+}
+main .character-anim__first-text > span.show {
+  opacity: 100%;
+}/*# sourceMappingURL=characterAnim.css.map */
