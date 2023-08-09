@@ -1,17 +1,17 @@
 import { name, AsyncTypewriter } from "./characterAnim.mjs";
 
-let time = 0
-setTimeout(() => {
-    AsyncTypewriter("angler_fish", 200, "#621414");
-}, time =+ 100);
+linkIds = [
+    "angler_fish",
+    "pacific_saury",
+    "skipjack_tuna",
+    "fat_greenling"
+]
 
-setTimeout(() => {
-    AsyncTypewriter("pacific_saury", 200, "#621414");
-}, time =+ 100);
+const RunAsyncTypewriter =  async () => {
+    await AsyncTypewriter("angler_fish", 200, "#621414");
+    await AsyncTypewriter("pacific_saury", 200, "#621414");
+    await AsyncTypewriter("skipjack_tuna", 200, "#621414");
+}
 
-setTimeout(() => {
-    AsyncTypewriter("skipjack_tuna", 200, "#621414");
-}, time =+ 100);
-
-
+RunAsyncTypewriter();
 console.log(name);

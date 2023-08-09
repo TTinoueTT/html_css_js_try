@@ -60,15 +60,17 @@ const TypewriterPromise = (text, textId, appearanceSpeed = 200, textColor = "#00
  * @param {string} textId 取得する id要素
  * @param {number} appearanceSpeed TypewriterPromise に渡す引数
  * @param {string} textColor TypewriterPromise に渡す引数
+ * @param {number} afterDelay 実行後の余韻の時間(なにかしらの次の処理を遅らせる)
  */
-export const AsyncTypewriter = async (textId, appearanceSpeed, textColor) => {
+export const AsyncTypewriter = async (textId, appearanceSpeed, textColor, afterDelay = 500) => {
     const assignArray = CreateTextArray(textId);
     document.getElementById(textId).innerHTML = '';
-
+    document.getElementById(textId).textContent = '';
     for (let index = 0; index < assignArray.length; index++) {
         const text = assignArray[index];
         await TypewriterPromise(text, textId, appearanceSpeed, textColor);
     }
+    await new Promise(resolve => setTimeout(resolve, afterDelay));
 }
 
 // ここから実行部分

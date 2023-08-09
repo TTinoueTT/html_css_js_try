@@ -1,3 +1,49 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+
+:root {
+  --image-url: ;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main > h1 {
+  width: 100%;
+}
+main > section {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  align-items: center;
+}
+main > section > h2 {
+  width: 100%;
+  color: aliceblue;
+  background-color: darkblue;
+}
+main > section > h3 {
+  width: 100%;
+  color: aliceblue;
+  background-color: rgb(96, 102, 7);
+}
+main > section > p {
+  width: 100%;
+  font-size: 85%;
+  text-align: left;
+}
+main > section > p span {
+  font-weight: 600;
+  color: rgb(228, 116, 37);
+}
+main > section > p li {
+  font-size: 0.8rem;
+}
+
 main {
   height: 100vh;
 }
@@ -7,11 +53,14 @@ main .character-anim {
 }
 main .character-anim__first-text {
   overflow: scroll;
+  overflow-wrap: normal;
   vertical-align: top;
-  color: transparent;
   writing-mode: vertical-rl;
   width: 100%;
-  overflow-wrap: normal;
+  color: transparent;
+}
+main .character-anim__first-text a {
+  color: transparent;
 }
 main .character-anim__first-text span {
   opacity: 0%;
