@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+}
+
+.svg-anim {
+    height: 30rem;
+    /* background-color: aqua; */
+    position: relative;
+    background-image: url(./mobius_x_jimhen.jpeg);
+    background-color: rgba(72, 103, 166, 0.9);
+    /* background-color:rgba(255,255,255,0.8); */
+    /* background-blend-mode:lighten; */
+    background-blend-mode:darken;
+}
+
+
+#epidemic-glaze-logo {
+    width: 80%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#base path {
+    fill:#5ef297; /* 塗りの色 */
+}
+
+#mask path {
+    fill:none; /* 塗りの色 */
+    stroke:#ffffff; /* 線の色 */
+    stroke-width:10px; /* 線幅 */
+    stroke-linecap:round; /* 線端の形状 */
+    stroke-linejoin:round; /* 角の形状 */
+}
