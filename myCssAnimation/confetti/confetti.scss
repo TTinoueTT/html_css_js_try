@@ -50,7 +50,7 @@
 }
 
 /* add animation */
-$ratio: 0.3;
+$ratio: 0.3; // アニメーションスピードの比率
 $fall-time: 10s * $ratio;
 .confetti span:nth-child(2n + 1) {
     animation: confetti-anim-1 $fall-time 0s linear infinite;
